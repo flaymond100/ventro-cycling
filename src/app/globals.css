@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "~@sl-codeblaster/react-3d-animated-card/dist/index.css";
 
 body {
   background-color: #121212;
