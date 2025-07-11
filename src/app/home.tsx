@@ -1,13 +1,12 @@
 "use client";
 
-import { Typography } from "@material-tailwind/react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 function Home() {
   return (
     <section className="pt-24 px-8 pb-20 md:pb-0 list-item bg-[url('/ben-guernsey.jpeg')] bg-cover bg-center bg-no-repeat relative min-h-screen">
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900/55 to-gray-900/50 mix-blend-multiply"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900/90 to-gray-200/10 mix-blend-multiply"></div>
       {/* Dotted grid overlay */}
       <div
         className="absolute inset-0 z-10"
@@ -26,9 +25,9 @@ function Home() {
         }
       ></div>
 
-      <div className="relative z-10 mt-24 flex flex-col items-start justify-center h-full max-w-5xl mx-auto px-6 md:px-12 text-left">
+      <div className="relative z-10 mt-24 md:ml-16 flex flex-col items-start justify-center h-full max-w-5xl mx-auto px-6 md:px-12 text-left">
         <motion.h1
-          className="text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter drop-shadow-lg"
+          className="text-6xl text-yellow-400 md:text-7xl font-extrabold leading-tight tracking-tighter drop-shadow-lg"
           initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -51,10 +50,10 @@ function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          Our coaching is built on science, not guesswork. We analyze your
-          power, heart rate, recovery, and fatigue to turn your training into
-          real-world speed. This is performance coaching for cyclists who are
-          done wasting time.
+          Our coaching is built on science. We analyze your power, heart rate,
+          recovery, and fatigue to make sure you are getting the most out of the
+          trainins. This is performance coaching for cyclists who are done
+          wasting time.
         </motion.p>
 
         <motion.p
@@ -72,7 +71,7 @@ function Home() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
         >
-          Book a Free Call <ArrowRight size={18} />
+          See Plans <ArrowRight size={18} />
         </motion.button>
       </div>
     </section>
