@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import {
   motion,
   useMotionValue,
@@ -55,7 +55,17 @@ function Home() {
           } as React.CSSProperties
         }
       ></div>
-      <div className="mx-auto grid min-h-[55vh] w-full grid-cols-1 place-items-start relative z-20"></div>
+
+      <div className="mx-auto grid min-h-[55vh] w-full grid-cols-1 place-items-start relative z-20">
+        <Typography
+          variant="h2"
+          className="mt-9 text-left sm:w-full"
+          color="white"
+          // style={{ width: "60%" }}
+        >
+          Welcome to the home of cycling coaching.
+        </Typography>
+      </div>
     </section>
   );
 }
@@ -152,7 +162,7 @@ const MotionCard: React.FC<{
   return (
     <motion.div
       style={{
-        perspective: 1200,
+        perspective: 1400,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -166,7 +176,7 @@ const MotionCard: React.FC<{
       <motion.div
         style={{
           margin: "150px 0 0",
-          width: "100%",
+          width: "40%",
           height: "100%",
           transformStyle: "preserve-3d",
           display: "flex",
