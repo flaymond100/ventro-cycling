@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Ventro Coaching is a community of athletes from all corners of the globe, we provide individual training plans for triathlon, cycling and running.",
   openGraph: {
-    url: "https://www.nrc-team.com",
+    url: "https://www.ventrocoaching.com",
     title: "Ventro Coaching - Running, Cycling and Triathlon Trainings",
     description:
       "Ventro Coaching is a community of athletes from all corners of the globe, we connect people and provide individual training plans for triathlon, cycling and running.",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Ventro Coaching",
   },
   alternates: {
-    canonical: `https://www.nrc-team.com`,
+    canonical: `https://www.ventrocoaching.com`,
   },
 };
 
@@ -45,11 +45,11 @@ const schema = {
   "@context": "http://schema.org",
   "@type": "SportsTeam",
   name: "Ventro Coaching",
-  email: "contact@nrc-team.com",
+  email: "contact@ventrocoaching.com",
   coach: "Konstantin Garbar",
   start_url: "/",
   founder: "Konstantin Garbar",
-  url: "https://www.nrc-team.com",
+  url: "https://www.ventrocoaching.com",
   logo: "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2FNRC_logo_web.jpg?alt=media&token=f9e70e4f-8c1b-4ecb-85d3-0a1b6df10aea",
   keywords:
     "Traithlon, Traithlon Coach, Traithlon Coaching, Cycling, Cycling Coaching, Germany, Berlin, Leipzig, Best Cycling Coach, Best Triathlon Coach, Training Camps, Racing, Triathlon, Cycling Germany, Triathlon Germany, Best Coach Germany, Best Coach Dubai, Trainin Plans, Triathlon Training Plan, Individual Triathlon Training Plan, Triathlon Training Plan, Ironman, Half Ironman, Sprint Triathlon, Bikes, Hour Record, Indoor Training, Zwift, Wahoo, Today's Plan, Training Peaks",
@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://www.nrc-team.com" />
+        <link rel="canonical" href="https://www.ventrocoaching.com" />
 
         <link
           rel="apple-touch-icon"

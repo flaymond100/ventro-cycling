@@ -41,37 +41,38 @@ const TermsAndConditions = () => {
           be provided upon the conclusion of your free trial period. 4.
           Termination of Contract You may terminate your contract with us at any
           time by providing us with one month's notice. Termination requests
-          should be sent to info@nrc-team.com 5. Health and Responsibility By
-          using our training plans, you acknowledge and agree to the following:
-          a. Health Awareness: You should be in good health and consult a
-          medical professional before starting any exercise program. We are not
-          responsible for any health issues that may arise during your training.
-          b. Advisory Nature: Our training plans are advisory in nature and
-          should be considered recommendations and support. They are not a
-          substitute for professional medical advice, diagnosis, or treatment.
-          c. Personal Responsibility: You are solely responsible for your own
-          health, well-being, and safety during your training. We do not assume
-          any responsibility for the decisions you make regarding your training
-          or their outcomes. d. Listening to Your Body: You should listen to
-          your body and make responsible decisions regarding your training
-          intensity and duration. If you experience any discomfort or pain, you
-          should stop the training and seek medical advice if necessary. 6. Data
-          Privacy We take your privacy seriously. Please review our Privacy
-          Policy to understand how we collect, use, and protect your personal
-          information. 7. Intellectual Property All content provided through our
-          services, including training plans, coaching materials, and any other
-          materials, are protected by copyright and other intellectual property
-          laws. You may not use, reproduce, or distribute this content without
-          our written permission. 8. Changes to Terms We reserve the right to
-          modify or update these Terms at any time. We will provide notice of
-          significant changes via email or through our website. Your continued
-          use of our services after such changes constitutes your acceptance of
-          the updated Terms. 9. Contact Information If you have any questions or
-          concerns about these Terms or our services, please contact us at [Your
-          Contact Information]. By using our online coaching services, you
-          acknowledge that you have read, understood, and agree to these Terms
-          and Conditions. Your use of our services is subject to these Terms,
-          and any violation may result in the termination of your access to our
+          should be sent to info@ventrocoaching.com 5. Health and Responsibility
+          By using our training plans, you acknowledge and agree to the
+          following: a. Health Awareness: You should be in good health and
+          consult a medical professional before starting any exercise program.
+          We are not responsible for any health issues that may arise during
+          your training. b. Advisory Nature: Our training plans are advisory in
+          nature and should be considered recommendations and support. They are
+          not a substitute for professional medical advice, diagnosis, or
+          treatment. c. Personal Responsibility: You are solely responsible for
+          your own health, well-being, and safety during your training. We do
+          not assume any responsibility for the decisions you make regarding
+          your training or their outcomes. d. Listening to Your Body: You should
+          listen to your body and make responsible decisions regarding your
+          training intensity and duration. If you experience any discomfort or
+          pain, you should stop the training and seek medical advice if
+          necessary. 6. Data Privacy We take your privacy seriously. Please
+          review our Privacy Policy to understand how we collect, use, and
+          protect your personal information. 7. Intellectual Property All
+          content provided through our services, including training plans,
+          coaching materials, and any other materials, are protected by
+          copyright and other intellectual property laws. You may not use,
+          reproduce, or distribute this content without our written permission.
+          8. Changes to Terms We reserve the right to modify or update these
+          Terms at any time. We will provide notice of significant changes via
+          email or through our website. Your continued use of our services after
+          such changes constitutes your acceptance of the updated Terms. 9.
+          Contact Information If you have any questions or concerns about these
+          Terms or our services, please contact us at [Your Contact
+          Information]. By using our online coaching services, you acknowledge
+          that you have read, understood, and agree to these Terms and
+          Conditions. Your use of our services is subject to these Terms, and
+          any violation may result in the termination of your access to our
           services. Privacy Policy 1. Information We Collect a. Personal
           Information: We may collect personal information such as your name,
           email address, postal address, phone number, and date of birth when
@@ -118,8 +119,8 @@ const TermsAndConditions = () => {
           regulatory reasons. We will notify you of any material changes through
           email or by posting a notice on our website. 9. Contact Us If you have
           any questions or concerns about this Privacy Policy or our data
-          practices, please contact us at contact@nrc-team.com. By using our
-          online coaching services, you agree to the terms of this Privacy
+          practices, please contact us at contact@ventrocoaching.com. By using
+          our online coaching services, you agree to the terms of this Privacy
           Policy and the collection and use of your personal information as
           described herein. Your continued use of our services constitutes your
           acceptance of this policy.

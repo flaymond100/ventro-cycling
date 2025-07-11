@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Choose the plan that suits your goals and embark on your journey to a healthier, more active you with the International Ventro Coaching.",
   alternates: {
-    canonical: `https://www.nrc-team.com/personal-coaching`,
+    canonical: `https://www.ventrocoaching.com/personal-coaching`,
   },
 };
 

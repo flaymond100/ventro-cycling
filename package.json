@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "author": "Kostiantyn Garbar",
-  "homepage": "https://www.nrc-team.com",
+  "homepage": "https://www.ventrocoaching.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
