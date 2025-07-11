@@ -97,7 +97,7 @@ export function Navbar() {
       <div className="container max-w-full mx-auto flex items-center justify-between  ">
         <Link href="/">
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/black-logo.png`}
+            src={`${process.env.NEXT_PUBLIC_BASE_URL}/white-logo-narrow.png`}
             alt="favicon Ventro Coaching"
             width={400}
             height={50}

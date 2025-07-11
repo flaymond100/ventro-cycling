@@ -33,7 +33,7 @@ export const fileUpload = async (file: File) => {
   if (!file) {
     alert("Please choose a file first!");
   }
-  const storageRef = ref(storage, `/files/${file.name}`);
+  const storageRef = ref(storage, `/files/ventro-coaching/${file.name}`);
   await uploadBytesResumable(storageRef, file);
   return await getDownloadURL(storageRef);
 };

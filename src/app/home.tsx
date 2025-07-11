@@ -5,7 +5,7 @@ import { Typography } from "@material-tailwind/react";
 function Home() {
   return (
     <section className="pt-24 px-8 pb-20 md:pb-0 list-item bg-[url('/ben-guernsey.jpeg')] bg-cover bg-center bg-no-repeat relative min-h-screen">
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900/30 to-gray-900/50 mix-blend-multiply"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900/55 to-gray-900/50 mix-blend-multiply"></div>
 
       {/* Dotted grid overlay */}
       <div
