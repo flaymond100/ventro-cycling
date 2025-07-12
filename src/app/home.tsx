@@ -6,13 +6,13 @@ import { ArrowRight } from "lucide-react";
 function Home() {
   return (
     <section className="pt-24 px-8 pb-20 md:pb-0 list-item bg-[url('/ben-guernsey.jpeg')] bg-cover bg-center bg-no-repeat relative min-h-screen">
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900/90 to-gray-200/10 mix-blend-multiply"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-600/50 to-gray-100/80 mix-blend-multiply"></div>
       {/* Dotted grid overlay */}
       <div
         className="absolute inset-0 z-10"
         style={
           {
-            "--dot-bg": "rgba(66 66 66 / 10%))",
+            "--dot-bg": "rgba(66, 66, 66, 0.1)",
             "--dot-color": "transparent",
             "--dot-size": "1px",
             "--dot-space": "22px",

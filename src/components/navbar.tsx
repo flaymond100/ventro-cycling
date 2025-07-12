@@ -17,8 +17,8 @@ const NAV_MENU = [
   // },
 
   {
-    name: "Personal Coaching",
-    href: "/personal-coaching",
+    name: "Plans and Pricing",
+    href: "/plans-and-pricing",
   },
   {
     name: "Team Coaching",
@@ -88,7 +88,7 @@ export function Navbar() {
       shadow={true}
       fullWidth
       style={{
-        backgroundColor: open ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.3)",
+        backgroundColor: open ? "rgba(0, 0, 0, 0.7)" : "#353744",
         backdropFilter: "blur(1px)",
         transition: "background-color 0.3s, backdrop-filter 0.3s",
       }}
