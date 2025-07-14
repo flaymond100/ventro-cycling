@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  background-color: #121212;
-  color: #ECD06F;
+  background-color: #f2f3f4;
+  color: #353744;
   backdrop-filter: blur(2px);
   
   /* --dot-bg: #121212;

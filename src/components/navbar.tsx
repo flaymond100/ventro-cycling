@@ -11,19 +11,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_MENU = [
-  // {
-  //   name: "Home",
-  //   href: "/",
-  // },
-
   {
     name: "Plans and Pricing",
     href: "/plans-and-pricing",
   },
-  {
-    name: "Team Coaching",
-    href: "/cycling-team",
-  },
+  // {
+  //   name: "Team Coaching",
+  //   href: "/team-coaching",
+  // },
   {
     name: "FTP Calculator",
     href: "/ftp-calculator",
@@ -88,7 +83,7 @@ export function Navbar() {
       shadow={true}
       fullWidth
       style={{
-        backgroundColor: open ? "rgba(0, 0, 0, 0.7)" : "#353744",
+        backgroundColor: open ? "rgba(0, 0, 0, 0.7)" : "#000000c9",
         backdropFilter: "blur(1px)",
         transition: "background-color 0.3s, backdrop-filter 0.3s",
       }}

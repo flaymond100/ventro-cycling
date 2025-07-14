@@ -10,40 +10,49 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    title: "Are the training plans suitable for beginners?",
-    desc: "Yes, our plans cater to all levels, including beginners. We tailor the intensity and structure based on your starting point, gradually building your capabilities.",
+    title: "Are your training plans suitable for beginner cyclists?",
+    desc: "Absolutely. Whether you're new to cycling or getting back into it, we create training plans that match your fitness level and goals. The focus is on gradual progression and sustainable performance gains.",
   },
   {
-    title: "How often do you update the training plans?",
-    desc: "We regularly review and update our training plans to incorporate the latest training methodologies and ensure they remain effective and aligned with current best practices.",
+    title:
+      "I want to race at a high level, can your coaching help me get there?",
+    desc: "Definitely. We work with competitive cyclists targeting podiums, race wins, and category upgrades. You'll get structured periodisation, detailed data analysis, and racing-specific training blocks tailored to your peak events.",
   },
   {
-    title: "How long do you need to prepare for a triathlon?",
-    desc: "Generally, a 12 to 16-week training plan is recommended forbeginners tackling a sprint distance. The ideal preparation time fora triathlon varies based on your current fitness level, experience, and the specific distance of the triathlon. Adequate time allows for a gradual increase in intensity, endurance, and skill development, reducing the risk of injury and enhancing overall performance on race day.",
+    title: "How do you track performance progress for serious athletes?",
+    desc: "We monitor key metrics like power curves, training load (CTL/ATL), fatigue management, and FTP. We use this data to fine-tune your workouts and ensure you're peaking at the right time without overtraining.",
   },
   {
-    title: "What makes your online training plans different?",
-    desc: "Our training plans are personalized to fit your specific needs, integrating a holistic approach that considers your fitness level, goals, and available time for training. We focus on tailored guidance rather than generic programs.",
+    title: "How often are the training plans updated?",
+    desc: "We update your plan on a weekly basis based on your progress, feedback, and data. This ensures the training remains effective, aligned with your goals, and adapts to changes in your performance or schedule.",
   },
   {
-    title: "How do I know if I'm ready for an advanced training plan?",
-    desc: "If you've consistently trained at a moderate level and have specific performance goals, you're likely ready. Our coaches can further assess your readiness and customize the plan accordingly to challenge and advance your abilities.",
+    title: "How long does it take to see improvements in cycling performance?",
+    desc: "Many cyclists notice improvements in endurance, power, or speed within the first 3–4 weeks. More significant results typically come after consistent training over 2–3 months.",
   },
   {
-    title: "Can I switch plans if my goals change during the training period?",
-    desc: "Absolutely, we understand that goals evolve. You can seamlessly switch plans, and our coaches will recalibrate your training to align with your new objectives, ensuring your program remains tailored to your aspirations.",
+    title: "What makes your cycling coaching different?",
+    desc: "We focus on data-driven and personalized coaching. Your plan is built around your power or heart rate zones, goals, available time, and event schedule. It's not a one-size-fits-all program.",
   },
   {
-    title: "What equipment or gear do I need for the training plans?",
-    desc: "Basic triathlon gear is recommended, and our coaches can provide guidance on suitable equipment based on your budget and the specific demands of your training, ensuring you have the essentials for a successful triathlon journey.",
+    title: "How do I know if I'm ready for a more advanced plan?",
+    desc: "If you've been riding regularly and want to target specific performance metrics or race goals, you’re likely ready. Our coach can assess your data and tailor the plan to challenge you appropriately.",
   },
   {
-    title: "What if I miss a workout or need to adjust the training schedule?",
-    desc: "Life happens, and flexibility is built into our plans. Our coaches can help you adjust your schedule to accommodate unexpected events while keeping your goals in focus, ensuring your training remains adaptable to the realities of your daily life.",
+    title: "Can I switch goals during the training period?",
+    desc: "Yes. If your objectives change—like shifting focus from a gran fondo to criterium racing—we’ll adjust your plan accordingly. Flexibility is part of our coaching philosophy.",
   },
   {
-    title: "What's the usual duration to see results with your training plans?",
-    desc: "Results vary depending on individual goals and starting points, but many of our clients report significant improvements within the first few weeks, with substantial progress over a few months of consistent training.",
+    title: "What equipment do I need for your cycling plans?",
+    desc: "At minimum, you'll need a road bike and a cycling computer. A power meter or heart rate monitor is highly recommended for more precise training and analysis. We can help you choose the right setup for your goals and budget.",
+  },
+  {
+    title: "What if I miss a ride or need to change my schedule?",
+    desc: "No problem. Life happens. Your coach will adjust your plan based on changes in availability or missed sessions, so you stay on track without unnecessary stress.",
+  },
+  {
+    title: "Do I need a specific fitness level to start?",
+    desc: "Not at all. We coach cyclists of all backgrounds—from complete beginners to seasoned racers. Your current level just helps us set a realistic starting point for building fitness effectively.",
   },
 ];
 
@@ -69,12 +78,20 @@ export function Faq() {
             >
               <AccordionHeader
                 placeholder={""}
-                className="text-left text-white"
+                className="text-left  hover:text-white focus:text-white"
+                style={{
+                  color: "#353744",
+                }}
               >
                 {title}
               </AccordionHeader>
               <AccordionBody>
-                <p color="blue-gray" className="font-normal text-xl text-white">
+                <p
+                  className="font-normal text-xl"
+                  style={{
+                    color: "#444759",
+                  }}
+                >
                   {desc}
                 </p>
               </AccordionBody>

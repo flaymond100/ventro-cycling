@@ -15,12 +15,6 @@ export default function Campaign() {
   return (
     <>
       <Home />
-      {/* <SocialRides /> */}
-      {/* <OurPrograms />
-      <Prices />
-      <OurServices />
-      <CarouselFeatures />
-      <CalendlyWidget /> */}
       <Faq />
       <Footer />
     </>
