@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 function Home() {
   return (
@@ -64,15 +65,16 @@ function Home() {
         >
           This is Ventro. Built to make you faster.
         </motion.p>
-
-        <motion.button
-          className="mt-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition flex items-center gap-2 shadow-lg"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-        >
-          See Plans <ArrowRight size={18} />
-        </motion.button>
+        <Link href="/plans-and-pricing">
+          <motion.button
+            className="mt-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition flex items-center gap-2 shadow-lg"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+          >
+            See Plans <ArrowRight size={18} />
+          </motion.button>{" "}
+        </Link>
       </div>
     </section>
   );
