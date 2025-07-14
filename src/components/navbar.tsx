@@ -9,6 +9,8 @@ import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const NAV_MENU = [
   {
@@ -105,6 +107,14 @@ export function Navbar() {
             </NavItem>
           ))}
         </ul>
+        <Link
+          className="ml-auto inline-block sm:hidden lg:block"
+          href="/plans-and-pricing"
+        >
+          <motion.button className="hidden md:flex ml-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition items-center gap-2 shadow-lg">
+            See Plans
+          </motion.button>{" "}
+        </Link>
         <IconButton
           placeholder={""}
           variant="text"
