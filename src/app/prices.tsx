@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export function Prices() {
   return (
@@ -21,14 +22,25 @@ export function Prices() {
           >
             Our Plans and Pricing
           </h1>
-
-          <div className="flex flex-col items-center justify-center">
-            {/* <p className="leter-spacing-1 text-xl max-w-3xl">
+          <div
+            style={{
+              color: "#444759",
+            }}
+            className="flex flex-col items-center justify-center"
+          >
+            <motion.p
+              initial={{ y: 80, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="font-normal text-xl max-w-3xl hidden md:block"
+            >
               There are 3 distinct plans to choose from, each designed to meet
-              your specific needs. Every option is fully personalized to help you
-              unlock your potential and achieve your best performance.
-            </p>
-            <br /> */}
+              your specific needs. Every option is fully personalized to help
+              you unlock your potential and achieve your best performance.
+            </motion.p>
+            <br />
+            <Stepper />
+
             {/* <p className="leter-spacing-1 text-xl max-w-3xl">
               Sign up for a free 7-day trial, and we'll connect with you within
               24 hours for a personal chat to set up everything you need to
@@ -36,9 +48,13 @@ export function Prices() {
             </p> */}
           </div>
         </div>
-        <div>
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
           <StripePricingTable />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -60,6 +76,108 @@ export const StripePricingTable = () => {
     "pricing-table-id": process.env.NEXT_PUBLIC_STRIPE_PRICING_TABLE_ID,
     "publishable-key": process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
   });
+};
+
+const Stepper = () => {
+  return (
+    <ol
+      style={{
+        color: "#353744",
+      }}
+      className="md:flex items-center w-full space-y-8 md:space-y-0 md:space-x-8"
+    >
+      <motion.li
+        initial={{ y: 80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative flex-1 min-w-[280px] min-h-[120px] after:content-['']  after:w-0.5 after:h-full lg:after:h-0.5 lg:after:w-full lg:after:top-1/2 lg:after:left-full lg:after:-translate-y-1/2"
+      >
+        <div className="flex text-left items-center justify-center gap-8 w-full max-w-sm">
+          <div className="flex min-h-[140px] items-center gap-3.5 bg-indigo-50 p-3.5 rounded-xl relative z-10 border border-indigo-600 w-full">
+            <div className="rounded-lg bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-600 p-3">1</span>
+            </div>
+            <div className=" flex items-start rounded-md justify-center flex-col ">
+              <h6 className="text-base font-semibold text-black mb-0.5">
+                Pick Your Plan & Sign Up
+              </h6>
+              <p
+                style={{
+                  color: "#353744",
+                }}
+                className="text-xs font-normal"
+              >
+                Choose the coaching package that fits your goals. Once you
+                subscribe, you'll receive a{" "}
+                <strong>personal questionnaire</strong> to help us understand
+                your goals, experience, and preferences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.li>
+      <motion.li
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="relative flex-1 min-w-[280px] min-h-[120px] after:content-['']  after:w-0.5 after:h-full after:bg-gray-200 after:inline-block after:absolute after:-bottom-12 after:left-1/2 lg:after:h-0.5 lg:after:w-full lg:after:top-1/2 lg:after:left-full lg:after:-translate-y-1/2"
+      >
+        <div className="flex text-left items-center justify-center gap-8 w-full max-w-sm">
+          <div className="flex min-h-[140px] items-center gap-3.5 bg-indigo-50 p-3.5 rounded-xl relative z-10 border border-indigo-600 w-full">
+            <div className="rounded-lg bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-600 p-3">2</span>
+            </div>
+            <div className=" flex items-start rounded-md justify-center flex-col">
+              <h6 className="text-base font-semibold text-black mb-0.5">
+                Personal Kickoff Call
+              </h6>
+              <p
+                style={{
+                  color: "#353744",
+                }}
+                className="text-xs font-normal"
+              >
+                We’ll invite you to book a{" "}
+                <strong>personal consultation</strong> with your coach. In this
+                video call, we’ll review your training history, current level,
+                goals, and lifestyle. This step ensures that your training plan
+                is 100% aligned with your real life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.li>
+      <motion.li
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+        className="relative flex-1 min-w-[280px] "
+      >
+        <div className="flex text-left items-center justify-center gap-8 w-full max-w-sm ">
+          <div className="flex min-h-[140px] items-center gap-3.5 bg-indigo-50 p-3.5 rounded-xl relative z-10 border border-indigo-600 w-full">
+            <div className="rounded-lg bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-600 p-3">3</span>
+            </div>
+            <div className=" flex items-start rounded-md justify-center flex-col ">
+              <h6 className="text-base font-semibold text-black mb-0.5">
+                Start Training
+              </h6>
+              <p
+                style={{
+                  color: "#353744",
+                }}
+                className="text-xs font-normal"
+              >
+                You'll receive your <strong>customized plan</strong> directly in
+                your TrainingPeaks account. We update it regularly based on your
+                package and performance data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.li>
+    </ol>
+  );
 };
 
 export default Prices;

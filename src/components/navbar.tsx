@@ -15,22 +15,22 @@ const NAV_MENU = [
     name: "Plans and Pricing",
     href: "/plans-and-pricing",
   },
-  // {
-  //   name: "Team Coaching",
-  //   href: "/team-coaching",
-  // },
+  {
+    name: "Team Coaching",
+    href: "/team-coaching",
+  },
   {
     name: "FTP Calculator",
     href: "/ftp-calculator",
   },
-  // {
-  //   name: "Our Trainers",
-  //   href: "/trainers",
-  // },
   {
-    name: "About Us",
-    href: "/about-us",
+    name: "Testimonials",
+    href: "/testimonials",
   },
+  // {
+  //   name: "About Us",
+  //   href: "/about-us",
+  // },
   {
     name: "Contact",
     href: "/contact",
