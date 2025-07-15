@@ -10,17 +10,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 const NAV_MENU = [
   {
     name: "Plans and Pricing",
     href: "/plans-and-pricing",
   },
-  {
-    name: "Team Coaching",
-    href: "/team-coaching",
-  },
+  // {
+  //   name: "Team Coaching",
+  //   href: "/team-coaching",
+  // },
   {
     name: "FTP Calculator",
     href: "/ftp-calculator",
@@ -100,21 +99,23 @@ export function Navbar() {
             height={50}
           />
         </Link>
-        <ul className="ml-10 hidden items-center gap-8 lg:flex">
-          {NAV_MENU.map(({ name, href }) => (
-            <NavItem key={name} href={href}>
-              {name}
-            </NavItem>
-          ))}
-        </ul>
-        <Link
-          className="ml-auto inline-block sm:hidden lg:block"
-          href="/plans-and-pricing"
-        >
-          <motion.button className="hidden md:flex ml-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition items-center gap-2 shadow-lg">
-            See Plans
-          </motion.button>{" "}
-        </Link>
+        <div className="flex items-center gap-2">
+          <ul className="ml-10 hidden items-center gap-8 lg:flex">
+            {NAV_MENU.map(({ name, href }) => (
+              <NavItem key={name} href={href}>
+                {name}
+              </NavItem>
+            ))}
+          </ul>
+          <Link
+            className="ml-auto inline-block sm:hidden lg:block"
+            href="/plans-and-pricing"
+          >
+            <motion.button className="hidden md:flex ml-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition items-center gap-2 shadow-lg">
+              See Plans
+            </motion.button>{" "}
+          </Link>
+        </div>
         <IconButton
           placeholder={""}
           variant="text"

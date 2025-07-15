@@ -17,6 +17,9 @@ body {
 		var(--dot-color); */
 }
 
+.PricingTable {
+  background-color: red !important;
+}
 
 .flip-card-1 {
   background-color: #121212;

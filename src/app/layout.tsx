@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import { Layout, FixedPlugin } from "@/components";
+import { Layout } from "@/components";
 import Modal from "@/components/modal";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";

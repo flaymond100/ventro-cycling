@@ -48,6 +48,7 @@ export function Prices() {
             </p> */}
           </div>
         </div>
+
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -67,8 +68,18 @@ export const StripePricingTable = () => {
     script.async = true;
     document.body.appendChild(script);
 
+    // Add red background style
+    const style = document.createElement("style");
+    style.textContent = `
+      .PricingTable {
+        background-color: red !important;
+      }
+    `;
+    document.head.appendChild(style);
+
     return () => {
       document.body.removeChild(script);
+      document.head.removeChild(style);
     };
   }, []);
 
