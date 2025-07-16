@@ -1,15 +1,8 @@
 import { Typography, Button, Input } from "@material-tailwind/react";
 import { BsStrava, BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 import Link from "next/link";
+import { NAV_MENU } from "./navbar";
 
-const LINKS = [
-  { title: "Personal Coaching", link: "/personal-coaching" },
-  { title: "Our Trainings", link: "/trainings" },
-  { title: "Our Trainers", link: "/trainers" },
-  { title: "About", link: "/about-us" },
-  { title: "Contact", link: "/contact" },
-  { title: "Terms", link: "/terms-and-conditions" },
-];
 const CURRENT_YEAR = new Date().getFullYear();
 
 export function Footer() {
@@ -22,16 +15,16 @@ export function Footer() {
               Ventro Coaching
             </Typography>
             <ul className="flex flex-wrap items-center justify-center md:justify-start">
-              {LINKS.map((data, idx) => (
-                <li key={data.link}>
+              {NAV_MENU.map((data, idx) => (
+                <li key={data.href}>
                   <Typography
                     as="a"
-                    href={data.link}
+                    href={data.href}
                     className={`py-1 font-medium !text-gray-700 transition-colors hover:!text-gray-900 ${
                       idx === 0 ? "pr-3" : "px-3"
                     }`}
                   >
-                    {data.title}
+                    {data.name}
                   </Typography>
                 </li>
               ))}
@@ -43,23 +36,9 @@ export function Footer() {
             </Typography>
             <div className="flex flex-row justify-center md:justify-start gap-3">
               <Link
-                aria-label="Go to strava"
-                target="_blank"
-                href="https://www.strava.com/clubs/nrc-tri-team"
-              >
-                <Button
-                  placeholder={""}
-                  aria-label="Go to strava"
-                  size="sm"
-                  name="Strava"
-                >
-                  <BsStrava />
-                </Button>
-              </Link>
-              <Link
                 aria-label="Go to instagram"
                 target="_blank"
-                href="https://www.instagram.com/nrc.int.team/"
+                href="https://www.instagram.com/ventro.cycling.coaching/"
               >
                 <Button
                   placeholder={""}
@@ -74,7 +53,7 @@ export function Footer() {
               <Link
                 aria-label="Go to facebook"
                 target="_blank"
-                href="https://www.facebook.com/nrcinternation"
+                href="https://www.facebook.com/ventro.cycling.coaching"
               >
                 <Button
                   placeholder={""}
@@ -83,20 +62,6 @@ export function Footer() {
                   name="Facebook"
                 >
                   <BsFacebook />
-                </Button>
-              </Link>
-              <Link
-                aria-label="Go to twitter"
-                target="_blank"
-                href="https://twitter.com/nrc_tri_team"
-              >
-                <Button
-                  placeholder={""}
-                  aria-label="Go to twitter"
-                  size="sm"
-                  name="Twitter"
-                >
-                  <BsTwitter />
                 </Button>
               </Link>
             </div>

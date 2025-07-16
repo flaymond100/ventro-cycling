@@ -11,7 +11,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
-const NAV_MENU = [
+export const NAV_MENU = [
   {
     name: "Plans and Pricing",
     href: "/plans-and-pricing",
@@ -24,10 +24,10 @@ const NAV_MENU = [
     name: "FTP Calculator",
     href: "/ftp-calculator",
   },
-  {
-    name: "Testimonials",
-    href: "/testimonials",
-  },
+  // {
+  //   name: "Testimonials",
+  //   href: "/testimonials",
+  // },
   // {
   //   name: "About Us",
   //   href: "/about-us",
