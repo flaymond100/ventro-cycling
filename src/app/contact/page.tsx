@@ -12,13 +12,15 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import CarouselFeatures from "../carousel-features";
 import { Prices } from "../prices";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Platforms } from "@/components/platforms";
 
 export default function ContactUs() {
   return (
     <>
       <Navbar />
       <FormSection />
-      <Prices />
       <CarouselFeatures />
       <Faq />
       <Footer />
@@ -26,8 +28,8 @@ export default function ContactUs() {
   );
 }
 const contactValidationSchema = Yup.object().shape({
-  firstName: Yup.string().required("Please enter your first name"),
-  lastName: Yup.string().required("Please enter your last name"),
+  firstName: Yup.string().nullable(),
+  lastName: Yup.string().nullable(),
   email: Yup.string()
     .email("Invalid email")
     .required("Please enter your email"),
@@ -39,14 +41,14 @@ const FormSection = () => {
   const [formSubmitted, setFormSubmitted] = React.useState(false);
   const formik = useFormik<{
     email: string;
-    firstName: string;
-    lastName: string;
+    firstName: string | null;
+    lastName: string | null;
     textarea: string | null;
   }>({
     initialValues: {
       email: "",
-      firstName: "",
-      lastName: "",
+      firstName: null,
+      lastName: null,
       textarea: null,
     },
     validateOnBlur: false,
@@ -86,13 +88,18 @@ const FormSection = () => {
   });
 
   return (
-    <section className="px-8 pt-20">
+    <section
+      className="pt-40   list-item bg-cover bg-center bg-no-repeat relative"
+      style={{
+        backgroundColor: "#f2f3f4",
+      }}
+    >
       <div className="container mx-auto text-center">
         <h1
           color="blue-gray"
           className="mb-4 leter-spacing-1 text-5xl font-bold"
         >
-          Get Started Today
+          Contact Us
         </h1>
         <div className="flex-row justify-center align-middle">
           <div className="flex justify-center mb-6">
@@ -104,22 +111,8 @@ const FormSection = () => {
         </div>
       </div>
 
-      <div
-        style={{ alignItems: "flex-start" }}
-        className="flex-row md:container md:mx-auto md:flex items-center justify-between"
-      >
-        <div className=" mt-10 grid gap-6 lg:mt-0 w-full">
-          <Image
-            width={568}
-            height={568}
-            src={`${
-              process.env.NEXT_PUBLIC_BASE_URL ?? ""
-            }/image/join-us-2.JPG`}
-            className="animate-in fade-in zoom-in duration-1000  mb-10 rounded-lg shadow-md "
-            alt="Get Started Today"
-          />
-        </div>
-        <div className="md:px-8 pt-6 pb-8 mb-4  md:ml-16 w-full">
+      <div className="flex items-center justify-center ">
+        <div className="md:px-8 pt-6 pb-8 flex justify-center items-center">
           <form onSubmit={formik.handleSubmit}>
             <div className="flex justify-between ">
               <div className="mb-6 w-4/5 mr-10">
@@ -127,52 +120,38 @@ const FormSection = () => {
                   className="block   text-sm font-bold mb-2"
                   htmlFor="text"
                 >
-                  First Name*
+                  First Name
                 </label>
                 <input
-                  className={`shadow appearance-none border ${
-                    formik.errors.firstName && "border-red-500"
-                  } rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
+                  className={`shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
                   id="firstName"
                   type="text"
                   disabled={disabled}
                   name="firstName"
                   placeholder="First Name"
-                  value={formik.values.firstName}
+                  value={formik.values.firstName ?? ""}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
-                {formik.errors.firstName && (
-                  <div className="text-red-500 text-xs italic">
-                    {formik.errors.firstName}
-                  </div>
-                )}
               </div>
               <div className="mb-6 w-4/5">
                 <label
                   className="block   text-sm font-bold mb-2"
                   htmlFor="text"
                 >
-                  Last Name*
+                  Last Name
                 </label>
                 <input
-                  className={`shadow appearance-none border ${
-                    formik.errors.lastName && "border-red-500"
-                  } rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
+                  className={`shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
                   id="lastName"
                   type="text"
                   disabled={disabled}
                   name="lastName"
                   placeholder="Last Name"
-                  value={formik.values.lastName}
+                  value={formik.values.lastName ?? ""}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
-                {formik.errors.lastName && (
-                  <div className="text-red-500 text-xs italic">
-                    {formik.errors.lastName}
-                  </div>
-                )}
               </div>
             </div>
             <div className="mb-4">
@@ -200,7 +179,7 @@ const FormSection = () => {
             </div>
             <div className="mb-4">
               <label className="block   text-sm font-bold mb-2" htmlFor="email">
-                Leave your message
+                Leave your message*
               </label>
               <textarea
                 className={`shadow appearance-none border ${
@@ -220,19 +199,26 @@ const FormSection = () => {
                 </p>
               )}
             </div>
-            <div className="flex items-center start mt-8">
-              <button
-                className={`w-full  ${
-                  disabled
-                    ? "bg-gray-500"
-                    : "bg-deep-purple-800 hover:bg-deep-purple-400"
-                } text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
+            <div className="flex items-center justify-end mt-8">
+              <motion.button
+                className={` ${
+                  disabled ? "bg-gray-500" : "bg-yellow-400 hover:bg-yellow-300"
+                } text-black px-6 py-3 rounded-xl font-bold transition flex items-center gap-2 shadow-lg`}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6 }}
                 type="submit"
                 value="Submit"
                 disabled={disabled}
               >
-                {disabled ? <Loader /> : "Submit"}
-              </button>
+                {disabled ? (
+                  <Loader />
+                ) : (
+                  <>
+                    Submit <ArrowRight size={18} />
+                  </>
+                )}
+              </motion.button>{" "}
             </div>
           </form>
         </div>

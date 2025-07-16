@@ -74,7 +74,7 @@ export function CarouselFeatures() {
       </section> */}
       <section
         style={{
-          background: "rgb(55 0 125 / 91%)",
+          background: "#111111d9",
         }}
         className="flex p-8 justify-center items-center w-screen"
       >
