@@ -15,13 +15,14 @@ import { Prices } from "../prices";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Platforms } from "@/components/platforms";
+import { AboutMe } from "@/components/about-me";
 
 export default function ContactUs() {
   return (
     <>
       <Navbar />
       <FormSection />
-      {/* <CarouselFeatures /> */}
+      <AboutMe />
       <Faq />
       <Footer />
     </>
