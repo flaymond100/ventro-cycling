@@ -38,22 +38,6 @@ export const AboutMe = () => {
               set your goals, adapting training to your life, and building a
               partnership based on trust, communication, and real progress.
             </p>
-
-            <p className="mt-4 text-xl text-gray-600 dark:text-gray-300 md:mt-8">
-              <span className="relative inline-block">
-                <span className="absolute inline-block w-full bottom-0.5 h-2 bg-yellow-300 dark:bg-gray-900"></span>
-                <span className="relative"> Have a question? </span>
-              </span>
-              <br className="block sm:hidden" />
-              Ask me on{" "}
-              <a
-                href="#"
-                title=""
-                className="transition-all duration-200 text-sky-500 dark:text-sky-400 hover:text-sky-600 dark:hover:text-sky-500 hover:underline"
-              >
-                Twitter
-              </a>
-            </p>
           </div>
         </div>
       </div>

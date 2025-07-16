@@ -90,12 +90,12 @@ const FormSection = () => {
 
   return (
     <section
-      className="pt-40   list-item bg-cover bg-center bg-no-repeat relative"
+      className="pt-40 mb-10   list-item bg-cover bg-center bg-no-repeat relative"
       style={{
         backgroundColor: "#f2f3f4",
       }}
     >
-      <div className="container mx-auto text-center">
+      <div className=" px-8 container mx-auto text-center">
         <h1
           color="blue-gray"
           className="mb-4 leter-spacing-1 text-5xl font-bold"
@@ -113,7 +113,7 @@ const FormSection = () => {
       </div>
 
       <div className="flex items-center justify-center">
-        <div className="md:px-8  pb-8 flex justify-center items-center">
+        <div className="px-8  pb-8 flex justify-center items-center">
           <form
             onSubmit={formik.handleSubmit}
             className="min-w-[300px] md:min-w-[700px]"
