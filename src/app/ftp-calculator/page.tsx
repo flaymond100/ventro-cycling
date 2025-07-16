@@ -34,14 +34,14 @@ const FTPCalculator = () => {
     if (ftpWkg >= 5.5 && vo2Wkg >= 7.5 && sprintWkg >= 17)
       return "UCI Pro Tour";
     if (ftpWkg >= 4.8 && vo2Wkg >= 6.5 && sprintWkg >= 14)
-      return "Elite (Cat 1)";
+      return "Elite Amatuer/Continental (Cat 1)";
     if (ftpWkg >= 4.0 && vo2Wkg >= 5.8 && sprintWkg >= 12)
-      return "Amateur Racer (Cat 2)";
+      return "Strong Amateur (Cat 2)";
     if (ftpWkg >= 3.2 && vo2Wkg >= 5.0 && sprintWkg >= 10)
       return "Competitive Amateur (Cat 3)";
     if (ftpWkg >= 2.5 && vo2Wkg >= 4.2 && sprintWkg >= 8)
-      return "Beginner Racer (Cat 4)";
-    return "Novice (Cat 5)";
+      return "Amateur (Cat 4)";
+    return "Beginner (Cat 5)";
   };
 
   const handleCalculate = () => {
@@ -196,16 +196,18 @@ const FTPCalculator = () => {
             Calculate
           </motion.button>{" "}
           {ftp && wkg && (
-            <div className="mt-6 space-y-2 text-green-700 font-medium text-lg">
+            <div className="mt-6 space-y-2 text-gray-700 font-medium text-lg">
               <div>
-                Estimated FTP: <span className="font-bold">{ftp} W</span>
+                Estimated FTP:{" "}
+                <span className="font-bold text-gray-900">{ftp} W</span>
               </div>
               <div>
-                FTP per kg: <span className="font-bold">{wkg} W/kg</span>
+                FTP per kg:{" "}
+                <span className="font-bold text-gray-900">{wkg} W/kg</span>
               </div>
               <div>
-                Ability Category:{" "}
-                <span className="text-blue-800">{category}</span>
+                Estimated Ability:{" "}
+                <span className="text-gray-900">{category}</span>
               </div>
             </div>
           )}
