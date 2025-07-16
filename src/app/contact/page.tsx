@@ -21,7 +21,7 @@ export default function ContactUs() {
     <>
       <Navbar />
       <FormSection />
-      <CarouselFeatures />
+      {/* <CarouselFeatures /> */}
       <Faq />
       <Footer />
     </>
