@@ -111,19 +111,22 @@ const FormSection = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center ">
-        <div className="md:px-8 pt-6 pb-8 flex justify-center items-center">
-          <form onSubmit={formik.handleSubmit}>
+      <div className="flex items-center justify-center">
+        <div className="md:px-8  pb-8 flex justify-center items-center">
+          <form
+            onSubmit={formik.handleSubmit}
+            className="min-w-[300px] md:min-w-[700px]"
+          >
             <div className="flex justify-between ">
-              <div className="mb-6 w-4/5 mr-10">
+              <div className="mb-8 w-4/5 mr-10">
                 <label
-                  className="block   text-sm font-bold mb-2"
+                  className="block   text-lg font-bold mb-2"
                   htmlFor="text"
                 >
                   First Name
                 </label>
                 <input
-                  className={`shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
+                  className={`shadow min-h-14 appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
                   id="firstName"
                   type="text"
                   disabled={disabled}
@@ -136,13 +139,13 @@ const FormSection = () => {
               </div>
               <div className="mb-6 w-4/5">
                 <label
-                  className="block   text-sm font-bold mb-2"
+                  className="block   text-lg font-bold mb-2"
                   htmlFor="text"
                 >
                   Last Name
                 </label>
                 <input
-                  className={`shadow appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
+                  className={`shadow min-h-14 appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
                   id="lastName"
                   type="text"
                   disabled={disabled}
@@ -154,14 +157,14 @@ const FormSection = () => {
                 />
               </div>
             </div>
-            <div className="mb-4">
-              <label className="block text-sm font-bold mb-2" htmlFor="email">
+            <div className="mb-8">
+              <label className="block text-lg font-bold mb-2" htmlFor="email">
                 Email*
               </label>
               <input
                 className={`shadow appearance-none border ${
                   formik.errors.email && "border-red-500"
-                } rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
+                } rounded w-full py-2 px-3   min-h-14  leading-tight focus:outline-none focus:shadow-outline`}
                 id="username"
                 type="email"
                 disabled={disabled}
@@ -178,13 +181,13 @@ const FormSection = () => {
               )}
             </div>
             <div className="mb-4">
-              <label className="block   text-sm font-bold mb-2" htmlFor="email">
+              <label className="block   text-lg font-bold mb-2" htmlFor="email">
                 Leave your message*
               </label>
               <textarea
                 className={`shadow appearance-none border ${
                   formik.errors.textarea && "border-red-500"
-                } rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline min-h-28`}
+                } rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline min-h-36`}
                 id="textarea"
                 disabled={disabled}
                 name="textarea"
