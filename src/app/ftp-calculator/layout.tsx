@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import { Layout } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Get Started",
+  title: "FTP Calculator",
   description:
-    "Choose the plan that suits your goals and embark on your journey to a healthier, more active you with the International Ventro Coaching.",
+    "Calculate your FTP and watts per kilogram to get a better understanding of your performance.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/personal-coaching`,
+    canonical: `https://www.ventrocoaching.com/ftp-calculator`,
   },
 };
 
