@@ -41,14 +41,23 @@ const NAV_MENU = [
 interface NavItemProps {
   children: React.ReactNode;
   href?: string;
+  onLinkClick?: () => void;
 }
 
-function NavItem({ children, href }: NavItemProps) {
+function NavItem({ children, href, onLinkClick }: NavItemProps) {
+  const handleClick = () => {
+    // Close mobile menu when link is clicked
+    if (onLinkClick) {
+      onLinkClick();
+    }
+  };
+
   return (
     <li>
       <Link
         href={href || "#"}
         scroll={true}
+        onClick={handleClick}
         className="flex items-center text-xl gap-2 font-normal text-white pb-1 hover:text-[#ecd06f] transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#ecd06f] after:transition-all duration-300 hover:after:w-full"
       >
         {children}
@@ -70,13 +79,18 @@ export function Navbar() {
     setOpen((cur) => !cur);
   }
   const pathname = usePathname();
-
+  console.log(pathname);
   React.useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpen(false)
     );
   }, []);
+
+  // Close mobile menu when pathname changes
+  React.useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <MTNavbar
@@ -102,7 +116,11 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <ul className="ml-10 hidden items-center gap-8 lg:flex">
             {NAV_MENU.map(({ name, href }) => (
-              <NavItem key={name} href={href}>
+              <NavItem
+                key={name}
+                href={href}
+                onLinkClick={() => setOpen(false)}
+              >
                 {name}
               </NavItem>
             ))}
@@ -135,7 +153,11 @@ export function Navbar() {
         <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
           <ul className="flex flex-col gap-4">
             {NAV_MENU.map(({ name, href }) => (
-              <NavItem key={name} href={href}>
+              <NavItem
+                key={name}
+                href={href}
+                onLinkClick={() => setOpen(false)}
+              >
                 {name}
               </NavItem>
             ))}
