@@ -79,7 +79,6 @@ export function Navbar() {
     setOpen((cur) => !cur);
   }
   const pathname = usePathname();
-  console.log(pathname);
   React.useEffect(() => {
     window.addEventListener(
       "resize",
