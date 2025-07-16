@@ -1,8 +1,14 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const Platforms = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 md:ml-16 pl-6 md:pl-12 gap-4 z-20 mb-18 relative mt-12 items-start justify-start max-w-2xl">
+    <motion.div
+      className="grid grid-cols-2 md:grid-cols-4 md:ml-16 pl-6 md:pl-12 gap-4 z-20 mb-18 relative mt-12 items-start justify-start max-w-2xl"
+      initial={{ y: 80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 2, delay: 0.8 }}
+    >
       <div className="flex flex-col justify-end items-center min-h-20">
         <Image
           width={150}
@@ -41,6 +47,6 @@ export const Platforms = () => {
       <div className="flex flex-col justify-end items-center  min-h-20">
         <Image width={150} height={150} src="/tp.png" alt="logo" />
       </div>
-    </div>
+    </motion.div>
   );
 };
