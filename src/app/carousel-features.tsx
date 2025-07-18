@@ -1,77 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Typography, Rating } from "@material-tailwind/react";
 import Marquee from "react-fast-marquee";
 
 export function CarouselFeatures() {
   return (
     <>
-      {/* <section
-        style={{
-          background: "rgb(55 0 125 / 91%)",
-        }}
-        className="p-16"
-      >
-        <div className="container mx-auto grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-2">
-          <div className="px-8 text-center">
-            <Typography
-               
-              variant="h3"
-              color="white"
-              className="mb-6 font-medium"
-            >
-              &quot;Thanks to this plan, I hit my PB in my last triathlon! The
-              coaches are incredibly supportive and responsive to my needs,
-              making it feel like I'm never training alone.&quot;
-            </Typography>
-            <Typography
-               
-              color="white"
-              variant="h4"
-              className="mt-4"
-            >
-              Oleg
-            </Typography>
-            <Typography
-               
-              color="white"
-              className="mb-4 font-normal"
-            >
-              Software Developer
-            </Typography>
-            <Rating   value={5} readonly />
-          </div>
-          <div className="px-8 text-center">
-            <Typography
-               
-              variant="h3"
-              color="white"
-              className="mb-6 font-medium"
-            >
-              &quot;The level of detail and customization in these plans is
-              outstanding. They’ve helped me balance work, life, and training
-              without feeling overwhelmed.&quot;
-            </Typography>
-            <Typography
-               
-              color="white"
-              variant="h4"
-              className="mt-4"
-            >
-              Anna
-            </Typography>
-            <Typography
-               
-              color="white"
-              className="mb-4 font-normal"
-            >
-              Marketing Specialist
-            </Typography>
-            <Rating   value={5} readonly />
-          </div>
-        </div>
-      </section> */}
       <section
         style={{
           background: "#111111d9",
