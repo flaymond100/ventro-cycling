@@ -5,16 +5,12 @@ import { Navbar, Footer, Loader } from "@/components";
 // sections
 import emailjs from "@emailjs/browser";
 import Faq from "../faq";
-import Image from "next/image";
 import React from "react";
 import toast from "react-hot-toast";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import CarouselFeatures from "../carousel-features";
-import { Prices } from "../prices";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Platforms } from "@/components/platforms";
 import { AboutMe } from "@/components/about-me";
 
 export default function ContactUs() {
@@ -39,7 +35,7 @@ const contactValidationSchema = Yup.object().shape({
 
 const FormSection = () => {
   const [disabled, setDisabled] = React.useState(false);
-  const [formSubmitted, setFormSubmitted] = React.useState(false);
+  const [_, setFormSubmitted] = React.useState(false);
   const formik = useFormik<{
     email: string;
     firstName: string | null;
