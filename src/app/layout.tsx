@@ -100,6 +100,10 @@ export default function RootLayout({
           content="Ventro Coaching helps cyclists and triathletes reach peak performance with custom training plans, expert feedback, and data-driven coaching."
         />
         <meta
+          name="google-site-verification"
+          content="XlQzuEWVIkVb3fSpAeOXda1-nx3deFkxsnsuBAm5lec"
+        />
+        <meta
           name="keywords"
           content="cycling coaching, cycling coach, personal cycling coach, endurance coaching, road cycling coach, professional cycling training, cycling training plan, cycling performance coach, bike training, FTP training, structured cycling workouts, online cycling coach, personalized cycling plan, power-based training, cycling improvement plan, FTP test, power zones, training zones, VO2 max cycling, lactate threshold, cycling base training, tempo training, threshold intervals, high-intensity interval training, recovery rides, long endurance rides, sweet spot training, off-season cycling plan, increase FTP, build endurance, improve cycling speed, race preparation, Ironman cycling coach, Gran Fondo training, time trial training, cycling race tactics, peak performance cycling, sportive training plan, climbing training, monthly coaching, weekly feedback, training analysis, power data review, coach consultation, one-on-one cycling coaching, customized training plan, remote cycling coaching, Zoom coaching calls, coaching for beginners, coaching for racers, group training sessions, TrainingPeaks, Zwift coaching, Strava analysis, WKO5, Garmin data, cycling analytics, online training log, cycling metrics, bike power meter, heart rate monitor training, amateur cyclists, competitive cyclists, triathletes, beginners in cycling, cycling teams, masters racers, juniors cycling training, women’s cycling coaching, endurance athletes, cycling clubs, hire a cycling coach, find a cycling coach, best cycling coaching plan, online cycling training, personal coach for cycling, start cycling training, improve cycling performance, train for a race, how to train for cycling, cycling training for beginners"
         />
