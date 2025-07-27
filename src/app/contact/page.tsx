@@ -25,6 +25,7 @@ export default function ContactUs() {
   );
 }
 const contactValidationSchema = Yup.object().shape({
+  companyName: Yup.string().nullable(),
   firstName: Yup.string().nullable(),
   lastName: Yup.string().nullable(),
   email: Yup.string()
@@ -38,12 +39,14 @@ const FormSection = () => {
   const [_, setFormSubmitted] = React.useState(false);
   const formik = useFormik<{
     email: string;
+    companyName: string | null;
     firstName: string | null;
     lastName: string | null;
     textarea: string | null;
   }>({
     initialValues: {
       email: "",
+      companyName: "VENTRO CYCLING",
       firstName: null,
       lastName: null,
       textarea: null,
