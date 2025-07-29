@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Join our international cycling team from any part of the world.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/cycling-team`,
+    canonical: `https://www.ventrocycling.com/cycling-team`,
   },
 };
 

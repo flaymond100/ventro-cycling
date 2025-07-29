@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Calculate your FTP and watts per kilogram to get a better understanding of your performance.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/ftp-calculator`,
+    canonical: `https://www.ventrocycling.com/ftp-calculator`,
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Cycling Team Roster",
   description: "Meet our riders.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/cycling-team/roster`,
+    canonical: `https://www.ventrocycling.com/cycling-team/roster`,
   },
 };
 

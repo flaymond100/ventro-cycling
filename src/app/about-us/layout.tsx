@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Ventro Coaching is a community of athletes from all corners of the globe, united by a shared love for endurance sports and become healthier people.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/about-us`,
+    canonical: `https://www.ventrocycling.com/about-us`,
   },
 };
 

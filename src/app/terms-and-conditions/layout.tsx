@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Terms and Conditions",
   description: "Terms and Conditions of Ventro Coaching.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/terms-and-conditions`,
+    canonical: `https://www.ventrocycling.com/terms-and-conditions`,
   },
 };
 

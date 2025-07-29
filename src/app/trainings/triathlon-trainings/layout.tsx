@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Triathlon Trainings",
   description: "Triathlon training plans.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/trainings/triathlon-trainings`,
+    canonical: `https://www.ventrocycling.com/trainings/triathlon-trainings`,
   },
 };
 

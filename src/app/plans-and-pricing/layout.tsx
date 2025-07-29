@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Choose the plan that suits your goals and embark on your journey to a healthier, more active you with Ventro Coaching.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/plans-and-pricing`,
+    canonical: `https://www.ventrocycling.com/plans-and-pricing`,
   },
 };
 

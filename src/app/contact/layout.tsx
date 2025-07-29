@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Reach out to Ventro Coaching and we will contact you back shortly.",
   alternates: {
-    canonical: `https://www.ventrocoaching.com/contact-us`,
+    canonical: `https://www.ventrocycling.com/contact-us`,
   },
 };
 

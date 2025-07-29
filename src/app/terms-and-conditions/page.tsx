@@ -41,7 +41,7 @@ const TermsAndConditions = () => {
           be provided upon the conclusion of your free trial period. 4.
           Termination of Contract You may terminate your contract with us at any
           time by providing us with one month's notice. Termination requests
-          should be sent to info@ventrocoaching.com 5. Health and Responsibility
+          should be sent to info@ventrocycling.com 5. Health and Responsibility
           By using our training plans, you acknowledge and agree to the
           following: a. Health Awareness: You should be in good health and
           consult a medical professional before starting any exercise program.
@@ -119,7 +119,7 @@ const TermsAndConditions = () => {
           regulatory reasons. We will notify you of any material changes through
           email or by posting a notice on our website. 9. Contact Us If you have
           any questions or concerns about this Privacy Policy or our data
-          practices, please contact us at contact@ventrocoaching.com. By using
+          practices, please contact us at contact@ventrocycling.com. By using
           our online coaching services, you agree to the terms of this Privacy
           Policy and the collection and use of your personal information as
           described herein. Your continued use of our services constitutes your

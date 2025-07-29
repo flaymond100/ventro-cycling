@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "author": "Kostiantyn Garbar",
-  "homepage": "https://www.ventrocoaching.com",
+  "homepage": "https://www.ventrocycling.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://www.ventrocoaching.com/sitemap.xml
+Sitemap: https://www.ventrocycling.com/sitemap.xml
