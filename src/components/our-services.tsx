@@ -64,8 +64,8 @@ export function OurServices() {
         </h2>
         <h3 className="mx-auto w-full px-4 !text-gray-500 lg:w-5/12">
           At Ventro Coaching, we help endurance athletes become faster,
-          stronger, and more consistent in their training. Ventro Coaching is
-          here to make sure you don’t just train — you improve.
+          stronger, and more consistent in their training. Ventro Cycling
+          Coaching is here to make sure you don’t just train — you improve.
         </h3>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-3">

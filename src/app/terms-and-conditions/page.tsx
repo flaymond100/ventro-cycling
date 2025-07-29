@@ -27,11 +27,11 @@ const TermsAndConditions = () => {
 
         <p className="mb-6">
           These Terms and Conditions ("Terms") govern your use of the online
-          coaching services provided by Ventro Coaching ("we," "us," or "our")
-          for triathlon, cycling, running, and swimming training plans. By
-          accessing and using our services, you agree to abide by these Terms.
-          Please read them carefully. 1. Service Description and Packages We
-          offer online training plans for triathlon, cycling, running, and
+          coaching services provided by Ventro Cycling Coaching ("we," "us," or
+          "our") for triathlon, cycling, running, and swimming training plans.
+          By accessing and using our services, you agree to abide by these
+          Terms. Please read them carefully. 1. Service Description and Packages
+          We offer online training plans for triathlon, cycling, running, and
           swimming. We provide three packages: Lite Package - €70, Premium
           Package - €100 and Deluxe Package - €200. 2. Free Trial Period Your
           first 7 days of training are provided for free to allow you to
