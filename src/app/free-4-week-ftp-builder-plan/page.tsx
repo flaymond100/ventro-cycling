@@ -35,7 +35,7 @@ const contactValidationSchema = Yup.object().shape({
   textarea: Yup.string().nullable().required("Please enter a message"),
 });
 
-export const Free4WeekPlan = () => {
+const Free4WeekPlan = () => {
   const [disabled, setDisabled] = React.useState(false);
   const [_, setFormSubmitted] = React.useState(false);
   const formik = useFormik<{
