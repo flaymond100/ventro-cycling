@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     title: "How long does it take to see improvements in cycling performance?",
-    desc: "Many cyclists notice improvements in endurance, power, or speed within the first 3–4 weeks. More significant results typically come after consistent training over 2–3 months.",
+    desc: "Many cyclists notice improvements in endurance, power, or speed within the first 3–4 Weeks. More significant results typically come after consistent training over 2–3 months.",
   },
   {
     title: "What makes your cycling coaching different?",

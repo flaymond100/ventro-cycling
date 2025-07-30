@@ -22,7 +22,7 @@ export const NAV_MENU = [
   // },
 
   {
-    name: "Free 4 Week Plan",
+    name: "Free 4-Week Plan",
     href: "/free-4-week-ftp-builder-plan",
   },
   {

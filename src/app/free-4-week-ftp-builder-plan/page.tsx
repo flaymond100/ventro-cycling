@@ -6,13 +6,13 @@ import { Navbar, Footer } from "@/components";
 // sections
 import Faq from "../faq";
 import { motion } from "framer-motion";
-import { ArrowRight, Loader } from "lucide-react";
+import { ArrowRight, ExternalLink, Loader } from "lucide-react";
 import React from "react";
 import toast from "react-hot-toast";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function PricingPage() {
   return (
@@ -47,7 +47,7 @@ export const Free4WeekPlan = () => {
   }>({
     initialValues: {
       email: "",
-      companyName: "VENTRO CYCLING-FREE 4 WEEK PLAN",
+      companyName: "VENTRO CYCLING-FREE 4-Week PLAN",
       firstName: null,
       lastName: null,
       textarea: null,
@@ -103,7 +103,7 @@ export const Free4WeekPlan = () => {
               color: "#353744",
             }}
           >
-            Free 4 Week FTP Builder Plan
+            Free 4-Week FTP Builder Plan
           </h1>
           <div>
             <motion.p
@@ -112,9 +112,34 @@ export const Free4WeekPlan = () => {
               transition={{ duration: 0.4 }}
               className="font-normal text-xl hidden md:block text-center mb-10"
             >
-              We understand that you might not be ready to commit to a paid plan
-              yet. That's why we're offering a completely free 4 Week FTP
-              Builder Plan to get you started.
+              <p>
+                We understand that you might not be ready to commit to a paid
+                plan yet. That's why we're offering a completely free{" "}
+                <strong>4-Week FTP Builder Plan</strong> to get you started.
+              </p>
+              <div className="flex justify-center">
+                <Link
+                  target="_blank"
+                  href="https://www.trainingpeaks.com/training-plans/cycling/road-cycling/tp-533230/4-week-ftp-builder-flexible-block-zwift-compatible"
+                >
+                  <motion.button
+                    className="mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition flex items-center gap-2 shadow-lg"
+                    initial={{ scale: 1, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                  >
+                    Plan Description <ExternalLink size={18} />
+                  </motion.button>{" "}
+                </Link>
+              </div>
+            </motion.p>
+            <motion.p
+              initial={{ y: 80, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="font-normal text-xl hidden md:block text-center mb-10"
+            >
+              Here are the steps how to get your free plan:
             </motion.p>
             <Stepper />
             <div>
@@ -217,14 +242,6 @@ export const Free4WeekPlan = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center">
-          <Image
-            src="/image/free-4-week-plan.png"
-            alt="Free 4 Week Plan"
-            width={1000}
-            height={1000}
-          />
-        </div>
       </div>
     </section>
   );
@@ -259,7 +276,7 @@ const Stepper = () => {
                 }}
                 className="text-xs font-normal"
               >
-                Enter your name and email to get your free 4 Week FTP Builder
+                Enter your name and email to get your free 4-Week FTP Builder
                 Plan.
               </p>
             </div>
@@ -316,7 +333,7 @@ const Stepper = () => {
                 }}
                 className="text-xs font-normal"
               >
-                Once you confirm your email, we will share with you a 4 Week FTP
+                Once you confirm your email, we will share with you a 4-Week FTP
                 Builder Plan. You can start training immediately and this plan
                 will stay with you forever.
               </p>

@@ -37,7 +37,7 @@ export function Prices() {
               className="font-normal text-xl max-w-3xl hidden md:block"
             >
               We are offering different types of training plans for cyclists of
-              all levels. You can start with a completely free 4 Week FTP
+              all levels. You can start with a completely free 4-Week FTP
               Builder Plan and make an upgrade to a paid plan when you're ready.
               <div className="flex justify-center">
                 <Link href="/free-4-week-ftp-builder-plan">
@@ -47,7 +47,7 @@ export function Prices() {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
                   >
-                    Get Free 4 Weeks Plan <ExternalLink size={18} />
+                    Get Free 4-Week Plan <ExternalLink size={18} />
                   </motion.button>{" "}
                 </Link>
               </div>
