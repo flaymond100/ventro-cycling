@@ -105,7 +105,7 @@ const Free4WeekPlan = () => {
           >
             Free 4-Week FTP Builder Plan
           </h1>
-          <div>
+          <div className="flex flex-col items-center justify-center">
             <motion.p
               initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -141,7 +141,9 @@ const Free4WeekPlan = () => {
             >
               Here are the steps how to get your free plan:
             </motion.p>
-            <Stepper />
+            <div className="flex flex-col items-center justify-center gap-10">
+              <Stepper />
+            </div>
             <div>
               <div className="pb-8 mt-10 flex justify-center items-center">
                 <form
@@ -253,7 +255,7 @@ const Stepper = () => {
       style={{
         color: "#353744",
       }}
-      className="md:flex items-center w-full"
+      className="md:flex items-center w-full gap-10"
     >
       <motion.li
         initial={{ y: 80, opacity: 0 }}
