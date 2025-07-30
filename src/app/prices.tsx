@@ -2,6 +2,8 @@
 
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 export function Prices() {
   return (
@@ -34,18 +36,30 @@ export function Prices() {
               transition={{ duration: 0.4 }}
               className="font-normal text-xl max-w-3xl hidden md:block"
             >
-              There are 3 distinct plans to choose from, each designed to meet
-              your specific needs. Every option is fully personalized to help
-              you unlock your potential and achieve your best performance.
+              We are offering different types of training plans for cyclists of
+              all levels. You can start with a completely free 4 Week FTP
+              Builder Plan and make an upgrade to a paid plan when you're ready.
+              <div className="flex justify-center">
+                <Link href="/free-4-week-ftp-builder-plan">
+                  <motion.button
+                    className="mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition flex items-center gap-2 shadow-lg"
+                    initial={{ scale: 1, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                  >
+                    Get Free 4 Weeks Plan <ExternalLink size={18} />
+                  </motion.button>{" "}
+                </Link>
+              </div>
+              <br />
+              If you are ready to jump directly into 1:1 coaching, we have 3
+              distinct offers to choose from, each designed to meet your
+              specific needs. Every option is fully personalized to help you
+              unlock your potential and achieve your best performance.
             </motion.p>
             <br />
+            <br />
             <Stepper />
-
-            {/* <p className="leter-spacing-1 text-xl max-w-3xl">
-              Sign up for a free 7-day trial, and we'll connect with you within
-              24 hours for a personal chat to set up everything you need to
-              start training.
-            </p> */}
           </div>
         </div>
 

@@ -20,6 +20,11 @@ export const NAV_MENU = [
   //   name: "Team Coaching",
   //   href: "/team-coaching",
   // },
+
+  {
+    name: "Free 4 Week Plan",
+    href: "/free-4-week-ftp-builder-plan",
+  },
   {
     name: "FTP Calculator",
     href: "/ftp-calculator",

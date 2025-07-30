@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import { Layout } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Plans and Pricing",
+  title: "Free 4 Week FTP Builder Plan",
   description:
-    "Choose the plan that suits your goals and embark on your journey to a healthier, more active you with Ventro Coaching.",
+    "Free 4 Week FTP Builder Plan from Ventro Cycling Coaching. Choose the plan that suits your goals and embark on your journey to a healthier, more active you with Ventro Coaching.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/plans-and-pricing/plans-and-pricing`,
+    canonical: `https://www.ventrocycling.com/free-4-week-ftp-builder-plan`,
   },
 };
 

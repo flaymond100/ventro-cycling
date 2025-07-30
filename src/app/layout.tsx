@@ -2,9 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import { Layout } from "@/components";
-import Modal from "@/components/modal";
 import { Toaster } from "react-hot-toast";
-import { Suspense } from "react";
 import Scroll from "@/components/scroll";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -18,7 +16,7 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: "Ventro Cycling Coaching",
   description:
-    "Ventro CyclingCoaching provides professional cycling coaching for amateur and competitive athletes. We offer personalized training plans, power-based analysis, and expert guidance to help you improve your endurance, speed, and race performance. Online and in-person coaching available for road cyclists, triathletes, and endurance enthusiasts.",
+    "Ventro Cycling Coaching provides professional cycling coaching for amateur and competitive athletes. We offer personalized training plans, power-based analysis, and expert guidance to help you improve your endurance, speed, and race performance. Online and in-person coaching available for road cyclists, triathletes, and endurance enthusiasts.",
   openGraph: {
     url: "https://www.ventrocycling.com",
     title: "Ventro Cycling Coaching - Personal Cycling Trainings",
@@ -118,9 +116,6 @@ export default function RootLayout({
           <Scroll />
           <Toaster position="top-right" />
           {children}
-          <Suspense fallback={<>modal</>}>
-            <Modal />
-          </Suspense>
         </Layout>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID!} />
