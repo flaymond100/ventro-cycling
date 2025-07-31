@@ -1,11 +1,13 @@
-import "../../globals.css";
+import "../globals.css";
 import type { Metadata } from "next";
 import { Layout } from "@/components";
+
 export const metadata: Metadata = {
-  title: "Running Trainings",
-  description: "Running training plans.",
+  title: "Testimonials",
+  description:
+    "Hear from our clients about their experience with our services.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/trainings/running-trainings`,
+    canonical: `https://www.ventrocycling.com/testimonials`,
   },
 };
 

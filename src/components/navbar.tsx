@@ -29,10 +29,10 @@ export const NAV_MENU = [
     name: "FTP Calculator",
     href: "/ftp-calculator",
   },
-  // {
-  //   name: "Testimonials",
-  //   href: "/testimonials",
-  // },
+  {
+    name: "Testimonials",
+    href: "/testimonials",
+  },
   // {
   //   name: "About Us",
   //   href: "/about-us",
@@ -63,7 +63,7 @@ function NavItem({ children, href, onLinkClick }: NavItemProps) {
         href={href || "#"}
         scroll={true}
         onClick={handleClick}
-        className="flex items-center text-xl gap-2 font-normal text-white pb-1 hover:text-[#ecd06f] transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#ecd06f] after:transition-all duration-300 hover:after:w-full"
+        className="flex items-center text-xl gap-2 font-normal text-white pb-1 hover:text-[#ecd06f] transition-all relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#ecd06f] after:transition-all duration-300 hover:after:w-full"
       >
         {children}
       </Link>

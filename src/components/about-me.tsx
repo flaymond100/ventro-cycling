@@ -23,7 +23,7 @@ export const AboutMe = () => {
           </div>
           <div>
             <h2 className="text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl">
-              Konstantin
+              Kosta
             </h2>
             <h3 className="text-3xl font-bold leading-tight text-gray-800 dark:text-white sm:text-4xl lg:text-xl">
               Founder & Head Coach
