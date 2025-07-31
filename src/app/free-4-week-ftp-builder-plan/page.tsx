@@ -95,7 +95,7 @@ const Free4WeekPlan = () => {
       }}
     >
       <div className="relative z-20">
-        <div className="grid grid-cols-1 md:ml-16 pl-6 md:pl-12 gap-2 z-20 mb-18 relative  justify-between">
+        <div className="grid grid-cols-1 pl-6 md:pl-12 gap-2 z-20 mb-18 relative  justify-between">
           <h1
             color="blue-gray"
             className="mb-4 leter-spacing-1 text-5xl font-bold text-center"
