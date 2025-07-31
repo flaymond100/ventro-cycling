@@ -8,12 +8,14 @@ import Faq from "../faq";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { AboutMe } from "@/components/about-me";
 
 export default function PricingPage() {
   return (
     <>
       <Navbar />
       <Testimonials />
+      <AboutMe />
       <Faq />
       <Footer />
     </>
@@ -140,7 +142,7 @@ const Testimonials = () => {
           initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.4 }}
-          className="font-normal text-xl max-w-3xl hidden md:block mb-10"
+          className="font-normal text-xl max-w-3xl hidden md:block"
         >
           We are offering different types of training plans for cyclists of all
           levels. You can start with a completely free 4-Week FTP Builder Plan

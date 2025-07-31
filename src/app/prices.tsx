@@ -101,7 +101,7 @@ export const StripePricingTable = () => {
   });
 };
 
-const Stepper = () => {
+export const Stepper = () => {
   return (
     <ol
       style={{
