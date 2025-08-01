@@ -95,7 +95,7 @@ const Free4WeekPlan = () => {
       }}
     >
       <div className="relative z-20">
-        <div className="grid grid-cols-1 pl-6 gap-2 z-20 mb-18 relative  justify-between">
+        <div className="grid grid-cols-1 pl-6 gap-2 z-20 relative  justify-between">
           <h1
             color="blue-gray"
             className="mb-4 leter-spacing-1 text-5xl font-bold text-center"
@@ -110,7 +110,7 @@ const Free4WeekPlan = () => {
               initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="font-normal text-xl hidden md:block text-center mb-10"
+              className="font-normal text-xl md:block text-center mb-10"
             >
               <p>
                 We understand that you might not be ready to commit to a paid
@@ -145,7 +145,7 @@ const Free4WeekPlan = () => {
               <Stepper />
             </div>
             <div>
-              <div className="pb-8 mt-10 flex justify-center items-center">
+              <div className=" mt-10 flex justify-center items-center">
                 <form
                   onSubmit={formik.handleSubmit}
                   className="min-w-[200px] md:min-w-[700px]"
@@ -255,7 +255,7 @@ const Stepper = () => {
       style={{
         color: "#353744",
       }}
-      className="md:flex items-center w-full gap-10"
+      className="md:flex items-center w-full space-y-8 md:space-y-0 md:space-x-8"
     >
       <motion.li
         initial={{ y: 80, opacity: 0 }}

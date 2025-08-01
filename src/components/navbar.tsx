@@ -167,23 +167,14 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-6 mb-4 flex items-center gap-2">
-            {pathname === "/trainings/running-trainings/" ||
-            pathname === "/trainings/triathlon-trainings/" ||
-            pathname === "/trainings/cycling-trainings/" ? (
-              <Link href="/personal-coaching">
-                <Button style={{ background: "#ecd06f" }} placeholder={""}>
-                  Get Started
-                </Button>
-              </Link>
-            ) : (
-              <Button
-                style={{ background: "#ecd06f" }}
-                placeholder={""}
-                onClick={scrollToStripeTable}
-              >
-                Get Started
-              </Button>
-            )}
+            <Link
+              className="ml-auto inline-block lg:block"
+              href="/plans-and-pricing"
+            >
+              <motion.button className=" md:flex ml-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition items-center gap-2 shadow-lg">
+                See Plans
+              </motion.button>{" "}
+            </Link>
           </div>
         </div>
       </Collapse>
