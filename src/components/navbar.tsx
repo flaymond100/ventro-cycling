@@ -102,8 +102,8 @@ export function Navbar() {
       shadow={true}
       fullWidth
       style={{
-        backgroundColor: open ? "rgba(0, 0, 0, 0.7)" : "#000000c9",
-        backdropFilter: "blur(1px)",
+        backgroundColor: open ? "rgba(0, 0, 0, 0.878)" : "#000000c9",
+        backdropFilter: "blur(2px)",
         transition: "background-color 0.3s, backdrop-filter 0.3s",
       }}
       className="border-0 absolute top-0 z-50 w-full"
