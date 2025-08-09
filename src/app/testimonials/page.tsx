@@ -40,7 +40,7 @@ const Testimonials = () => {
             Testimonials
           </h1>
         </div>
-        <div className="grid mb-8 lg:mb-12 lg:grid-cols-2">
+        <div className="grid mb-8 lg:mb-12 lg:grid-cols-2 gap-8">
           <motion.figure
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -126,6 +126,51 @@ const Testimonials = () => {
               <div className="flex justify-center items-center space-x-3">
                 <div className="space-y-0.5 text-4xl font-medium text-white text-left">
                   <div>Olly</div>
+                </div>
+              </div>
+            </div>
+          </motion.figure>
+          <motion.figure
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex flex-col justify-center items-center p-8 text-center border-b border-gray-200 md:p-12 dark:border-gray-700 relative overflow-hidden"
+            style={{
+              backgroundImage:
+                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Famy.webp?alt=media&token=748c33bd-ac57-41d7-a734-7e18c9bdced7")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+            <div className="relative z-20">
+              <blockquote className="mx-auto mb-8 max-w-2xl text-white">
+                <p className="my-4 text-white">
+                  Going into my first season of racing in the women’s Bundesliga
+                  this year, I was looking for some serious support in helping
+                  prepare me for the races ahead. Not only in terms of
+                  developing my power on the bike, but also for discussing
+                  racing strategies, positioning and tactics, nutrition, and
+                  recovery.
+                </p>
+                <p className="my-4 text-white">
+                  It was also important for me to understand the purpose of my
+                  different sessions, their key targets and how I should fuel
+                  them, and it has been great working with a coach who very
+                  openly discusses this with me and answers any questions I
+                  have.
+                </p>
+                <p className="my-4 text-white">
+                  I have really appreciated the high level of personalised
+                  support that Kostiantyn provides, and this is something I have
+                  both seen and felt the benefits of massively in my training
+                  and performance. I am super excited for the next season!
+                </p>
+              </blockquote>
+              <div className="flex justify-center items-center space-x-3">
+                <div className="space-y-0.5 text-4xl font-medium text-white text-left">
+                  <div>Amy</div>
                 </div>
               </div>
             </div>

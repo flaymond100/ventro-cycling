@@ -2,7 +2,6 @@ import React from "react";
 import {
   Navbar as MTNavbar,
   Collapse,
-  Button,
   IconButton,
 } from "@material-tailwind/react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
@@ -73,13 +72,6 @@ function NavItem({ children, href, onLinkClick }: NavItemProps) {
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
-  const scrollToStripeTable = () => {
-    const element = document.getElementById("stripe-pricing");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setTimeout(() => setOpen(false), 700);
-  };
   function handleOpen() {
     setOpen((cur) => !cur);
   }
