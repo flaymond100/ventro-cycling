@@ -137,7 +137,7 @@ const Testimonials = () => {
             className="flex flex-col justify-center items-center p-8 text-center border-b border-gray-200 md:p-12 dark:border-gray-700 relative overflow-hidden"
             style={{
               backgroundImage:
-                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Famy.webp?alt=media&token=748c33bd-ac57-41d7-a734-7e18c9bdced7")',
+                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2FWhatsApp%20Image%202025-08-13%20at%2011.00.27_compressed.webp?alt=media&token=04369684-fe48-40b8-9823-c9ca19a27398")',
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
