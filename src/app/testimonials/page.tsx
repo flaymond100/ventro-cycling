@@ -175,6 +175,57 @@ const Testimonials = () => {
               </div>
             </div>
           </motion.figure>
+          <motion.figure
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex flex-col justify-center items-center p-8 text-center border-b border-gray-200 md:p-12 dark:border-gray-700 relative overflow-hidden"
+            style={{
+              backgroundImage:
+                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Fphoto_2023-05-03_11-34-01%20(2).jpg?alt=media&token=7c22585c-89a5-4fe9-b7a4-8a2e4a6e49fd")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+            <div className="relative z-20">
+              <blockquote className="mx-auto mb-8 max-w-2xl text-white">
+                <p className="my-4 text-white">
+                  When I started working with Kosta, my main goal was to build
+                  the strength and endurance to take on long, challenging races
+                  like a Gran Fondo. Up until then, I was training on my own,
+                  riding a lot of kilometers but never really improving in the
+                  way I wanted.
+                </p>
+                <p className="my-4 text-white">
+                  Kosta changed everything. His structured plans gave me clarity
+                  and purpose. Every session had a reason behind it, and he
+                  always explained what we were targeting and why. Over time, my
+                  FTP jumped by more than 40 watts, but just as importantly, I
+                  became smarter with how I train, race, and recover.
+                </p>
+                <p className="my-4 text-white">
+                  One of my proudest moments was riding the Gran Fondo in
+                  Austria in 2025. It had always been on my bucket list, but I
+                  honestly never thought I could keep up with the first group at
+                  a competitive pace.
+                </p>
+                <p className="my-4 text-white">
+                  Kosta doesn’t just hand you a plan—he adapts it to your life,
+                  checks in regularly, and makes sure you’re progressing in the
+                  right direction. For me, this has been a complete
+                  transformation. I feel fitter, faster, and more confident than
+                  ever on the bike, and I can’t wait to see what’s next.
+                </p>
+              </blockquote>
+              <div className="flex justify-center items-center space-x-3">
+                <div className="space-y-0.5 text-4xl font-medium text-white text-left">
+                  <div>Mark</div>
+                </div>
+              </div>
+            </div>
+          </motion.figure>
         </div>
       </div>
       <div
