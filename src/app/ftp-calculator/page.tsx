@@ -5,6 +5,8 @@ import { Navbar, Footer } from "@/components";
 // sections
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function FTPCalculatorPage() {
   return (
@@ -398,102 +400,195 @@ const FTPCalculator = () => {
           </motion.button>
 
           {ftp !== null && wkg !== null && category && (
-            <motion.div
-              className="mt-6 p-6 bg-gray-50 rounded-xl space-y-4 border-2 border-gray-200"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="space-y-3">
-                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                  <span className="text-gray-700 font-medium">
-                    Estimated FTP:
-                  </span>
-                  <span className="font-bold text-2xl text-gray-900">
-                    {ftp.toFixed(1)} W
-                  </span>
+            <>
+              <motion.div
+                className="mt-6 p-6 bg-gray-50 rounded-xl space-y-4 border-2 border-gray-200"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                    <span className="text-gray-700 font-medium">
+                      Estimated FTP:
+                    </span>
+                    <span className="font-bold text-2xl text-gray-900">
+                      {ftp.toFixed(1)} W
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                    <span className="text-gray-700 font-medium">
+                      FTP per kg:
+                    </span>
+                    <span className="font-bold text-2xl text-gray-900">
+                      {wkg.toFixed(2)} W/kg
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-gray-700 font-medium block mb-2">
+                      Cycling Fitness Level:
+                    </span>
+                    <span className="text-xl font-bold text-blue-600">
+                      {category.data.name}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                  <span className="text-gray-700 font-medium">FTP per kg:</span>
-                  <span className="font-bold text-2xl text-gray-900">
-                    {wkg.toFixed(2)} W/kg
-                  </span>
+              </motion.div>
+
+              {/* Free Plan CTA */}
+              <motion.div
+                className="mt-6 p-6 bg-white rounded-2xl shadow-lg border-2 border-yellow-400"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="text-center space-y-3">
+                  <h4 className="text-xl font-bold text-gray-900">
+                    Take Your Training to the Next Level
+                  </h4>
+                  <p className="text-gray-700 text-sm">
+                    Our free 4-week FTP builder plan is specifically designed to
+                    help cyclists at your level improve their power and
+                    endurance.
+                  </p>
+                  <Link href="/free-4-week-ftp-builder-plan">
+                    <motion.button
+                      className="w-full bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition flex items-center justify-center gap-2 shadow-lg"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Claim Your Free Plan
+                      <ArrowRight className="w-4 h-4" />
+                    </motion.button>
+                  </Link>
                 </div>
-                <div>
-                  <span className="text-gray-700 font-medium block mb-2">
-                    Cycling Fitness Level:
-                  </span>
-                  <span className="text-xl font-bold text-blue-600">
-                    {category.data.name}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </div>
 
         {/* Results and Explanation */}
         {category && (
-          <motion.div
-            className="max-w-md mx-auto lg:mx-0 bg-white rounded-2xl shadow-lg p-8 space-y-4"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-              Cycling Fitness Level Explanation
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">
-                  {category.data.name}
-                </h4>
-                <p className="text-gray-700 leading-relaxed">
-                  {category.data.description}
+          <div className="space-y-6">
+            <motion.div
+              className="max-w-md mx-auto lg:mx-0 bg-white rounded-2xl shadow-lg p-8 space-y-4"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                Cycling Fitness Level Explanation
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
+                    {category.data.name}
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    {category.data.description}
+                  </p>
+                </div>
+                {(category.data.weeklyRides ||
+                  category.data.weeklyDistance ||
+                  category.data.oneDayDistance ||
+                  category.data.averageSpeed ||
+                  category.data.zwiftCategory) && (
+                  <div className="pt-4 border-t border-gray-200 space-y-2">
+                    {category.data.weeklyRides && (
+                      <p className="text-sm text-gray-600">
+                        <strong>Typical number of weekly rides:</strong>{" "}
+                        {category.data.weeklyRides}
+                      </p>
+                    )}
+                    {category.data.weeklyDistance && (
+                      <p className="text-sm text-gray-600">
+                        <strong>Current average weekly distance:</strong>{" "}
+                        {category.data.weeklyDistance}
+                      </p>
+                    )}
+                    {category.data.oneDayDistance && (
+                      <p className="text-sm text-gray-600">
+                        <strong>
+                          Distance you're capable of riding in one day:
+                        </strong>{" "}
+                        {category.data.oneDayDistance}
+                      </p>
+                    )}
+                    {category.data.averageSpeed && (
+                      <p className="text-sm text-gray-600">
+                        <strong>Average speed on a typical ride:</strong>{" "}
+                        {category.data.averageSpeed}
+                      </p>
+                    )}
+                    {category.data.zwiftCategory && (
+                      <p className="text-sm text-gray-600">
+                        <strong>Zwift racing category:</strong>{" "}
+                        {category.data.zwiftCategory}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+
+            {/* Additional CTA for larger screens */}
+            <motion.div
+              className="max-w-md mx-auto lg:mx-0 p-6 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-400 rounded-xl shadow-xl border-2 border-yellow-500"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <div className="text-center space-y-4">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Ready to Improve Your FTP?
+                  </h3>
+                </div>
+                <p className="text-gray-800 font-medium text-lg">
+                  You're at{" "}
+                  <span className="font-bold">{category.data.name}</span> level
+                  with{" "}
+                  <span className="font-bold">
+                    {wkg !== null ? `${wkg.toFixed(2)} W/kg` : ""}
+                  </span>
+                </p>
+                <p className="text-gray-700 text-base">
+                  Get our <strong>FREE 4-Week FTP Builder Plan</strong> designed
+                  to help you increase your Functional Threshold Power and reach
+                  the next fitness level.
+                </p>
+                <div className="pt-2 space-y-2">
+                  <div className="flex items-center justify-center gap-2 text-sm text-gray-700">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Structured workouts</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-gray-700">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>TrainingPeaks compatible</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-gray-700">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>100% free - no credit card required</span>
+                  </div>
+                </div>
+                <Link href="/free-4-week-ftp-builder-plan">
+                  <motion.button
+                    className="mt-4 w-full bg-gray-900 text-white px-6 py-4 rounded-xl font-bold hover:bg-gray-800 transition flex items-center justify-center gap-2 shadow-lg text-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Get Your Free 4-Week Plan
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.button>
+                </Link>
+                <p className="text-xs text-gray-600 pt-2">
+                  Join thousands of cyclists improving their FTP with our proven
+                  training methods
                 </p>
               </div>
-              {(category.data.weeklyRides ||
-                category.data.weeklyDistance ||
-                category.data.oneDayDistance ||
-                category.data.averageSpeed ||
-                category.data.zwiftCategory) && (
-                <div className="pt-4 border-t border-gray-200 space-y-2">
-                  {category.data.weeklyRides && (
-                    <p className="text-sm text-gray-600">
-                      <strong>Typical number of weekly rides:</strong>{" "}
-                      {category.data.weeklyRides}
-                    </p>
-                  )}
-                  {category.data.weeklyDistance && (
-                    <p className="text-sm text-gray-600">
-                      <strong>Current average weekly distance:</strong>{" "}
-                      {category.data.weeklyDistance}
-                    </p>
-                  )}
-                  {category.data.oneDayDistance && (
-                    <p className="text-sm text-gray-600">
-                      <strong>
-                        Distance you're capable of riding in one day:
-                      </strong>{" "}
-                      {category.data.oneDayDistance}
-                    </p>
-                  )}
-                  {category.data.averageSpeed && (
-                    <p className="text-sm text-gray-600">
-                      <strong>Average speed on a typical ride:</strong>{" "}
-                      {category.data.averageSpeed}
-                    </p>
-                  )}
-                  {category.data.zwiftCategory && (
-                    <p className="text-sm text-gray-600">
-                      <strong>Zwift racing category:</strong>{" "}
-                      {category.data.zwiftCategory}
-                    </p>
-                  )}
-                </div>
-              )}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         )}
 
         {/* Instructions */}
