@@ -59,7 +59,7 @@ export function OurServices() {
       className="px-8"
     >
       <div className="container mx-auto mb-16 text-center">
-        <h2 color="blue-gray" className="mb-4 pt-16 text-4xl ">
+        <h2 color="blue-gray" className="mb-4 pt-16 text-4xl">
           How we will support you
         </h2>
         <h3 className="mx-auto w-full px-4 !text-gray-500 lg:w-5/12">
@@ -67,7 +67,49 @@ export function OurServices() {
           stronger, and more consistent in their training. Ventro Cycling
           Coaching is here to make sure you don’t just train — you improve.
         </h3>
+
+        {/* VENTRO METHODOLOGY */}
+        <div className="mx-auto mt-6 w-full px-4 text-left text-base text-gray-800 leading-relaxed lg:w-7/12">
+          <p className="mb-4 text-lg">
+            Our methodology is simple:{" "}
+            <strong className="text-gray-900">
+              scientific, efficient, and for every level
+            </strong>{" "}
+            — from complete beginners to ambitious age-groupers and pros.
+          </p>
+          <ul className="list-disc space-y-3 pl-6 text-gray-700">
+            <li>
+              <strong className="text-gray-900">Science-first training:</strong>{" "}
+              We build your plan using power and heart rate data, structured
+              periodisation, and proven endurance principles instead of
+              guesswork and random workouts.
+            </li>
+            <li>
+              <strong className="text-gray-900">No wasted hours:</strong> Every
+              session has a clear purpose. We focus on the right mix of
+              endurance, threshold, VO2, and recovery so you get maximum
+              progress from the time you actually have.
+            </li>
+            <li>
+              <strong className="text-gray-900">
+                Individual, not generic:
+              </strong>{" "}
+              Your plan is tailored to your goals, history, and schedule —
+              whether you are preparing for your first event or fighting for a
+              podium.
+            </li>
+            <li>
+              <strong className="text-gray-900">
+                Progress for all levels:
+              </strong>{" "}
+              We scale structure and intensity to your current fitness, making
+              the work challenging but realistic, and adjusting as you grow
+              stronger.
+            </li>
+          </ul>
+        </div>
       </div>
+
       <div className="container mx-auto grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {FEATURES.map(({ icon, title, description }) => (
           <FeatureCard key={title} icon={icon} title={title}>
