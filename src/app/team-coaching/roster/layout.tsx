@@ -4,7 +4,8 @@ import { Layout } from "@/components";
 
 export const metadata: Metadata = {
   title: "Cycling Team Roster",
-  description: "Meet our riders.",
+  description:
+    "Meet the Ventro Cycling Coaching team roster: Competitive cyclists and triathletes from around the world training with our expert coaching programs.",
   alternates: {
     canonical: `https://www.ventrocycling.com/cycling-team/roster`,
   },

@@ -16,12 +16,12 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: "Ventro Cycling Coaching",
   description:
-    "Ventro Cycling Coaching provides professional cycling coaching for amateur and competitive athletes. We offer personalized training plans, power-based analysis, and expert guidance to help you improve your endurance, speed, and race performance. Online and in-person coaching available for road cyclists, triathletes, and endurance enthusiasts.",
+    "Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance. Online coaching for road cyclists, triathletes, and endurance athletes.",
   openGraph: {
     url: "https://www.ventrocycling.com",
     title: "Ventro Cycling Coaching - Personal Cycling Trainings",
     description:
-      "Ventro Cycling Coaching provides professional cycling coaching for amateur and competitive athletes. We offer personalized training plans, power-based analysis, and expert guidance to help you improve your endurance, speed, and race performance. Online and in-person coaching available for road cyclists, triathletes, and endurance enthusiasts.",
+      "Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance. Online coaching for road cyclists, triathletes, and endurance athletes.",
     images: [
       {
         url: "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2F3.png?alt=media&token=bb7dcbb4-5fb5-4c8a-947d-4f8a7eda6f1e",
@@ -54,7 +54,7 @@ const schema = {
   sport: "cycling",
   slogan: "We're here to help you achieve your goals.",
   description:
-    "Ventro Cycling Coaching provides professional cycling coaching for amateur and competitive athletes. We offer personalized training plans, power-based analysis, and expert guidance to help you improve your endurance, speed, and race performance. Online and in-person coaching available for road cyclists, triathletes, and endurance enthusiasts.",
+    "Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance. Online coaching for road cyclists, triathletes, and endurance athletes.",
   sameAs: ["https://www.instagram.com/ventrocoaching"],
 };
 
@@ -95,7 +95,7 @@ export default function RootLayout({
         />
         <meta
           property="description"
-          content="Ventro Cycling Coaching helps cyclists and triathletes reach peak performance with custom training plans, expert feedback, and data-driven coaching."
+          content="Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance."
         />
         <meta
           name="google-site-verification"

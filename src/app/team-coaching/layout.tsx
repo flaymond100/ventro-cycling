@@ -5,7 +5,7 @@ import { Layout } from "@/components";
 export const metadata: Metadata = {
   title: "Cycling Team",
   description:
-    "Join our international cycling team from any part of the world.",
+    "Join Ventro Cycling Coaching's international cycling team. Team coaching programs for competitive cyclists, triathletes, and endurance athletes worldwide.",
   alternates: {
     canonical: `https://www.ventrocycling.com/cycling-team`,
   },

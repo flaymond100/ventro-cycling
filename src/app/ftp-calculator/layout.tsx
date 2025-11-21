@@ -5,7 +5,7 @@ import { Layout } from "@/components";
 export const metadata: Metadata = {
   title: "FTP Calculator",
   description:
-    "Use this simple, free cycling FTP calculator to estimate your current fitness level. Enter your FTP or best 20-minute average power plus your weight, and get your estimated threshold power, watts per kilo, and a clear explanation of your cycling level.",
+    "Free cycling FTP calculator: Calculate your Functional Threshold Power (FTP) and watts per kilogram (W/kg). Enter your 20-minute average power and weight to determine your cycling fitness level and training zones.",
   alternates: {
     canonical: `https://www.ventrocycling.com/ftp-calculator`,
   },

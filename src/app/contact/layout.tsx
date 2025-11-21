@@ -5,7 +5,7 @@ import { Layout } from "@/components";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Reach out to Ventro Cycling Coaching and we will contact you back shortly.",
+    "Contact Ventro Cycling Coaching for personalized cycling training plans, FTP improvement programs, and expert coaching. Get started with a free consultation today.",
   alternates: {
     canonical: `https://www.ventrocycling.com/contact-us`,
   },

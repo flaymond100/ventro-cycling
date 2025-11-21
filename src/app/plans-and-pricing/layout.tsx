@@ -5,7 +5,7 @@ import { Layout } from "@/components";
 export const metadata: Metadata = {
   title: "Plans and Pricing",
   description:
-    "Choose the plan that suits your goals and embark on your journey to a healthier, more active you with Ventro Coaching.",
+    "Cycling coaching plans and pricing for all levels. Choose from monthly coaching, training plans, or consultations. Personalized coaching to improve FTP, endurance, and race performance.",
   alternates: {
     canonical: `https://www.ventrocycling.com/plans-and-pricing/plans-and-pricing`,
   },

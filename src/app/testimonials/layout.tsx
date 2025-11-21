@@ -5,7 +5,7 @@ import { Layout } from "@/components";
 export const metadata: Metadata = {
   title: "Testimonials",
   description:
-    "Hear from our clients about their experience with our services.",
+    "Read success stories from cyclists and triathletes who improved their FTP, race performance, and endurance with Ventro Cycling Coaching. Real results from real athletes.",
   alternates: {
     canonical: `https://www.ventrocycling.com/testimonials`,
   },

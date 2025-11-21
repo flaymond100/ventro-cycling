@@ -5,7 +5,7 @@ import { Layout } from "@/components";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Ventro Cycling Coaching is a community of athletes from all corners of the globe, united by a shared love for endurance sports and become healthier people.",
+    "Learn about Ventro Cycling Coaching: Expert cycling coaches helping athletes worldwide improve performance through science-based training, power analysis, and personalized coaching plans.",
   alternates: {
     canonical: `https://www.ventrocycling.com/about-us`,
   },
