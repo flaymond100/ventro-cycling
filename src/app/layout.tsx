@@ -14,14 +14,16 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "Ventro Cycling Coaching",
+  title:
+    "Ventro Cycling Coaching | Personal Online Cycling Coach & Training Plans",
   description:
-    "Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance. Online coaching for road cyclists, triathletes, and endurance athletes.",
+    "Personal cycling coaching and power-based training plans for road cyclists, triathletes, and endurance athletes. Work 1:1 with an online cycling coach to increase FTP, build endurance, and prepare for races with structured, data-driven workouts and regular feedback.",
   openGraph: {
     url: "https://www.ventrocycling.com",
-    title: "Ventro Cycling Coaching - Personal Cycling Trainings",
+    title:
+      "Ventro Cycling Coaching | Personal Online Cycling Coach & Training Plans",
     description:
-      "Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance. Online coaching for road cyclists, triathletes, and endurance athletes.",
+      "Personal cycling coaching and power-based training plans for road cyclists, triathletes, and endurance athletes. Work 1:1 with an online cycling coach to increase FTP, build endurance, and prepare for races with structured, data-driven workouts and regular feedback.",
     images: [
       {
         url: "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2F3.png?alt=media&token=bb7dcbb4-5fb5-4c8a-947d-4f8a7eda6f1e",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
       },
     ],
     type: "website",
-    locale: "en",
+    locale: "en_US",
     siteName: "Ventro Cycling Coaching",
   },
   alternates: {
@@ -41,20 +43,20 @@ export const metadata: Metadata = {
 
 const schema = {
   "@context": "http://schema.org",
-  "@type": "SportsTeam",
+  "@type": "SportsOrganization",
   name: "Ventro Cycling Coaching",
   email: "kostiantyn.garbar@gmail.com",
-  coach: "kostiantyn Garbar",
-  start_url: "/",
-  founder: "kostiantyn Garbar",
+  coach: "Kostiantyn Garbar",
+  founder: "Kostiantyn Garbar",
   url: "https://www.ventrocycling.com",
   logo: "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2F3.png?alt=media&token=bb7dcbb4-5fb5-4c8a-947d-4f8a7eda6f1e",
   keywords:
-    "cycling coaching, cycling coach, personal cycling coach, endurance coaching, road cycling coach, professional cycling training, cycling training plan, cycling performance coach, bike training, FTP training, structured cycling workouts, online cycling coach, personalized cycling plan, power-based training, cycling improvement plan, FTP test, power zones, training zones, VO2 max cycling, lactate threshold, cycling base training, tempo training, threshold intervals, high-intensity interval training, recovery rides, long endurance rides, sweet spot training, off-season cycling plan, increase FTP, build endurance, improve cycling speed, race preparation, Ironman cycling coach, Gran Fondo training, time trial training, cycling race tactics, peak performance cycling, sportive training plan, climbing training, monthly coaching, weekly feedback, training analysis, power data review, coach consultation, one-on-one cycling coaching, customized training plan, remote cycling coaching, Zoom coaching calls, coaching for beginners, coaching for racers, group training sessions, TrainingPeaks, Zwift coaching, Strava analysis, WKO5, Garmin data, cycling analytics, online training log, cycling metrics, bike power meter, heart rate monitor training, amateur cyclists, competitive cyclists, triathletes, beginners in cycling, cycling teams, masters racers, juniors cycling training, women’s cycling coaching, endurance athletes, cycling clubs, hire a cycling coach, find a cycling coach, best cycling coaching plan, online cycling training, personal coach for cycling, start cycling training, improve cycling performance, train for a race, how to train for cycling, cycling training for beginners",
+    "cycling coaching, cycling coach, personal cycling coach, online cycling coach, cycling training plan, endurance coaching, road cycling coach, cycling performance coach, FTP training, structured cycling workouts, power-based training, race preparation, Ironman cycling coach, Gran Fondo training, time trial training, TrainingPeaks coaching, Zwift coaching, Strava analysis, one-on-one cycling coaching, customized training plan, remote cycling coaching, cycling training for beginners, improve cycling performance, increase FTP, build endurance",
   sport: "cycling",
-  slogan: "We're here to help you achieve your goals.",
+  slogan:
+    "Data-Driven Cycling Coaching to Increase FTP, Endurance, and Race Performance.",
   description:
-    "Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance. Online coaching for road cyclists, triathletes, and endurance athletes.",
+    "Personal cycling coaching and power-based training plans for road cyclists, triathletes, and endurance athletes. Structured, data-driven workouts, training analysis, and regular feedback from an experienced online cycling coach.",
   sameAs: ["https://www.instagram.com/ventrocoaching"],
 };
 
@@ -91,11 +93,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <meta
           property="title"
-          content="Ventro Cycling Coaching - Personal Cycling Trainings"
+          content="Ventro Cycling Coaching | Personal Online Cycling Coach & Training Plans"
         />
         <meta
-          property="description"
-          content="Professional cycling coaching for athletes of all levels. Personalized training plans, power-based analysis, and expert guidance to improve FTP, endurance, and race performance."
+          name="description"
+          content="Personal cycling coaching and power-based training plans for road cyclists, triathletes, and endurance athletes. Work 1:1 with an online cycling coach to increase FTP, build endurance, and prepare for races with structured, data-driven workouts and regular feedback."
         />
         <meta
           name="google-site-verification"
@@ -103,9 +105,9 @@ export default function RootLayout({
         />
         <meta
           name="keywords"
-          content="cycling coaching, cycling coach, personal cycling coach, endurance coaching, road cycling coach, professional cycling training, cycling training plan, cycling performance coach, bike training, FTP training, structured cycling workouts, online cycling coach, personalized cycling plan, power-based training, cycling improvement plan, FTP test, power zones, training zones, VO2 max cycling, lactate threshold, cycling base training, tempo training, threshold intervals, high-intensity interval training, recovery rides, long endurance rides, sweet spot training, off-season cycling plan, increase FTP, build endurance, improve cycling speed, race preparation, Ironman cycling coach, Gran Fondo training, time trial training, cycling race tactics, peak performance cycling, sportive training plan, climbing training, monthly coaching, weekly feedback, training analysis, power data review, coach consultation, one-on-one cycling coaching, customized training plan, remote cycling coaching, Zoom coaching calls, coaching for beginners, coaching for racers, group training sessions, TrainingPeaks, Zwift coaching, Strava analysis, WKO5, Garmin data, cycling analytics, online training log, cycling metrics, bike power meter, heart rate monitor training, amateur cyclists, competitive cyclists, triathletes, beginners in cycling, cycling teams, masters racers, juniors cycling training, women’s cycling coaching, endurance athletes, cycling clubs, hire a cycling coach, find a cycling coach, best cycling coaching plan, online cycling training, personal coach for cycling, start cycling training, improve cycling performance, train for a race, how to train for cycling, cycling training for beginners"
+          content="cycling coaching, cycling coach, personal cycling coach, online cycling coach, cycling training plan, endurance coaching, road cycling coach, cycling performance coach, FTP training, structured cycling workouts, power-based training, race preparation, Ironman cycling coach, Gran Fondo training, time trial training, TrainingPeaks coaching, Zwift coaching, Strava analysis, one-on-one cycling coaching, customized training plan, remote cycling coaching, cycling training for beginners, improve cycling performance, increase FTP, build endurance"
         />
-        <meta name="robots" content="all" />
+        <meta name="robots" content="index,follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
