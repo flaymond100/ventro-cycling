@@ -10,7 +10,7 @@ import {
   Timer,
 } from "lucide-react";
 
-const STRIPE_URL = "https://book.stripe.com/00w4gy3Y3gor6QtasH6sw05";
+const STRIPE_URL = "https://buy.stripe.com/7sY6oGfGL5JN4Il0S76sw06";
 const SUPPORT_EMAIL_PLACEHOLDER = "contact@nrc-team.com";
 
 const markers = [
