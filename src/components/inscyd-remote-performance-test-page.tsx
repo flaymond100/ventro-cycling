@@ -163,7 +163,7 @@ export default function InscydRemotePerformanceTestPage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-[#d7dde6] bg-white p-4">
               <p className="text-xs uppercase tracking-wider text-[#6b7280]">Price</p>
-              <p className="mt-2 text-2xl font-semibold">€179</p>
+              <p className="mt-2 text-2xl font-semibold">€189</p>
             </div>
             <div className="rounded-2xl border border-[#d7dde6] bg-white p-4">
               <p className="text-xs uppercase tracking-wider text-[#6b7280]">
@@ -300,7 +300,7 @@ export default function InscydRemotePerformanceTestPage() {
       <Section title="Price">
         <div className="rounded-2xl border border-[#bfcada] bg-white p-6 md:p-8">
           <p className="text-sm uppercase tracking-[0.2em] text-[#64748b]">INSCYD Remote Performance Test</p>
-          <p className="mt-2 text-5xl font-bold tracking-tight text-[#0f172a]">€179</p>
+          <p className="mt-2 text-5xl font-bold tracking-tight text-[#0f172a]">€189</p>
           <p className="mt-4 max-w-2xl text-base text-[#334155] md:text-lg">
             Lab-level metabolic insight without visiting a lab.
           </p>
