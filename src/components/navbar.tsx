@@ -15,6 +15,10 @@ export const NAV_MENU = [
     name: "Plans and Pricing",
     href: "/plans-and-pricing",
   },
+  {
+    name: "INSCYD Test",
+    href: "/inscyd-remote-performance-test",
+  },
   // {
   //   name: "Team Coaching",
   //   href: "/team-coaching",
