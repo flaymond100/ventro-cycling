@@ -1,8 +1,93 @@
-// components
 import { Navbar, Footer } from "@/components";
-
-// sections
 import Faq from "../faq";
+
+const T = {
+  ink: "#0B0D10",
+  char: "#14181D",
+  bone: "#F4F4F2",
+  mist: "#E4E4DE",
+  lime: "#D9FF00",
+  dim: "rgba(244,244,242,0.55)",
+  hair: "rgba(244,244,242,0.14)",
+};
+
+const TERMS = [
+  {
+    title: "1. Service Description and Packages",
+    body: "We offer online training plans for triathlon, cycling, running, and swimming. We provide three packages: Lite Package (EUR 100), Premium Package (EUR 150), and Deluxe Package (EUR 300).",
+  },
+  {
+    title: "2. Free Trial Period",
+    body: "Your first 7 days of training are provided for free to allow you to evaluate our services. After the free trial period, you must pay for the selected package via bank transfer.",
+  },
+  {
+    title: "3. Payment",
+    body: "Payment for the selected package must be made via bank transfer. Payment details will be provided upon completion of your free trial period.",
+  },
+  {
+    title: "4. Termination of Contract",
+    body: "You may terminate your contract with us at any time by providing one month notice. Termination requests should be sent to info@nrc-team.com.",
+  },
+  {
+    title: "5. Health and Responsibility",
+    body: "By using our training plans you acknowledge that you should be in good health and consult a medical professional before starting any program. Our training plans are advisory only and are not a substitute for medical diagnosis, advice, or treatment. You are solely responsible for your own health, well-being, and safety during training.",
+  },
+  {
+    title: "6. Data Privacy",
+    body: "We take your privacy seriously. Please review our privacy terms below to understand how we collect, use, and protect your personal information.",
+  },
+  {
+    title: "7. Intellectual Property",
+    body: "All content provided through our services, including training plans and coaching materials, is protected by copyright and other intellectual property laws. You may not reproduce or distribute this content without written permission.",
+  },
+  {
+    title: "8. Changes to Terms",
+    body: "We reserve the right to modify or update these terms at any time. Significant changes will be communicated by email or through our website. Continued use of our services after changes means you accept the updated terms.",
+  },
+  {
+    title: "9. Contact Information",
+    body: "If you have questions about these terms or our services, contact us at contact@ventrocycling.com.",
+  },
+];
+
+const PRIVACY = [
+  {
+    title: "1. Information We Collect",
+    body: "We may collect personal information (name, email, phone, date of birth), payment details as needed to process payments, training data, and communication history.",
+  },
+  {
+    title: "2. How We Use Your Information",
+    body: "We use your information to deliver and personalize coaching, process payments, provide support, improve our services, comply with legal obligations, and protect the safety and rights of users and our business.",
+  },
+  {
+    title: "3. Data Security",
+    body: "We use appropriate technical and organizational measures to protect your information. No internet transmission is fully secure, so sharing data is at your own risk.",
+  },
+  {
+    title: "4. Sharing Your Information",
+    body: "We do not sell, rent, or trade your personal information. We may share data with trusted service providers only as needed to deliver our services.",
+  },
+  {
+    title: "5. Your Choices",
+    body: "You can review and update account information, unsubscribe from marketing emails, and request account deletion subject to data retention requirements.",
+  },
+  {
+    title: "6. Cookies and Tracking",
+    body: "We use cookies and related technologies to understand website usage. You can manage cookie preferences in your browser settings.",
+  },
+  {
+    title: "7. Age Privacy",
+    body: "Our services are not intended for people under 18 years old.",
+  },
+  {
+    title: "8. Changes to Privacy Policy",
+    body: "We may update this privacy policy for legal, operational, or service reasons. Material changes will be communicated via email or website notice.",
+  },
+  {
+    title: "9. Contact Us",
+    body: "Questions about privacy can be sent to contact@ventrocycling.com.",
+  },
+];
 
 export default function TermsAndConditionsPage() {
   return (
@@ -17,112 +102,73 @@ export default function TermsAndConditionsPage() {
 
 const TermsAndConditions = () => {
   return (
-    <>
-      <section className="mb-20 container text-center md:text-left mt-6 md:mt-10 mx-auto px-6">
-        <h1 className="mb-8 text-left text-4xl font-bold">
-          Terms and Conditions
+    <section className="px-6 pb-24 pt-32 md:px-12" style={{ background: T.ink, color: T.bone }}>
+      <div className="mx-auto max-w-5xl">
+        <p className="font-mono uppercase mb-4" style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}>
+          ◎ Legal
+        </p>
+        <h1
+          className="font-extrabold uppercase mb-6"
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: "clamp(36px, 5.5vw, 72px)",
+            lineHeight: 0.92,
+            letterSpacing: "-0.04em",
+            color: T.bone,
+          }}
+        >
+          Terms &{" "}
+          <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
+            conditions.
+          </span>
         </h1>
 
-        <p className="mb-6">
-          These Terms and Conditions ("Terms") govern your use of the online
-          coaching services provided by Ventro Cycling Coaching ("we," "us," or
-          "our") for triathlon, cycling, running, and swimming training plans.
-          By accessing and using our services, you agree to abide by these
-          Terms. Please read them carefully. 1. Service Description and Packages
-          We offer online training plans for triathlon, cycling, running, and
-          swimming. We provide three packages: Lite Package - €100, Premium
-          Package - €150 and Deluxe Package - €300. 2. Free Trial Period Your
-          first 7 days of training are provided for free to allow you to
-          evaluate our services. After the free trial period, you must pay for
-          the selected package via bank transfer. 3. Payment Payment for the
-          selected package must be made via bank transfer. Payment details will
-          be provided upon the conclusion of your free trial period. 4.
-          Termination of Contract You may terminate your contract with us at any
-          time by providing us with one month's notice. Termination requests
-          should be sent to info@nrc-team.com 5. Health and Responsibility By
-          using our training plans, you acknowledge and agree to the following:
-          a. Health Awareness: You should be in good health and consult a
-          medical professional before starting any exercise program. We are not
-          responsible for any health issues that may arise during your training.
-          b. Advisory Nature: Our training plans are advisory in nature and
-          should be considered recommendations and support. They are not a
-          substitute for professional medical advice, diagnosis, or treatment.
-          c. Personal Responsibility: You are solely responsible for your own
-          health, well-being, and safety during your training. We do not assume
-          any responsibility for the decisions you make regarding your training
-          or their outcomes. d. Listening to Your Body: You should listen to
-          your body and make responsible decisions regarding your training
-          intensity and duration. If you experience any discomfort or pain, you
-          should stop the training and seek medical advice if necessary. 6. Data
-          Privacy We take your privacy seriously. Please review our Privacy
-          Policy to understand how we collect, use, and protect your personal
-          information. 7. Intellectual Property All content provided through our
-          services, including training plans, coaching materials, and any other
-          materials, are protected by copyright and other intellectual property
-          laws. You may not use, reproduce, or distribute this content without
-          our written permission. 8. Changes to Terms We reserve the right to
-          modify or update these Terms at any time. We will provide notice of
-          significant changes via email or through our website. Your continued
-          use of our services after such changes constitutes your acceptance of
-          the updated Terms. 9. Contact Information If you have any questions or
-          concerns about these Terms or our services, please contact us at [Your
-          Contact Information]. By using our online coaching services, you
-          acknowledge that you have read, understood, and agree to these Terms
-          and Conditions. Your use of our services is subject to these Terms,
-          and any violation may result in the termination of your access to our
-          services. Privacy Policy 1. Information We Collect a. Personal
-          Information: We may collect personal information such as your name,
-          email address, postal address, phone number, and date of birth when
-          you sign up for our services. b. Payment Information: When you make
-          payments for our services, we may collect payment information, such as
-          credit card details or bank account information, as necessary to
-          process payments. c. Training Data: As you use our training plans and
-          coaching services, we may collect data related to your training
-          activities, performance, and progress. d. Communication Data: We may
-          collect information about your interactions with us, including emails
-          and other forms of communication. 2. How We Use Your Information We
-          use the collected information for the following purposes: a. To
-          provide and personalize our coaching services, including the
-          development of training plans and monitoring your progress. b. To
-          process payments and manage your account. c. To communicate with you,
-          respond to your inquiries, and provide customer support. d. To improve
-          our services and develop new features. e. To comply with legal and
-          regulatory obligations. f. To protect our rights, privacy, safety, or
-          property, or those of our users or others. g. To conduct research and
-          analysis for the purpose of improving our services and understanding
-          user behavior. 3. Data Security We employ appropriate technical and
-          organizational measures to protect your personal information. However,
-          no data transmission over the internet is completely secure, and we
-          cannot guarantee the security of your data. You understand that you
-          share your information at your own risk. 4. Sharing Your Information
-          We do not sell, rent, or trade your personal information to third
-          parties. We may share your information with third-party service
-          providers or partners to provide our services or for other purposes
-          outlined in this Privacy Policy. 5. Your Choices a. Review and Update
-          Information: You can review and update your personal information in
-          your account settings. b. Opt-Out: You can opt out of receiving
-          promotional emails from us by following the unsubscribe instructions
-          included in those emails. c. Request Deletion: You can request the
-          deletion of your account and associated data, subject to our data
-          retention policy. 6. Cookies and Tracking Technologies We use cookies
-          and similar tracking technologies to collect information about your
-          use of our website. You can manage your cookie preferences in your
-          browser settings. 7. Age Privacy Our services are not intended for
-          people under the age of 18. If you are a parent or guardian and
-          believe your child has provided us with personal information, please
-          contact us, and we will take steps to delete that information. 8.
-          Changes to this Privacy Policy We may update this Privacy Policy to
-          reflect changes in our practices or for other operational, legal, or
-          regulatory reasons. We will notify you of any material changes through
-          email or by posting a notice on our website. 9. Contact Us If you have
-          any questions or concerns about this Privacy Policy or our data
-          practices, please contact us at contact@ventrocycling.com. By using
-          our online coaching services, you agree to the terms of this Privacy
-          Policy and the collection and use of your personal information as
-          described herein. Your continued use of our services constitutes your
-          acceptance of this policy.
+        <p className="max-w-3xl text-base leading-relaxed mb-12" style={{ color: T.mist }}>
+          These terms govern your use of Ventro Cycling Coaching online services for triathlon, cycling, running, and swimming training plans.
         </p>
-      </section>
-    </>
+
+        <div className="space-y-3" style={{ borderTop: `1px solid ${T.hair}` }}>
+          {TERMS.map((item) => (
+            <article key={item.title} className="pt-6" style={{ borderBottom: `1px solid ${T.hair}` }}>
+              <h2 className="font-semibold text-base mb-2" style={{ color: T.bone }}>
+                {item.title}
+              </h2>
+              <p className="text-sm leading-relaxed pb-6" style={{ color: T.mist }}>
+                {item.body}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <h2
+          className="font-extrabold uppercase mt-16 mb-6"
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: "clamp(28px, 4vw, 48px)",
+            lineHeight: 0.95,
+            letterSpacing: "-0.035em",
+            color: T.bone,
+          }}
+        >
+          Privacy{" "}
+          <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
+            policy.
+          </span>
+        </h2>
+
+        <div className="space-y-3" style={{ borderTop: `1px solid ${T.hair}` }}>
+          {PRIVACY.map((item) => (
+            <article key={item.title} className="pt-6" style={{ borderBottom: `1px solid ${T.hair}` }}>
+              <h3 className="font-semibold text-base mb-2" style={{ color: T.bone }}>
+                {item.title}
+              </h3>
+              <p className="text-sm leading-relaxed pb-6" style={{ color: T.mist }}>
+                {item.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };

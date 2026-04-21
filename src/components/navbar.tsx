@@ -1,74 +1,46 @@
+"use client";
+
 import React from "react";
-import {
-  Navbar as MTNavbar,
-  Collapse,
-  IconButton,
-} from "@material-tailwind/react";
-import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { ArrowRight, Menu, X } from "lucide-react";
+import Image from "next/image";
+
+// ── Tokens ────────────────────────────────────────────────────────────────
+const T = {
+  ink: "#0B0D10",
+  bone: "#F4F4F2",
+  lime: "#D9FF00",
+  dim: "rgba(244,244,242,0.55)",
+  hair: "rgba(244,244,242,0.14)",
+};
 
 export const NAV_MENU = [
-  {
-    name: "Plans and Pricing",
-    href: "/plans-and-pricing",
-  },
-  {
-    name: "INSCYD Test",
-    href: "/inscyd-remote-performance-test",
-  },
-  // {
-  //   name: "Team Coaching",
-  //   href: "/team-coaching",
-  // },
-
-  {
-    name: "Free 4-Week Plan",
-    href: "/free-4-week-ftp-builder-plan",
-  },
-  {
-    name: "FTP Calculator",
-    href: "/ftp-calculator",
-  },
-  {
-    name: "Testimonials",
-    href: "/testimonials",
-  },
-  // {
-  //   name: "About Us",
-  //   href: "/about-us",
-  // },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
+  { name: "Plans & Pricing", href: "/plans-and-pricing" },
+  { name: "INSCYD Test", href: "/inscyd-remote-performance-test" },
+  { name: "Free 4-Week Plan", href: "/free-4-week-ftp-builder-plan" },
+  { name: "FTP Calculator", href: "/ftp-calculator" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Contact", href: "/contact" },
 ];
 
 interface NavItemProps {
-  children: React.ReactNode;
-  href?: string;
-  onLinkClick?: () => void;
+  name: string;
+  href: string;
+  active: boolean;
+  onClick?: () => void;
 }
 
-function NavItem({ children, href, onLinkClick }: NavItemProps) {
-  const handleClick = () => {
-    // Close mobile menu when link is clicked
-    if (onLinkClick) {
-      onLinkClick();
-    }
-  };
-
+function NavItem({ name, href, active, onClick }: NavItemProps) {
   return (
     <li>
       <Link
-        href={href || "#"}
-        scroll={true}
-        onClick={handleClick}
-        className="flex items-center text-xl gap-2 font-normal text-white pb-1 hover:text-[#ecd06f] transition-all relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#ecd06f] after:transition-all duration-300 hover:after:w-full"
+        href={href}
+        onClick={onClick}
+        className="font-mono uppercase text-[11px] tracking-[0.14em] transition-colors"
+        style={{ color: active ? T.lime : T.dim }}
       >
-        {children}
+        {name}
       </Link>
     </li>
   );
@@ -76,105 +48,101 @@ function NavItem({ children, href, onLinkClick }: NavItemProps) {
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
-  function handleOpen() {
-    setOpen((cur) => !cur);
-  }
   const pathname = usePathname();
+
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpen(false)
-    );
+    const close = () => window.innerWidth >= 1024 && setOpen(false);
+    window.addEventListener("resize", close);
+    return () => window.removeEventListener("resize", close);
   }, []);
 
-  // Close mobile menu when pathname changes
   React.useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   return (
-    <MTNavbar
-      placeholder={""}
-      shadow={true}
-      fullWidth
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 border-b"
       style={{
-        backgroundColor: open ? "rgba(0, 0, 0, 0.878)" : "#000000c9",
-        backdropFilter: "blur(2px)",
-        transition: "background-color 0.3s, backdrop-filter 0.3s",
+        background: T.ink,
+        borderColor: T.hair,
       }}
-      className="border-0 absolute top-0 z-50 w-full"
     >
-      <div className="container max-w-full mx-auto flex items-center justify-between  ">
-        <Link href="/">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6">
+        {/* Wordmark */}
+        <Link href="/" className="flex items-center">
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/white-logo-narrow.png`}
-            alt="favicon Ventro Coaching"
-            width={400}
-            height={50}
+            src={`${process.env.NEXT_PUBLIC_BASE_URL ?? ""}/white-logo-narrow.png`}
+            alt="Ventro Cycling Coaching"
+            width={120}
+            height={32}
+            className="h-8 w-auto"
           />
         </Link>
-        <div className="flex items-center gap-2">
-          <ul className="ml-10 hidden items-center gap-8 lg:flex">
+
+        {/* Desktop links */}
+        <ul className="hidden items-center gap-8 lg:flex">
+          {NAV_MENU.map(({ name, href }) => (
+            <NavItem
+              key={href}
+              name={name}
+              href={href}
+              active={pathname === href}
+            />
+          ))}
+        </ul>
+
+        {/* Desktop CTA */}
+        <Link href="/plans-and-pricing" className="hidden lg:block">
+          <button
+            className="group inline-flex items-center gap-2 px-5 py-3 font-semibold text-[13px]"
+            style={{ background: T.lime, color: T.ink }}
+          >
+            See Plans
+            <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+          </button>
+        </Link>
+
+        {/* Mobile hamburger */}
+        <button
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((v) => !v)}
+          className="flex items-center justify-center lg:hidden"
+          style={{ color: T.bone }}
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div
+          className="border-t px-6 pb-6 pt-4 lg:hidden"
+          style={{ background: T.ink, borderColor: T.hair }}
+        >
+          <ul className="flex flex-col gap-5">
             {NAV_MENU.map(({ name, href }) => (
               <NavItem
-                key={name}
+                key={href}
+                name={name}
                 href={href}
-                onLinkClick={() => setOpen(false)}
-              >
-                {name}
-              </NavItem>
+                active={pathname === href}
+                onClick={() => setOpen(false)}
+              />
             ))}
           </ul>
-          <Link
-            className="ml-auto inline-block sm:hidden lg:block"
-            href="/plans-and-pricing"
-          >
-            <motion.button className="hidden md:flex ml-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition items-center gap-2 shadow-lg">
+          <Link href="/plans-and-pricing" onClick={() => setOpen(false)} className="mt-6 block">
+            <button
+              className="group inline-flex w-full items-center justify-center gap-2 px-5 py-4 font-semibold text-[13px]"
+              style={{ background: T.lime, color: T.ink }}
+            >
               See Plans
-            </motion.button>{" "}
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+            </button>
           </Link>
         </div>
-        <IconButton
-          placeholder={""}
-          variant="text"
-          color="white"
-          aria-label="Open Menu"
-          onClick={handleOpen}
-          className="ml-auto inline-block lg:hidden"
-        >
-          {open ? (
-            <XMarkIcon strokeWidth={2} className="h-6 w-6" />
-          ) : (
-            <Bars3Icon strokeWidth={2} className="h-6 w-6" />
-          )}
-        </IconButton>
-      </div>
-      <Collapse open={open}>
-        <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
-          <ul className="flex flex-col gap-4">
-            {NAV_MENU.map(({ name, href }) => (
-              <NavItem
-                key={name}
-                href={href}
-                onLinkClick={() => setOpen(false)}
-              >
-                {name}
-              </NavItem>
-            ))}
-          </ul>
-          <div className="mt-6 mb-4 flex items-center gap-2">
-            <Link
-              className="ml-auto inline-block lg:block"
-              href="/plans-and-pricing"
-            >
-              <motion.button className=" md:flex ml-10 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition items-center gap-2 shadow-lg">
-                See Plans
-              </motion.button>{" "}
-            </Link>
-          </div>
-        </div>
-      </Collapse>
-    </MTNavbar>
+      )}
+    </nav>
   );
 }
 

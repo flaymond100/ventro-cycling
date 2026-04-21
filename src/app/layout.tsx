@@ -1,16 +1,23 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { Layout } from "@/components";
 import { Toaster } from "react-hot-toast";
 import Scroll from "@/components/scroll";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const rubik = Rubik({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-rubik",
+  variable: "--font-space-grotesk",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -113,7 +120,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       </head>
-      <body className={`${rubik.variable} font-rubik`}>
+      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans bg-ventro-ink text-ventro-bone`}>
         <Layout>
           <Scroll />
           <Toaster position="top-right" />

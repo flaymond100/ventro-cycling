@@ -1,8 +1,6 @@
 "use client";
-// components
-import { Navbar, Footer, Loader } from "@/components";
 
-// sections
+import { Navbar, Footer, Loader } from "@/components";
 import emailjs from "@emailjs/browser";
 import Faq from "../faq";
 import React from "react";
@@ -13,30 +11,38 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { AboutMe } from "@/components/about-me";
 
-export default function ContactUs() {
-  return (
-    <>
-      <Navbar />
-      <FormSection />
-      <AboutMe />
-      <Faq />
-      <Footer />
-    </>
-  );
-}
+// ── Tokens ────────────────────────────────────────────────────────────────
+const T = {
+  ink: "#0B0D10",
+  char: "#14181D",
+  bone: "#F4F4F2",
+  mist: "#E4E4DE",
+  lime: "#D9FF00",
+  dim: "rgba(244,244,242,0.55)",
+  hair: "rgba(244,244,242,0.14)",
+};
+
+// ── Validation ────────────────────────────────────────────────────────────
 const contactValidationSchema = Yup.object().shape({
   companyName: Yup.string().nullable(),
   firstName: Yup.string().nullable(),
   lastName: Yup.string().nullable(),
-  email: Yup.string()
-    .email("Invalid email")
-    .required("Please enter your email"),
+  email: Yup.string().email("Invalid email").required("Please enter your email"),
   textarea: Yup.string().nullable().required("Please enter a message"),
 });
 
+// ── Shared input styles ────────────────────────────────────────────────────
+const inputClass =
+  "w-full px-4 py-3 bg-transparent text-sm outline-none transition placeholder:text-[rgba(244,244,242,0.3)]";
+
+function FieldError({ msg }: { msg?: string }) {
+  if (!msg) return null;
+  return <p className="mt-1 font-mono text-[10px] tracking-widest uppercase" style={{ color: T.lime }}>{msg}</p>;
+}
+
+// ── Form ──────────────────────────────────────────────────────────────────
 const FormSection = () => {
   const [disabled, setDisabled] = React.useState(false);
-  const [_, setFormSubmitted] = React.useState(false);
   const formik = useFormik<{
     email: string;
     companyName: string | null;
@@ -66,166 +72,190 @@ const FormSection = () => {
           () => {
             toast.success(
               "You're all set! We'll email you within 24 hours, so keep an eye on your inbox.",
-              {
-                style: { color: "white", background: "green" },
-                duration: 40000,
-              }
+              { style: { color: "white", background: "#14181D" }, duration: 40000 }
             );
-            // router.back();
-            setFormSubmitted(true);
             resetForm();
           },
-          (error: { text: any }) => {
+          () => {
             toast.error("Error happened, please try again!");
-            console.log(error.text);
           }
         )
-        .finally(() => {
-          setDisabled(false);
-        });
+        .finally(() => setDisabled(false));
     },
     validationSchema: contactValidationSchema,
   });
 
+  const fieldStyle = (err?: string) => ({
+    background: "transparent",
+    color: T.bone,
+    border: `1px solid ${err ? T.lime : T.hair}`,
+    borderRadius: 0,
+  });
+
   return (
     <section
-      className="pt-40 mb-10   list-item bg-cover bg-center bg-no-repeat relative"
-      style={{
-        backgroundColor: "#f2f3f4",
-      }}
+      className="pt-32 px-6 pb-24 md:px-12"
+      style={{ background: T.ink, color: T.bone }}
     >
-      <div className=" px-8 container mx-auto text-center">
-        <h1
-          color="blue-gray"
-          className="mb-4 leter-spacing-1 text-5xl font-bold"
+      <div className="mx-auto max-w-2xl">
+        {/* Eyebrow */}
+        <p
+          className="font-mono uppercase mb-4"
+          style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}
         >
-          Contact Us
-        </h1>
-        <div className="flex-row justify-center align-middle">
-          <div className="flex justify-center mb-6">
-            <p className="leter-spacing-1 text-xl max-w-3xl">
-              Leave a request and we will contact you back shortly.
-            </p>
-          </div>
-          <br />
-        </div>
-      </div>
+          ◎ Get in touch
+        </p>
 
-      <div className="flex items-center justify-center">
-        <div className="px-8  pb-8 flex justify-center items-center">
-          <form
-            onSubmit={formik.handleSubmit}
-            className="min-w-[300px] md:min-w-[700px]"
-          >
-            <div className="flex justify-between ">
-              <div className="mb-8 w-4/5 mr-10">
-                <label
-                  className="block   text-lg font-bold mb-2"
-                  htmlFor="text"
-                >
-                  First Name
-                </label>
-                <input
-                  className={`shadow min-h-14 appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
-                  id="firstName"
-                  type="text"
-                  disabled={disabled}
-                  name="firstName"
-                  placeholder="First Name"
-                  value={formik.values.firstName ?? ""}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
-              </div>
-              <div className="mb-6 w-4/5">
-                <label
-                  className="block   text-lg font-bold mb-2"
-                  htmlFor="text"
-                >
-                  Last Name
-                </label>
-                <input
-                  className={`shadow min-h-14 appearance-none border rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline`}
-                  id="lastName"
-                  type="text"
-                  disabled={disabled}
-                  name="lastName"
-                  placeholder="Last Name"
-                  value={formik.values.lastName ?? ""}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
-              </div>
-            </div>
-            <div className="mb-8">
-              <label className="block text-lg font-bold mb-2" htmlFor="email">
-                Email*
+        {/* Headline */}
+        <h1
+          className="font-extrabold uppercase mb-10"
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: "clamp(40px, 6vw, 80px)",
+            lineHeight: 0.92,
+            letterSpacing: "-0.04em",
+            color: T.bone,
+          }}
+        >
+          Contact{" "}
+          <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
+            us.
+          </span>
+        </h1>
+
+        <p className="mb-10 text-base leading-relaxed" style={{ color: T.mist }}>
+          Leave a request and we will contact you back shortly.
+        </p>
+
+        {/* Form */}
+        <form onSubmit={formik.handleSubmit} noValidate>
+          {/* Name row */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mb-4">
+            <div>
+              <label
+                htmlFor="firstName"
+                className="block font-mono uppercase mb-2"
+                style={{ fontSize: 10.5, letterSpacing: "0.14em", color: T.dim }}
+              >
+                First Name
               </label>
               <input
-                className={`shadow appearance-none border ${
-                  formik.errors.email && "border-red-500"
-                } rounded w-full py-2 px-3   min-h-14  leading-tight focus:outline-none focus:shadow-outline`}
-                id="username"
-                type="email"
+                id="firstName"
+                type="text"
+                name="firstName"
                 disabled={disabled}
-                name="email"
-                placeholder="Your email"
-                value={formik.values.email}
+                placeholder="First"
+                value={formik.values.firstName ?? ""}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+                className={inputClass}
+                style={fieldStyle()}
               />
-              {formik.errors.email && (
-                <p className="text-red-500 text-xs italic">
-                  {formik.errors.email}
-                </p>
-              )}
             </div>
-            <div className="mb-4">
-              <label className="block   text-lg font-bold mb-2" htmlFor="email">
-                Leave your message*
-              </label>
-              <textarea
-                className={`shadow appearance-none border ${
-                  formik.errors.textarea && "border-red-500"
-                } rounded w-full py-2 px-3   leading-tight focus:outline-none focus:shadow-outline min-h-36`}
-                id="textarea"
-                disabled={disabled}
-                name="textarea"
-                placeholder="Leave your message here"
-                value={formik.values.textarea ?? ""}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {formik.errors.textarea && (
-                <p className="text-red-500 text-xs italic">
-                  {formik.errors.textarea}
-                </p>
-              )}
-            </div>
-            <div className="flex items-center justify-end mt-8">
-              <motion.button
-                className={` ${
-                  disabled ? "bg-gray-500" : "bg-yellow-400 hover:bg-yellow-300"
-                } text-black px-6 py-3 rounded-xl font-bold transition flex items-center gap-2 shadow-lg`}
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                type="submit"
-                value="Submit"
-                disabled={disabled}
+            <div>
+              <label
+                htmlFor="lastName"
+                className="block font-mono uppercase mb-2"
+                style={{ fontSize: 10.5, letterSpacing: "0.14em", color: T.dim }}
               >
-                {disabled ? (
-                  <Loader />
-                ) : (
-                  <>
-                    Submit <ArrowRight size={18} />
-                  </>
-                )}
-              </motion.button>{" "}
+                Last Name
+              </label>
+              <input
+                id="lastName"
+                type="text"
+                name="lastName"
+                disabled={disabled}
+                placeholder="Last"
+                value={formik.values.lastName ?? ""}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className={inputClass}
+                style={fieldStyle()}
+              />
             </div>
-          </form>
-        </div>
+          </div>
+
+          {/* Email */}
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block font-mono uppercase mb-2"
+              style={{ fontSize: 10.5, letterSpacing: "0.14em", color: T.dim }}
+            >
+              Email *
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              disabled={disabled}
+              placeholder="you@example.com"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={inputClass}
+              style={fieldStyle(formik.errors.email)}
+            />
+            <FieldError msg={formik.errors.email} />
+          </div>
+
+          {/* Message */}
+          <div className="mb-8">
+            <label
+              htmlFor="textarea"
+              className="block font-mono uppercase mb-2"
+              style={{ fontSize: 10.5, letterSpacing: "0.14em", color: T.dim }}
+            >
+              Message *
+            </label>
+            <textarea
+              id="textarea"
+              name="textarea"
+              disabled={disabled}
+              placeholder="Leave your message here"
+              rows={6}
+              value={formik.values.textarea ?? ""}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className={inputClass + " resize-none"}
+              style={fieldStyle(formik.errors.textarea)}
+            />
+            <FieldError msg={formik.errors.textarea ?? undefined} />
+          </div>
+
+          {/* Submit */}
+          <motion.button
+            type="submit"
+            disabled={disabled}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="group inline-flex items-center gap-3 px-5 py-4 font-semibold text-sm disabled:opacity-60"
+            style={{ background: disabled ? T.dim : T.lime, color: T.ink }}
+          >
+            {disabled ? (
+              <Loader />
+            ) : (
+              <>
+                Send message
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </>
+            )}
+          </motion.button>
+        </form>
       </div>
     </section>
   );
 };
+
+export default function ContactUs() {
+  return (
+    <>
+      <Navbar />
+      <FormSection />
+      <AboutMe />
+      <Faq />
+      <Footer />
+    </>
+  );
+}

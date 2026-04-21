@@ -1,163 +1,136 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import {
-  Card,
-  CardBody,
-  Timeline,
-  TimelineItem,
-  TimelineConnector,
-  TimelineHeader,
-  TimelineIcon,
-  TimelineBody,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
-import {
-  PaperAirplaneIcon,
-  DocumentCheckIcon,
-  CalendarDaysIcon,
-  CheckIcon,
-  ChevronDownIcon,
-} from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
+import { ArrowDown, ArrowRight, CalendarDays, Check, MailCheck, Send } from "lucide-react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const T = {
+  ink: "#0B0D10",
+  char: "#14181D",
+  bone: "#F4F4F2",
+  mist: "#E4E4DE",
+  lime: "#D9FF00",
+  dim: "rgba(244,244,242,0.55)",
+  hair: "rgba(244,244,242,0.14)",
+};
+
+const PROGRAMS = [
+  {
+    id: "running",
+    title: "Running Trainings",
+    copy: "Elevate your running performance with personalized training plans tailored to your fitness level and goals.",
+    image: "/image/8716_20230423_144655_274310037_original.webp",
+    href: "/trainings/running-trainings",
+  },
+  {
+    id: "cycling",
+    title: "Cycling Trainings",
+    copy: "Discover cycling with structured plans for beginners and experienced athletes focused on measurable progress.",
+    image: "/image/France_Downhill_Kosta.webp",
+    href: "/trainings/cycling-trainings",
+  },
+  {
+    id: "triathlon",
+    title: "Triathlon Trainings",
+    copy: "Build confidence across swim, bike, and run with personalized triathlon plans and race-specific preparation.",
+    image: "/image/tri_1.webp",
+    href: "/trainings/triathlon-trainings",
+  },
+];
+
+const STEPS = [
+  {
+    title: "Start Your Free Trial",
+    text: "Secure your 7-day free trial with an easy online payment and begin immediately.",
+    icon: Send,
+  },
+  {
+    title: "Check Your Email",
+    text: "Within 24 hours, you receive a TrainingPeaks link and athlete questionnaire.",
+    icon: MailCheck,
+  },
+  {
+    title: "Schedule a Call",
+    text: "Optional call to align your goals, constraints, and training preferences.",
+    icon: CalendarDays,
+  },
+  {
+    title: "Begin Your Training",
+    text: "Receive your personalized plan and start tracking structured progress.",
+    icon: Check,
+  },
+];
+
 export function OurPrograms() {
   const pathname = usePathname();
   const homePage = pathname === "/";
+
   return (
     <section
-      style={{
-        background:
-          "linear-gradient(to bottom, rgb(237 242 246), rgba(255 255 255))",
-        marginBottom: homePage ? "0" : "40px",
-      }}
-      className="px-8 pt-20"
+      className="px-6 py-20 md:px-12"
+      style={{ background: T.ink, marginBottom: homePage ? 0 : 40 }}
     >
-      <div className="animate-in slide-in-from-bottom duration-1000 container mx-auto mb-10 grid place-items-center text-center ">
-        <h1
-          color="blue-gray"
-          className="mb-4 leter-spacing-1 text-5xl font-bold text-center"
+      <div className="mx-auto max-w-6xl">
+        <p className="font-mono uppercase mb-4" style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}>
+          ◎ Trainings
+        </p>
+        <h2
+          className="font-extrabold uppercase mb-10"
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: "clamp(36px, 5vw, 64px)",
+            lineHeight: 0.92,
+            letterSpacing: "-0.04em",
+            color: T.bone,
+          }}
         >
-          Trainings
-        </h1>
-      </div>
-      <div className="container mx-auto mb-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-        <Card
-          id="running"
-          color="gray"
-          className="animate-in slide-in-from-left duration-1000 relative grid h-full w-full place-items-center overflow-hidden text-center"
-        >
-          <Image
-            width={768}
-            height={768}
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/image/8716_20230423_144655_274310037_original.webp`}
-            alt={"/image/8716_20230423_144655_274310037_original.webp"}
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 h-full w-full bg-gray-900/75" />
-          <div className="flex flex-col " style={{ zIndex: "1" }}>
-            <CardBody className="relative  h-full  w-full">
-              <Typography variant="h4" className="mt-9" color="white">
-                Running Trainings
-              </Typography>
-              <Typography
-                color="white"
-                className="mt-4 mb-14 font-normal opacity-70"
-              >
-                Elevate your running performance with our personalized training
-                plans tailored to your fitness level and goals. Our experienced
-                coaches provide support to help you reach new goals.
-              </Typography>
-            </CardBody>
-            <Link style={{ zIndex: "1" }} href="/trainings/running-trainings">
-              <Button className="mb-8" size="sm" color="white">
-                Read More
-              </Button>
-            </Link>
-          </div>
-        </Card>
+          Training
+          <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em", marginLeft: 8 }}>
+            tracks.
+          </span>
+        </h2>
 
-        <Card
-          id="cycling"
-          color="gray"
-          className="animate-in slide-in-from-bottom duration-1000 relative grid h-full w-full place-items-center overflow-hidden text-center"
-        >
-          <Image
-            width={768}
-            height={768}
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/image/France_Downhill_Kosta.webp`}
-            alt={" /image/France_Downhill_Kosta.webp"}
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 h-full w-full bg-gray-900/75" />
-          <div className="flex flex-col " style={{ zIndex: "1" }}>
-            <CardBody className="relative  h-full  w-full">
-              <Typography variant="h4" className="mt-9" color="white">
-                Cycling Trainings
-              </Typography>
-              <Typography
-                color="white"
-                className="mt-4 mb-14 font-normal opacity-70"
-              >
-                Discover the world of cycling with our personalized plans.
-                Whether you are a beginner or an experienced athlete, we are
-                here to help you reach your full potential.
-              </Typography>
-            </CardBody>
-            <Link
-              aria-label="Read more about cycling trainings"
-              style={{ zIndex: "1" }}
-              href="/trainings/cycling-trainings"
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {PROGRAMS.map((program) => (
+            <motion.article
+              key={program.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="relative overflow-hidden"
+              style={{ border: `1px solid ${T.hair}` }}
             >
-              <Button className="mb-8" size="sm" color="white">
-                Read More
-              </Button>
-            </Link>
-          </div>
-        </Card>
-        <Card
-          id="triathlon"
-          color="gray"
-          className="animate-in slide-in-from-right duration-1000 relative grid h-full w-full place-items-center overflow-hidden text-center"
-        >
-          <Image
-            width={768}
-            height={768}
-            style={{ left: "-10px" }}
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/image/tri_1.webp`}
-            alt={" /image/tri_1.webp"}
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 h-full w-full bg-gray-900/75" />
-          <div className="flex flex-col " style={{ zIndex: "1" }}>
-            <CardBody className="relative  h-full  w-full">
-              <Typography variant="h4" className="mt-9" color="white">
-                Triathlon Trainings
-              </Typography>
-              <Typography
-                color="white"
-                className="mt-4 mb-14 font-normal opacity-70"
-              >
-                Dive into the world of triathlon with us! Whether you are a
-                newbie or a seasoned triathlete, our presonalised plans will
-                help you complete triathlon disciplines with confidence.
-              </Typography>
-            </CardBody>
-            <Link
-              aria-label="Read more about triathlon trainings"
-              style={{ zIndex: "1" }}
-              href="/trainings/triathlon-trainings"
-            >
-              <Button className="mb-8" size="sm" color="white">
-                Read More
-              </Button>
-            </Link>
-          </div>
-        </Card>
+              <Image
+                width={768}
+                height={768}
+                src={`${process.env.NEXT_PUBLIC_BASE_URL ?? ""}${program.image}`}
+                alt={program.title}
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(11,13,16,0.9) 0%, rgba(11,13,16,0.45) 55%, rgba(11,13,16,0.2) 100%)" }} />
+              <div className="relative z-10 min-h-[360px] p-8 flex flex-col justify-end">
+                <h3 className="text-2xl font-bold mb-3" style={{ color: T.bone }}>
+                  {program.title}
+                </h3>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: T.mist }}>
+                  {program.copy}
+                </p>
+                <Link href={program.href}>
+                  <button
+                    className="group inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
+                    style={{ background: T.lime, color: T.ink }}
+                  >
+                    Read More
+                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                  </button>
+                </Link>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -168,127 +141,49 @@ export const TimelineWithIcon = () => {
   const form = pathname === "/personal-coaching/";
 
   return (
-    <div className="mx-auto w-4/5 lg:w-[32rem]">
-      <div className="animate-in slide-in-from-bottom duration-2000 container mx-auto mb-10 grid place-items-center text-center ">
-        <h1 color="blue-gray" className=" text-4xl font-bold">
-          How it Works
-        </h1>
+    <div className="mx-auto w-full max-w-3xl px-6 pb-20 md:px-0">
+      <div className="mb-10 text-center">
+        <h2 className="font-extrabold uppercase" style={{ fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 0.95, letterSpacing: "-0.03em", color: T.bone }}>
+          How it works
+        </h2>
       </div>
 
-      <Timeline>
-        <TimelineItem className="animate-in slide-in-from-left duration-2000">
-          <TimelineConnector />
-          <TimelineHeader>
-            <TimelineIcon className="p-2">
-              <PaperAirplaneIcon className="h-4 w-4" />
-            </TimelineIcon>
-            <Typography variant="h5" color="blue-gray">
-              Start Your Free Trial
-            </Typography>
-          </TimelineHeader>
-          <TimelineBody className="pb-8">
-            <Typography color="gray" className="font-normal text-gray-600">
-              Secure your 7-day free trial with an easy online payment. Begin
-              your journey immediately and explore what’s possible!
-            </Typography>
-          </TimelineBody>
-        </TimelineItem>
-        <TimelineItem className="animate-in slide-in-from-right duration-3000">
-          <TimelineConnector />
-          <TimelineHeader>
-            <TimelineIcon className="p-2">
-              <DocumentCheckIcon className="h-4 w-4" />
-            </TimelineIcon>
-            <Typography variant="h5" color="blue-gray">
-              Check Your Email
-            </Typography>
-          </TimelineHeader>
+      <div className="space-y-4" style={{ borderLeft: `1px solid ${T.hair}` }}>
+        {STEPS.map((step, idx) => {
+          const Icon = step.icon;
+          return (
+            <div key={step.title} className="relative pl-8 pb-6 last:pb-0">
+              <div className="absolute -left-[7px] top-1 h-3 w-3" style={{ background: T.lime }} />
+              <p className="font-mono uppercase mb-2" style={{ fontSize: 10.5, letterSpacing: "0.14em", color: T.dim }}>
+                Step {idx + 1}
+              </p>
+              <div className="flex items-center gap-2 mb-2">
+                <Icon size={16} style={{ color: T.lime }} />
+                <h3 className="font-semibold" style={{ color: T.bone }}>{step.title}</h3>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: T.mist }}>
+                {step.text}
+              </p>
+            </div>
+          );
+        })}
+      </div>
 
-          <TimelineBody className="pb-8">
-            <Typography color="gray" className="font-normal text-gray-600">
-              Within 24 hours, you’ll receive an email from us with a link to
-              TrainingPeaks and an athlete questionnaire. Fill it out to share
-              your sport background, training history, and goals, so we can
-              create a training plan that’s right for you.
-            </Typography>
-          </TimelineBody>
-        </TimelineItem>
-        <TimelineItem className="animate-in slide-in-from-left duration-4000">
-          <TimelineConnector />
-          <TimelineHeader>
-            <TimelineIcon className="p-2">
-              <CalendarDaysIcon className="h-4 w-4" />
-            </TimelineIcon>
-            <Typography variant="h5" color="blue-gray">
-              Schedule a Call (optional)
-            </Typography>
-          </TimelineHeader>
-
-          <TimelineBody className="pb-8">
-            <Typography color="gray" className="font-normal text-gray-600 pb-8">
-              Let’s get to know each other! We'll set up a call to discuss your
-              goals, preferences, and any specific requirements you have. It’s a
-              chance for us to align on how we can best work together.
-            </Typography>
-          </TimelineBody>
-        </TimelineItem>
-        <TimelineItem className="animate-in slide-in-from-right duration-5000">
-          <TimelineHeader>
-            <TimelineIcon className="p-2">
-              <CheckIcon className="h-4 w-4" />
-            </TimelineIcon>
-            <Typography variant="h5" color="blue-gray">
-              Begin Your Training
-            </Typography>
-          </TimelineHeader>
-
-          <TimelineBody>
-            <Typography color="gray" className="font-normal text-gray-600">
-              Once we've gathered all the details, you’ll receive a personalized
-              training plan via TrainingPeaks. Follow your plan, track your
-              progress, and start your journey toward achieving your goals.
-            </Typography>
-          </TimelineBody>
-        </TimelineItem>
-      </Timeline>
-      <div className="animate-in slide-in-from-bottom duration-2000 container mx-auto mt-10 grid place-items-center text-center ">
-        <div style={{ display: "flex" }}>
-          <div
-            style={{
-              color: "white",
-              marginRight: "20px",
-              marginBottom: form ? "0" : "20px",
-            }}
-            className="animate-bounce p-2 w-10 h-10 ring-1 ring-transparent rounded-full flex items-center justify-center"
-          >
-            <ChevronDownIcon className="h-4 w-4" style={{ color: "#ecd06f" }} />
-          </div>
-          <div
-            style={{
-              color: "white",
-              marginRight: "20px",
-              marginBottom: form ? "0" : "20px",
-            }}
-            className="animate-bounce p-2 w-10 h-10 ring-1 ring-transparent  rounded-full flex items-center justify-center"
-          >
-            <ChevronDownIcon className="h-4 w-4" style={{ color: "#ecd06f" }} />
-          </div>
-          <div
-            style={{ color: "white", marginBottom: form ? "0" : "20px" }}
-            className="animate-bounce p-2 w-10 h-10 ring-1 ring-transparent  rounded-full flex items-center justify-center"
-          >
-            <ChevronDownIcon className="h-4 w-4" style={{ color: "#ecd06f" }} />
-          </div>
+      <div className="mt-10 text-center">
+        <div className="mb-5 flex items-center justify-center gap-2" style={{ color: T.lime }}>
+          <ArrowDown size={16} />
+          <ArrowDown size={16} />
+          <ArrowDown size={16} />
         </div>
         {!form && (
-          <Link
-            className="mb-10"
-            aria-label="sing-up-form"
-            href="/personal-coaching"
-          >
-            <Button size="lg" style={{ background: "#ecd06f" }}>
+          <Link aria-label="sign-up-form" href="/personal-coaching">
+            <button
+              className="group inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
+              style={{ background: T.lime, color: T.ink }}
+            >
               Get Started
-            </Button>
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </button>
           </Link>
         )}
       </div>

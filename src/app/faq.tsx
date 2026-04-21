@@ -1,12 +1,19 @@
 "use client";
-import React from "react";
 
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from "@material-tailwind/react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+// ── Tokens ────────────────────────────────────────────────────────────────
+const T = {
+  ink: "#0B0D10",
+  char: "#14181D",
+  bone: "#F4F4F2",
+  mist: "#E4E4DE",
+  lime: "#D9FF00",
+  dim: "rgba(244,244,242,0.55)",
+  hair: "rgba(244,244,242,0.14)",
+};
 
 const FAQS = [
   {
@@ -14,8 +21,7 @@ const FAQS = [
     desc: "Absolutely. Whether you're new to cycling or getting back into it, we create training plans that match your fitness level and goals. The focus is on gradual progression and sustainable performance gains.",
   },
   {
-    title:
-      "I want to race at a high level, can your coaching help me get there?",
+    title: "I want to race at a high level, can your coaching help me get there?",
     desc: "Definitely. We work with competitive cyclists targeting podiums, race wins, and category upgrades. You'll get structured periodisation, detailed data analysis, and racing-specific training blocks tailored to your peak events.",
   },
   {
@@ -28,7 +34,7 @@ const FAQS = [
   },
   {
     title: "How long does it take to see improvements in cycling performance?",
-    desc: "Many cyclists notice improvements in endurance, power, or speed within the first 3–4 Weeks. More significant results typically come after consistent training over 2–3 months.",
+    desc: "Many cyclists notice improvements in endurance, power, or speed within the first 3–4 weeks. More significant results typically come after consistent training over 2–3 months.",
   },
   {
     title: "What makes your cycling coaching different?",
@@ -36,11 +42,11 @@ const FAQS = [
   },
   {
     title: "How do I know if I'm ready for a more advanced plan?",
-    desc: "If you've been riding regularly and want to target specific performance metrics or race goals, you’re likely ready. Our coach can assess your data and tailor the plan to challenge you appropriately.",
+    desc: "If you've been riding regularly and want to target specific performance metrics or race goals, you're likely ready. Our coach can assess your data and tailor the plan to challenge you appropriately.",
   },
   {
     title: "Can I switch goals during the training period?",
-    desc: "Yes. If your objectives change—like shifting focus from a gran fondo to criterium racing—we’ll adjust your plan accordingly. Flexibility is part of our coaching philosophy.",
+    desc: "Yes. If your objectives change—like shifting focus from a gran fondo to criterium racing—we'll adjust your plan accordingly. Flexibility is part of our coaching philosophy.",
   },
   {
     title: "What equipment do I need for your cycling plans?",
@@ -56,48 +62,128 @@ const FAQS = [
   },
 ];
 
+// ── Motion ────────────────────────────────────────────────────────────────
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+};
+const rise = {
+  hidden: { y: 24, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.2, 0.7, 0.2, 1] } },
+};
+
 export function Faq() {
-  const [open, setOpen] = useState(1);
-  const handleOpen = (value: number) => setOpen(open === value ? 0 : value);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="px-8 pt-20">
-      <div className="container mx-auto">
-        <div className="text-center">
-          <h1 color="blue-gray" className="mb-4 text-5xl font-bold">
-            Frequently Asked Questions
-          </h1>
-        </div>
-        <div className="mx-auto lg:max-w-screen-lg lg:px-20">
-          {FAQS.map(({ title, desc }, key) => (
-            <Accordion
-              placeholder={""}
-              key={key}
-              open={open === key + 1}
-              onClick={() => handleOpen(key + 1)}
-            >
-              <AccordionHeader
-                placeholder={""}
-                className="text-left  hover:text-white focus:text-white"
-                style={{
-                  color: "#353744",
-                }}
+    <section
+      className="px-6 py-28 md:px-12"
+      style={{ background: T.ink }}
+    >
+      <div className="mx-auto max-w-4xl">
+        {/* Eyebrow */}
+        <p
+          className="font-mono uppercase mb-4"
+          style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}
+        >
+          ◎ FAQ
+        </p>
+
+        {/* Headline */}
+        <h2
+          className="font-extrabold uppercase mb-14"
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: "clamp(32px, 5vw, 64px)",
+            lineHeight: 0.92,
+            letterSpacing: "-0.035em",
+            color: T.bone,
+          }}
+        >
+          Common{" "}
+          <span
+            className="inline-block"
+            style={{
+              background: T.lime,
+              color: T.ink,
+              padding: "0 0.18em",
+            }}
+          >
+            questions.
+          </span>
+        </h2>
+
+        {/* Accordion list */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={container}
+          className="flex flex-col"
+          style={{ borderTop: `1px solid ${T.hair}` }}
+        >
+          {FAQS.map(({ title, desc }, idx) => {
+            const isOpen = open === idx;
+            const code = `Q·${String(idx + 1).padStart(2, "0")}`;
+            return (
+              <motion.div
+                key={idx}
+                variants={rise}
+                style={{ borderBottom: `1px solid ${T.hair}` }}
               >
-                {title}
-              </AccordionHeader>
-              <AccordionBody>
-                <p
-                  className="font-normal text-xl"
-                  style={{
-                    color: "#444759",
-                  }}
+                <button
+                  className="flex w-full items-start gap-4 py-5 text-left"
+                  onClick={() => setOpen(isOpen ? null : idx)}
+                  aria-expanded={isOpen}
                 >
-                  {desc}
-                </p>
-              </AccordionBody>
-            </Accordion>
-          ))}
-        </div>
+                  {/* Mono Q code */}
+                  <span
+                    className="font-mono shrink-0 mt-0.5"
+                    style={{ fontSize: 11, letterSpacing: "0.14em", color: T.lime }}
+                  >
+                    {code}
+                  </span>
+                  {/* Question */}
+                  <span
+                    className="flex-1 font-semibold text-base md:text-lg"
+                    style={{ color: T.bone }}
+                  >
+                    {title}
+                  </span>
+                  {/* Chevron */}
+                  <ChevronDown
+                    size={18}
+                    className="shrink-0 mt-1 transition-transform duration-300"
+                    style={{
+                      color: T.dim,
+                      transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    }}
+                  />
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="body"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p
+                        className="pb-5 pl-10 text-base leading-relaxed"
+                        style={{ color: T.mist }}
+                      >
+                        {desc}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );

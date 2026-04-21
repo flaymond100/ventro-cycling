@@ -1,152 +1,228 @@
-// components
+"use client";
+
 import { Navbar, Footer } from "@/components";
-
-// sections
 import Faq from "../faq";
-import Image from "next/image";
-import CarouselFeatures from "../carousel-features";
 import { CalendlyWidget } from "@/components/widget";
-import Prices from "../prices";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-const OFFERS = [
-  "Personal Training Plans: Each plan is meticulously crafted to meet your unique goals, whether you're a beginner or a seasoned athlete. Our experienced coaches design these plans exclusively for you, focusing on your strengths, areas for improvement, and the goals you aim to achieve. Find out more information on our page. Experience the power of personalized training, guiding you toward excellence in your chosen discipline.",
-  "Triathlon Trainings: Dive into a comprehensive triathlon training experience that covers swimming, cycling, and running. Our structured programs cater to all levels, guiding you through the diverse disciplines of triathlon, helping you reach your peak performance on race day.",
-  "Cycling Trainings: Train towards your cycling goals with personalized training plans. From boosting endurance to refining techniques, our cycling training programs are tailored to enhance your skills and enjoyment on two wheels.",
-  "Running Trainings: Step up your running game with tailored training plans designed for beginners to seasoned marathoners. Whether you aim to conquer distances or improve your pace, our running training focuses on technique, endurance, and goal-specific progress.",
-  "Swimming Trainings: Dive into our individualized swimming training to refine strokes, build endurance, and enhance confidence in the water. Our programs are crafted to accommodate all skill levels, ensuring comfort and proficiency in every lap.",
-  "Duathlon Trainings: Master the art of duathlon with specialized training plans focusing on both running and cycling. Our duathlon training programs target seamless transitions, pacing strategies, and performance optimization for each segment.",
-  "Lose Weight Trainings: Join our specialized training programs designed to support your weight loss journey. Tailored exercises, personalized plans, and expert guidance await you in our comprehensive training designed to help you achieve your weight loss goals. Our approach focuses on a balanced mix of exercises, nutrition guidance, and ongoing support to help you attain a healthier and fitter you.",
-  "Fitness for All: We believe that sport and physical activity are for everyone. Our programs cater to individuals of all experience levels, from newcomers to seasoned athletes, helping you discover the joy of movement.",
+// ── Tokens ────────────────────────────────────────────────────────────────
+const T = {
+  ink: "#0B0D10",
+  char: "#14181D",
+  steel: "#2A3039",
+  bone: "#F4F4F2",
+  mist: "#E4E4DE",
+  lime: "#D9FF00",
+  dim: "rgba(244,244,242,0.55)",
+  hair: "rgba(244,244,242,0.14)",
+};
+
+// ── Copy ──────────────────────────────────────────────────────────────────
+const BELIEFS = [
+  {
+    title: "Inclusivity",
+    body: "No matter your background or experience level, Ventro is your inclusive fitness community where everyone is welcome.",
+  },
+  {
+    title: "Health Awareness",
+    body: "Our core value is to raise awareness about the importance of health and overall well-being, guiding you toward a healthier and more balanced lifestyle.",
+  },
+  {
+    title: "Expert Guidance",
+    body: "Our coaches are here to support and encourage you every step of the way. We prioritise your well-being and individual goals.",
+  },
+  {
+    title: "Data Driven",
+    body: "Every plan is built around power, heart rate, and real performance data. No guesswork—just structured progress you can measure.",
+  },
 ];
-const CHOICE = [
-  "Inclusivity: No matter your background or experience level, NRC is your inclusive fitness community where everyone is welcome.",
-  "Health Awareness: Our core value is to raise awareness about the importance of health and overall well-being. We aim to guide you toward a healthier and more balanced lifestyle.",
-  "Expert Guidance: Our coaches are here to support and encourage you every step of the way. We prioritize your well-being and individual goals.",
-  "Community Bond: We foster a sense of belonging and connection. NRC is not just about sport; it's about building meaningful relationships while improving your health.",
-  "Fun and Friendship: While we focus on health, we also enjoy fun, friendship, and social events. We're not just a team; we're a community.",
-];
+
+// ── Motion ────────────────────────────────────────────────────────────────
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+};
+const rise = {
+  hidden: { y: 28, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 0.65, ease: [0.2, 0.7, 0.2, 1] } },
+};
+
+const AboutUs = () => (
+  <section
+    className="pt-32 px-6 pb-24 md:px-12"
+    style={{ background: T.ink, color: T.bone }}
+  >
+    <div className="mx-auto max-w-5xl">
+      {/* Eyebrow */}
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="font-mono uppercase mb-4"
+        style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}
+      >
+        ◎ Who we are
+      </motion.p>
+
+      {/* Poster H1 */}
+      <motion.h1
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
+        className="font-extrabold uppercase mb-10"
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: "clamp(48px, 8vw, 112px)",
+          lineHeight: 0.9,
+          letterSpacing: "-0.04em",
+          color: T.bone,
+        }}
+      >
+        Ventro
+        <br />
+        Cycling{" "}
+        <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
+          Coaching.
+        </span>
+      </motion.h1>
+
+      {/* Intro copy */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        className="mb-16 max-w-2xl text-lg leading-relaxed"
+        style={{ color: T.mist }}
+      >
+        A community of athletes united by a passion for endurance sports and a
+        commitment to living a healthy life. We believe everyone—regardless of
+        experience—has a place here.
+      </motion.p>
+
+      {/* Divider */}
+      <div className="mb-16" style={{ height: 1, background: T.hair }} />
+
+      {/* Two-col: mission copy + CTA */}
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+        className="grid grid-cols-1 gap-12 md:grid-cols-2 mb-20"
+      >
+        <motion.div variants={rise}>
+          <h2
+            className="font-bold uppercase mb-5"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "clamp(22px, 3vw, 36px)",
+              letterSpacing: "-0.025em",
+              color: T.bone,
+            }}
+          >
+            Our mission
+          </h2>
+          <p className="text-base leading-relaxed mb-6" style={{ color: T.mist }}>
+            At the heart of Ventro Cycling Coaching is the mission to empower
+            individuals—regardless of their sporting background—to lead healthier
+            lives, one ride at a time. We inspire, support, and empower athletes
+            to achieve their goals, no matter how big or small.
+          </p>
+          <Link href="/plans-and-pricing">
+            <button
+              className="group inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
+              style={{ background: T.lime, color: T.ink }}
+            >
+              See Plans
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </button>
+          </Link>
+        </motion.div>
+
+        <motion.div variants={rise}>
+          <h2
+            className="font-bold uppercase mb-5"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "clamp(22px, 3vw, 36px)",
+              letterSpacing: "-0.025em",
+              color: T.bone,
+            }}
+          >
+            The coach
+          </h2>
+          <p className="text-base leading-relaxed mb-4" style={{ color: T.mist }}>
+            Kostiantyn (Kosta) Garbar is the founder and head coach. With over a
+            decade of experience in high-performance endurance sports, he helps
+            cyclists unlock their full potential through structured, data-driven,
+            and fully personalised coaching.
+          </p>
+          <p className="text-base leading-relaxed" style={{ color: T.mist }}>
+            At Ventro we understand your needs, set realistic goals, adapt
+            training to your life, and build a partnership based on trust,
+            communication, and real progress.
+          </p>
+        </motion.div>
+      </motion.div>
+
+      {/* Belief grid */}
+      <p
+        className="font-mono uppercase mb-8"
+        style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.dim }}
+      >
+        ◎ What we stand for
+      </p>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+        className="grid grid-cols-1 gap-px sm:grid-cols-2"
+        style={{ border: `1px solid ${T.hair}` }}
+      >
+        {BELIEFS.map(({ title, body }, i) => (
+          <motion.div
+            key={i}
+            variants={rise}
+            className="p-8"
+            style={{
+              background: T.char,
+              borderRight: i % 2 === 0 ? `1px solid ${T.hair}` : "none",
+              borderBottom: i < 2 ? `1px solid ${T.hair}` : "none",
+            }}
+          >
+            <span
+              className="font-mono block mb-3"
+              style={{ fontSize: 11, letterSpacing: "0.14em", color: T.lime }}
+            >
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3
+              className="font-semibold mb-2 text-base"
+              style={{ color: T.bone }}
+            >
+              {title}
+            </h3>
+            <p className="text-sm leading-relaxed" style={{ color: T.mist }}>
+              {body}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </section>
+);
+
 export default function AboutUsPage() {
   return (
     <>
       <Navbar />
       <AboutUs />
-      <CarouselFeatures />
       <CalendlyWidget />
       <Faq />
       <Footer />
     </>
   );
 }
-
-const AboutUs = () => {
-  return (
-    <>
-      <section className="mb-20 container text-center md:text-left mt-6 md:mt-10 mx-auto px-6">
-        <h1
-          color="blue-gray"
-          className="mb-4 leter-spacing-1 text-5xl font-bold text-center"
-        >
-          About Us
-        </h1>
-        <h2 className="mb-8 text-center text-xl w-50">
-          We are not just a team - we are a community of athletes from all
-          corners of the world, united by a shared love for endurance sports and
-          become healthier people.
-        </h2>
-
-        <div className="container mx-auto mb-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div className="animate-in slide-in-from-left duration-1000">
-            <h2 className="mb-4 text-3xl font-bold">Who are we?</h2>
-            <h3 className="mb-4 text-lg">
-              We are a community bonded by a passion for endurance sports and a
-              presuit of living a healthy life.
-            </h3>
-            <p className="mb-6">
-              NRC inspired by the Latin words "Natantes," "Revolutio," and
-              "Currit," embodies our commitment to fostering a culture of
-              well-rounded well-being through triathlon, running, swimming, and
-              cycling. We're a bonded by a passion for endurance sports and a
-              commitment to holistic well-being. We embody inclusivity,
-              dedication, and the belief that everyone, regardless of
-              experience, has a place in our family.
-            </p>
-          </div>
-
-          <Image
-            width={500}
-            height={600}
-            src={`${
-              process.env.NEXT_PUBLIC_BASE_URL ?? ""
-            }/image/about-us.webp`}
-            className="animate-in slide-in-from-right duration-1000 mb-6 w-full rounded-lg shadow-lg dark:shadow-black/20"
-            alt=""
-          />
-        </div>
-
-        <h2 className="mb-4 text-3xl font-bold">What we offer</h2>
-
-        <ul
-          className={`mb-16 font-normal list-image-[url(/image/checkmark.svg)] ml-4`}
-        >
-          {OFFERS.map((item, index) => (
-            <li className="mb-4 pl-2" key={index}>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="container mx-auto mb-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <Image
-            width={500}
-            height={600}
-            src={`${
-              process.env.NEXT_PUBLIC_BASE_URL ?? ""
-            }/image/ksu-running-min.webp`}
-            className="mb-6 w-full rounded-lg shadow-lg dark:shadow-black/20"
-            alt=""
-          />
-          <div>
-            <h2 className="mb-4 text-3xl font-bold">Our Mission</h2>
-            <h3 className="mb-4 text-lg">
-              At the heart of the International Ventro Cycling Coaching is our
-              mission to empower individuals, regardless of their sporting
-              background, to lead healthier lives, one step at a time.
-            </h3>
-            <p className="mb-6">
-              At NRC, we're not just a team; we're a community of athletes from
-              all corners of the globe, united by a shared love for endurance
-              sports. Our mission is to inspire, support, and empower
-              individuals to achieve their athletic goals, no matter how big or
-              small.
-            </p>
-          </div>
-        </div>
-
-        <h2 className="mb-4 text-3xl font-bold">Why Choose NRC?</h2>
-
-        <ul
-          className={`mb-16 font-normal list-image-[url(/image/checkmark.svg)] ml-4`}
-        >
-          {CHOICE.map((item, index) => (
-            <li className="mb-4 pl-2" key={index}>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <p className="mb-6">
-          Get started your journey to a healthier, more active life.
-          International Ventro Cycling Coaching is your partner in making
-          fitness a sustainable part of your daily routine. Whether you're a
-          seasoned athlete or someone taking their first steps toward a more
-          active lifestyle, we're here to help you achieve your goals.
-        </p>
-        <p>
-          Ready to embark on this journey with us? the International Ventro
-          Coaching and take the first step toward a healthier, more active you.
-        </p>
-      </section>
-      <Prices />
-    </>
-  );
-};

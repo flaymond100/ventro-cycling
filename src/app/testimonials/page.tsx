@@ -1,16 +1,196 @@
 "use client";
 
-// components
 import { Navbar, Footer } from "@/components";
-
-// sections
 import Faq from "../faq";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { AboutMe } from "@/components/about-me";
 
-export default function PricingPage() {
+// ── Tokens ────────────────────────────────────────────────────────────────
+const T = {
+  ink: "#0B0D10",
+  char: "#14181D",
+  bone: "#F4F4F2",
+  mist: "#E4E4DE",
+  lime: "#D9FF00",
+  dim: "rgba(244,244,242,0.55)",
+  hair: "rgba(244,244,242,0.14)",
+};
+
+// ── Motion ────────────────────────────────────────────────────────────────
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+};
+const rise = {
+  hidden: { y: 28, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 0.65, ease: [0.2, 0.7, 0.2, 1] } },
+};
+
+// ── Data ──────────────────────────────────────────────────────────────────
+const TESTIMONIALS = [
+  {
+    name: "John",
+    photo:
+      "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Fjohn.jpg?alt=media&token=c19d91ec-3ce2-4a59-8f01-d01e8225ec6e",
+    quotes: [
+      "I started training with Kosta about a year ago, and it's been a game changer. I didn't have much cycling experience as I had just started training on Zwift, and wanted to get better at Zwift racing. With Kosta's training, my Zwift racing score went from 145 to almost 300 in 6 months and was getting on the podium in C division.",
+      "My cycling journey has transformed, with my FTP increasing from 160 to 255 watts. Kosta's dedication to my progress, weekly check-ins, and personalized plans have made a world of difference. I would highly recommend to anyone who is looking for a coach. He's the man!",
+    ],
+  },
+  {
+    name: "Olly",
+    photo:
+      "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Folly.jpeg?alt=media&token=b49589fd-d0d4-4f9d-b196-1258da30d361",
+    quotes: [
+      "Working with Kosta has been a game-changer for my cycling. His structured training plans gave me the focus and consistency I needed—not only did I increase my FTP, but I also achieved one of my biggest goals: winning a Zwift Racing League race.",
+      "Kosta guided me to become the best version of myself on the bike. He delivered everything he promised and often went above and beyond. I can't recommend him highly enough—if you're serious about improving, Kosta is the coach you want in your corner.",
+    ],
+  },
+  {
+    name: "Amy",
+    photo:
+      "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2FWhatsApp%20Image%202025-08-13%20at%2011.00.27_compressed.webp?alt=media&token=04369684-fe48-40b8-9823-c9ca19a27398",
+    quotes: [
+      "Going into my first season of racing in the women's Bundesliga this year, I was looking for support not just for developing my power, but also for racing strategies, positioning and tactics, nutrition, and recovery.",
+      "I have really appreciated the high level of personalised support that Kostiantyn provides. I am super excited for the next season!",
+    ],
+  },
+  {
+    name: "Mark",
+    photo:
+      "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Fphoto_2023-05-03_11-34-01%20(2).jpg?alt=media&token=7c22585c-89a5-4fe9-b7a4-8a2e4a6e49fd",
+    quotes: [
+      "When I started working with Kosta, my main goal was to build the strength and endurance to take on long, challenging races like a Gran Fondo. Kosta changed everything. His structured plans gave me clarity and purpose.",
+      "Over time, my FTP jumped by more than 40 watts, and I became smarter with how I train, race, and recover. One of my proudest moments was riding the Gran Fondo in Austria in 2025. I feel fitter, faster, and more confident than ever on the bike.",
+    ],
+  },
+];
+
+const SCRIM = `linear-gradient(to top, rgba(11,13,16,0.92) 0%, rgba(11,13,16,0.55) 55%, rgba(11,13,16,0.2) 100%)`;
+
+function TestimonialCard({
+  name,
+  photo,
+  quotes,
+}: (typeof TESTIMONIALS)[number]) {
+  return (
+    <motion.article
+      variants={rise}
+      className="relative overflow-hidden"
+      style={{ border: `1px solid ${T.hair}` }}
+    >
+      {/* Background photo + scrim */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url("${photo}")` }}
+        aria-hidden
+      />
+      <div className="absolute inset-0" style={{ background: SCRIM }} aria-hidden />
+
+      {/* Content */}
+      <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end min-h-[480px]">
+        <blockquote className="mb-6">
+          {quotes.map((q, i) => (
+            <p
+              key={i}
+              className="mb-3 text-sm leading-relaxed md:text-base"
+              style={{ color: T.mist }}
+            >
+              {q}
+            </p>
+          ))}
+        </blockquote>
+        <div className="flex items-center gap-3" style={{ borderTop: `1px solid ${T.hair}`, paddingTop: "1rem" }}>
+          <span
+            className="font-mono uppercase"
+            style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}
+          >
+            ◉
+          </span>
+          <span className="font-bold text-lg" style={{ color: T.bone }}>
+            {name}
+          </span>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+const Testimonials = () => (
+  <section
+    className="pt-32 px-6 pb-24 md:px-12"
+    style={{ background: T.ink, color: T.bone }}
+  >
+    <div className="mx-auto max-w-6xl">
+      {/* Eyebrow */}
+      <p
+        className="font-mono uppercase mb-4"
+        style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}
+      >
+        ◎ Athlete stories
+      </p>
+
+      {/* Headline */}
+      <h1
+        className="font-extrabold uppercase mb-14"
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: "clamp(40px, 6vw, 80px)",
+          lineHeight: 0.92,
+          letterSpacing: "-0.04em",
+          color: T.bone,
+        }}
+      >
+        Real riders.{" "}
+        <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
+          Real results.
+        </span>
+      </h1>
+
+      {/* Grid */}
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={container}
+        className="grid grid-cols-1 gap-4 md:grid-cols-2"
+      >
+        {TESTIMONIALS.map((t) => (
+          <TestimonialCard key={t.name} {...t} />
+        ))}
+      </motion.div>
+
+      {/* Bottom CTA */}
+      <div className="mt-16 flex flex-col items-start gap-4" style={{ borderTop: `1px solid ${T.hair}`, paddingTop: "2.5rem" }}>
+        <p className="text-base" style={{ color: T.mist }}>
+          Ready to start your own journey?
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/plans-and-pricing">
+            <button
+              className="group inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
+              style={{ background: T.lime, color: T.ink }}
+            >
+              See Plans
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </button>
+          </Link>
+          <Link href="/free-4-week-ftp-builder-plan">
+            <button
+              className="group inline-flex items-center gap-2 px-5 py-4 font-medium text-sm"
+              style={{ background: "transparent", color: T.bone, border: `1px solid ${T.hair}` }}
+            >
+              Free 4-Week Plan →
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default function TestimonialsPage() {
   return (
     <>
       <Navbar />
@@ -21,259 +201,3 @@ export default function PricingPage() {
     </>
   );
 }
-
-const Testimonials = () => {
-  return (
-    <section
-      className="pt-40 mb-10 md:pl-16 md:pr-16  bg-cover bg-center bg-no-repeat  items-center relative"
-      style={{
-        backgroundColor: "#f2f3f4",
-      }}
-    >
-      {" "}
-      <div className="container mx-auto px-4">
-        <div className="px-8 container mx-auto text-center">
-          <h1
-            color="blue-gray"
-            className="mb-4 leter-spacing-1 text-5xl font-bold"
-          >
-            Testimonials
-          </h1>
-        </div>
-        <div className="grid mb-8 lg:mb-12 lg:grid-cols-2 gap-8">
-          <motion.figure
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="flex flex-col justify-center items-center p-8 text-center border-b border-gray-200 md:p-12 lg:border-r dark:border-gray-700 relative overflow-hidden"
-            style={{
-              backgroundImage:
-                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Fjohn.jpg?alt=media&token=c19d91ec-3ce2-4a59-8f01-d01e8225ec6e")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-65 z-10"></div>
-            <div className="relative z-20">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-white">
-                <p className="my-4 text-white">
-                  I started training with Kosta about a year ago, and it’s been
-                  a game changer. I didn’t have much cycling experience as I
-                  hard just started training on Zwift, and wanted to get better
-                  at Zwift racing. With Kosta training, my Zwift racing score
-                  when from 145 to almost 300 in 6 months and was getting on the
-                  podium in C division.
-                </p>
-                <p className="my-4 text-white">
-                  From the moment I signed up, Kosta’s support has been next
-                  level. Whether it’s training advice, nutrition tips, or bike
-                  queries. My schedule is constantly changing with my regular
-                  life commitments, which causes lots of scheduling changing,
-                  Kosta always tailors my training no matter how many times I
-                  need to move scheduled training around!
-                </p>
-                <p className="my-4 text-white">
-                  My cycling journey has transformed, with my FTP increasing
-                  from 160 to 255 watts. Kosta’s dedication to my progress,
-                  weekly check-ins, and personalized plans have made a world of
-                  difference. It’s been one of my best decisions, and I couldn’t
-                  be happier with this incredible coaching experience. I would
-                  highly recommend to anyone who is looking for a coach. He’s
-                  the man!
-                </p>
-              </blockquote>
-              <div className="flex justify-center items-center space-x-3">
-                <div className="space-y-0.5 text-4xl font-medium text-white text-left">
-                  <div>John</div>
-                </div>
-              </div>
-            </div>
-          </motion.figure>
-          <motion.figure
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="flex flex-col justify-center items-center p-8 text-center border-b border-gray-200 md:p-12 dark:border-gray-700 relative overflow-hidden"
-            style={{
-              backgroundImage:
-                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Folly.jpeg?alt=media&token=b49589fd-d0d4-4f9d-b196-1258da30d361")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-            <div className="relative z-20">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-white">
-                <p className="my-4 text-white">
-                  Working with Kosta has been a game-changer for my cycling.
-                  He’s incredibly knowledgeable, approachable, and always brings
-                  positive energy to every session. His structured training
-                  plans gave me the focus and consistency I needed—not only did
-                  I increase my FTP, but I also achieved one of my biggest
-                  goals: winning a Zwift Racing League race.
-                </p>
-                <p className="my-4 text-white">
-                  Kosta guided me to become the best version of myself on the
-                  bike. He delivered everything he promised and often went above
-                  and beyond, always communicating clearly and supporting me
-                  through every phase of training. I can’t recommend him highly
-                  enough—if you’re serious about improving, Kosta is the coach
-                  you want in your corner.
-                </p>
-              </blockquote>
-              <div className="flex justify-center items-center space-x-3">
-                <div className="space-y-0.5 text-4xl font-medium text-white text-left">
-                  <div>Olly</div>
-                </div>
-              </div>
-            </div>
-          </motion.figure>
-          <motion.figure
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex flex-col justify-center items-center p-8 text-center border-b border-gray-200 md:p-12 dark:border-gray-700 relative overflow-hidden"
-            style={{
-              backgroundImage:
-                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2FWhatsApp%20Image%202025-08-13%20at%2011.00.27_compressed.webp?alt=media&token=04369684-fe48-40b8-9823-c9ca19a27398")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-            <div className="relative z-20">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-white">
-                <p className="my-4 text-white">
-                  Going into my first season of racing in the women’s Bundesliga
-                  this year, I was looking for some serious support in helping
-                  prepare me for the races ahead. Not only in terms of
-                  developing my power on the bike, but also for discussing
-                  racing strategies, positioning and tactics, nutrition, and
-                  recovery.
-                </p>
-                <p className="my-4 text-white">
-                  It was also important for me to understand the purpose of my
-                  different sessions, their key targets and how I should fuel
-                  them, and it has been great working with a coach who very
-                  openly discusses this with me and answers any questions I
-                  have.
-                </p>
-                <p className="my-4 text-white">
-                  I have really appreciated the high level of personalised
-                  support that Kostiantyn provides, and this is something I have
-                  both seen and felt the benefits of massively in my training
-                  and performance. I am super excited for the next season!
-                </p>
-              </blockquote>
-              <div className="flex justify-center items-center space-x-3">
-                <div className="space-y-0.5 text-4xl font-medium text-white text-left">
-                  <div>Amy</div>
-                </div>
-              </div>
-            </div>
-          </motion.figure>
-          <motion.figure
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex flex-col justify-center items-center p-8 text-center border-b border-gray-200 md:p-12 dark:border-gray-700 relative overflow-hidden"
-            style={{
-              backgroundImage:
-                'url("https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2Fphoto_2023-05-03_11-34-01%20(2).jpg?alt=media&token=7c22585c-89a5-4fe9-b7a4-8a2e4a6e49fd")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-            <div className="relative z-20">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-white">
-                <p className="my-4 text-white">
-                  When I started working with Kosta, my main goal was to build
-                  the strength and endurance to take on long, challenging races
-                  like a Gran Fondo. Up until then, I was training on my own,
-                  riding a lot of kilometers but never really improving in the
-                  way I wanted.
-                </p>
-                <p className="my-4 text-white">
-                  Kosta changed everything. His structured plans gave me clarity
-                  and purpose. Every session had a reason behind it, and he
-                  always explained what we were targeting and why. Over time, my
-                  FTP jumped by more than 40 watts, but just as importantly, I
-                  became smarter with how I train, race, and recover.
-                </p>
-                <p className="my-4 text-white">
-                  One of my proudest moments was riding the Gran Fondo in
-                  Austria in 2025. It had always been on my bucket list, but I
-                  honestly never thought I could keep up with the first group at
-                  a competitive pace.
-                </p>
-                <p className="my-4 text-white">
-                  Kosta doesn’t just hand you a plan—he adapts it to your life,
-                  checks in regularly, and makes sure you’re progressing in the
-                  right direction. For me, this has been a complete
-                  transformation. I feel fitter, faster, and more confident than
-                  ever on the bike, and I can’t wait to see what’s next.
-                </p>
-              </blockquote>
-              <div className="flex justify-center items-center space-x-3">
-                <div className="space-y-0.5 text-4xl font-medium text-white text-left">
-                  <div>Mark</div>
-                </div>
-              </div>
-            </div>
-          </motion.figure>
-        </div>
-      </div>
-      <div
-        style={{
-          color: "#444759",
-        }}
-        className="flex flex-col items-center justify-center text-center"
-      >
-        <motion.p
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="font-normal text-xl max-w-3xl hidden md:block"
-        >
-          We are offering different types of training plans for cyclists of all
-          levels. You can start with a completely free 4-Week FTP Builder Plan
-          and make an upgrade to a paid plan when you're ready.
-          <div className="flex justify-center">
-            <Link href="/free-4-week-ftp-builder-plan">
-              <motion.button
-                className="mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition flex items-center gap-2 shadow-lg"
-                initial={{ scale: 1, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                Get Free 4-Week Plan <ExternalLink size={18} />
-              </motion.button>{" "}
-            </Link>
-          </div>
-          <br />
-          If you are ready to jump directly into 1:1 coaching, we have 3
-          distinct offers to choose from, each designed to meet your specific
-          needs. Every option is fully personalized to help you unlock your
-          potential and achieve your best performance.
-          <div className="flex justify-center">
-            <Link href="/free-4-week-ftp-builder-plan">
-              <motion.button
-                className="mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition flex items-center gap-2 shadow-lg"
-                initial={{ scale: 1, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                See Plans <ArrowRight size={18} />
-              </motion.button>{" "}
-            </Link>
-          </div>
-        </motion.p>
-      </div>
-    </section>
-  );
-};

@@ -17,9 +17,24 @@ const config: Config = withMT({
     },
     extend: {
       fontFamily: {
+        sans: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
         rubik: ["var(--font-rubik)"],
+        "space-grotesk": ["var(--font-space-grotesk)", "sans-serif"],
+        "jetbrains-mono": ["var(--font-jetbrains-mono)", "monospace"],
       },
       colors: {
+        ventro: {
+          ink: "#0B0D10",
+          char: "#14181D",
+          steel: "#2A3039",
+          fog: "#3A424D",
+          bone: "#F4F4F2",
+          mist: "#E4E4DE",
+          lime: "#D9FF00",
+          dim: "rgba(244,244,242,0.55)",
+          hair: "rgba(244,244,242,0.14)",
+        },
         "custom-orange": "rgb(236 208 111)",
       },
       transitionDuration: {
