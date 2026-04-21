@@ -128,7 +128,7 @@ export function Faq() {
             return (
               <motion.div
                 key={idx}
-                variants={rise}
+                variants={rise as any}
                 style={{ borderBottom: `1px solid ${T.hair}` }}
               >
                 <button

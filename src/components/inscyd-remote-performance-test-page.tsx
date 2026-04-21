@@ -239,7 +239,7 @@ export default function InscydRemotePerformanceTestPage() {
                 return (
                   <motion.div
                     key={marker.label}
-                    variants={rise}
+                    variants={rise as any}
                     className="p-6"
                     style={{ background: T.char, border: `1px solid ${T.hair}` }}
                   >
@@ -305,7 +305,7 @@ export default function InscydRemotePerformanceTestPage() {
               style={{ border: `1px solid ${T.hair}` }}
             >
               {howItWorks.map((step, i) => (
-                <motion.div key={step.title} variants={rise} className="p-5" style={{ background: T.char, border: `1px solid ${T.hair}` }}>
+                <motion.div key={step.title} variants={rise as any} className="p-5" style={{ background: T.char, border: `1px solid ${T.hair}` }}>
                   <span className="font-mono block mb-3" style={{ fontSize: 11, letterSpacing: "0.14em", color: T.lime }}>
                     {String(i + 1).padStart(2, "0")}
                   </span>

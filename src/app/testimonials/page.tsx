@@ -77,7 +77,7 @@ function TestimonialCard({
 }: (typeof TESTIMONIALS)[number]) {
   return (
     <motion.article
-      variants={rise}
+      variants={rise as any}
       className="relative overflow-hidden"
       style={{ border: `1px solid ${T.hair}` }}
     >

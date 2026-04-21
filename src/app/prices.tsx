@@ -132,7 +132,7 @@ export function Prices() {
             {STEPS.map(({ code, title, body }) => (
               <motion.div
                 key={code}
-                variants={rise}
+                variants={rise as any}
                 className="p-6 md:p-8"
                 style={{ background: T.char, borderRight: `1px solid ${T.hair}` }}
               >

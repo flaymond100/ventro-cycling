@@ -37,7 +37,7 @@ export const AboutMe = () => (
     >
       {/* Photo */}
       <motion.div
-        variants={rise}
+        variants={rise as any}
         className="overflow-hidden"
         style={{ border: `1px solid ${T.hair}` }}
       >
@@ -52,7 +52,7 @@ export const AboutMe = () => (
       </motion.div>
 
       {/* Copy */}
-      <motion.div variants={rise}>
+      <motion.div variants={rise as any}>
         <p
           className="font-mono uppercase mb-4"
           style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}
