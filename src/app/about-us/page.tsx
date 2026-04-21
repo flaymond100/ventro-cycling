@@ -112,7 +112,7 @@ const AboutUs = () => (
         variants={container}
         className="grid grid-cols-1 gap-12 md:grid-cols-2 mb-20"
       >
-        <motion.div variants={rise}>
+        <motion.div variants={rise as any}>
           <h2
             className="font-bold uppercase mb-5"
             style={{
@@ -141,7 +141,7 @@ const AboutUs = () => (
           </Link>
         </motion.div>
 
-        <motion.div variants={rise}>
+        <motion.div variants={rise as any}>
           <h2
             className="font-bold uppercase mb-5"
             style={{
@@ -185,7 +185,7 @@ const AboutUs = () => (
         {BELIEFS.map(({ title, body }, i) => (
           <motion.div
             key={i}
-            variants={rise}
+            variants={rise as any}
             className="p-8"
             style={{
               background: T.char,
