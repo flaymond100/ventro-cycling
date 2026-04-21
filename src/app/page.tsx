@@ -15,8 +15,6 @@ export default function Campaign() {
   return (
     <>
       <Home />
-      <OurServices />
-      <Plans />
       <Faq />
       <Footer />
     </>
