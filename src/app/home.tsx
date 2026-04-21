@@ -40,7 +40,7 @@ const tokens = {
 
 // ── Copy ──────────────────────────────────────────────────────────────────
 const COPY = {
-  eyebrow: "◉ Season 26 · Intake open",
+  eyebrow: "◉ Journey unclocked",
   h1a: "Cycling",
   h1b: "coaching",
   h1c: "built to last.",
