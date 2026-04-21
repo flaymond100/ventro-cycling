@@ -26,7 +26,7 @@ const T = {
 const STEPS = [
   {
     code: "01",
-    title: "Click "Plan Description"",
+    title: "Click 'Plan Description'",
     body: "Review the full 4-Week FTP Builder plan on TrainingPeaks before you claim it.",
   },
   {
@@ -210,7 +210,7 @@ const Free4WeekPlan = () => {
             {STEPS.map(({ code, title, body }) => (
               <motion.div
                 key={code}
-                variants={rise}
+                variants={rise as any}
                 className="p-6 md:p-8"
                 style={{ background: T.char, borderRight: `1px solid ${T.hair}` }}
               >
