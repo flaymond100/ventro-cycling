@@ -21,27 +21,35 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Ventro Cycling Coaching | Personal Online Cycling Coach & Training Plans",
+  metadataBase: new URL("https://www.ventrocycling.com"),
+  title: {
+    default: "Personal Online Cycling Coach & Training Plans | Ventro",
+    template: "%s | Ventro Cycling",
+  },
   description:
-    "Personal cycling coaching and power-based training plans for road cyclists, triathletes, and endurance athletes. Work 1:1 with an online cycling coach to increase FTP, build endurance, and prepare for races with structured, data-driven workouts and regular feedback.",
+    "Work 1:1 with an online cycling coach. Power-based plans for cyclists, triathletes and endurance athletes to raise FTP, build endurance and race faster.",
   openGraph: {
     url: "https://www.ventrocycling.com/",
-    title:
-      "Ventro Cycling Coaching | Personal Online Cycling Coach & Training Plans",
+    title: "Personal Online Cycling Coach & Training Plans | Ventro Cycling",
     description:
-      "Personal cycling coaching and power-based training plans for road cyclists, triathletes, and endurance athletes. Work 1:1 with an online cycling coach to increase FTP, build endurance, and prepare for races with structured, data-driven workouts and regular feedback.",
+      "Work 1:1 with an online cycling coach. Power-based plans for cyclists, triathletes and endurance athletes to raise FTP, build endurance and race faster.",
     images: [
       {
         url: "https://firebasestorage.googleapis.com/v0/b/nrc-team.appspot.com/o/files%2Fventro-coaching%2F3.png?alt=media&token=bb7dcbb4-5fb5-4c8a-947d-4f8a7eda6f1e",
         width: 800,
         height: 600,
-        alt: "Ventro Cycling Coaching Logo",
+        alt: "Ventro Cycling Coaching",
       },
     ],
     type: "website",
     locale: "en_US",
     siteName: "Ventro Cycling Coaching",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Online Cycling Coach & Training Plans | Ventro Cycling",
+    description:
+      "Work 1:1 with an online cycling coach. Power-based training plans to raise FTP, build endurance and race faster.",
   },
   alternates: {
     canonical: `https://www.ventrocycling.com/`,

@@ -3,9 +3,14 @@ import type { Metadata } from "next";
 import { Layout } from "@/components";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About & Head Coach Kostiantyn Garbar",
   description:
-    "Learn about Ventro Cycling Coaching: Expert cycling coaches helping athletes worldwide improve performance through science-based training, power analysis, and personalized coaching plans.",
+    "Meet Kostiantyn Garbar, founder and head coach at Ventro. Data-driven cycling coaching built on power, FTP and 10+ years of endurance-sport experience.",
+  openGraph: {
+    title: "About & Head Coach Kostiantyn Garbar | Ventro Cycling",
+    description:
+      "Meet Kostiantyn Garbar, founder and head coach at Ventro. Data-driven cycling coaching built on power, FTP and 10+ years of endurance-sport experience.",
+  },
   alternates: {
     canonical: `https://www.ventrocycling.com/about-us/`,
   },

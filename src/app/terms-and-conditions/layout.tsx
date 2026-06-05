@@ -3,9 +3,14 @@ import type { Metadata } from "next";
 import { Layout } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions",
+  title: "Terms & Conditions",
   description:
-    "Terms and conditions for Ventro Cycling Coaching services. Review our coaching agreement, training plan policies, and service terms before signing up.",
+    "Terms and conditions for Ventro Cycling Coaching: coaching agreement, training-plan policies, payments, health responsibility and privacy.",
+  openGraph: {
+    title: "Terms & Conditions | Ventro Cycling",
+    description:
+      "Terms and conditions for Ventro Cycling Coaching: coaching agreement, training-plan policies, payments, health responsibility and privacy.",
+  },
   alternates: {
     canonical: `https://www.ventrocycling.com/terms-and-conditions/`,
   },

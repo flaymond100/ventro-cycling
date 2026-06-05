@@ -3,9 +3,14 @@ import type { Metadata } from "next";
 import { Layout } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact & Free Consultation",
   description:
-    "Contact Ventro Cycling Coaching for personalized cycling training plans, FTP improvement programs, and expert coaching. Get started with a free consultation today.",
+    "Get in touch with Ventro Cycling Coaching. Book a free consultation or message us about 1:1 coaching, training plans and INSCYD performance testing.",
+  openGraph: {
+    title: "Contact & Free Consultation | Ventro Cycling",
+    description:
+      "Get in touch with Ventro Cycling Coaching. Book a free consultation or message us about 1:1 coaching, training plans and INSCYD performance testing.",
+  },
   alternates: {
     canonical: `https://www.ventrocycling.com/contact/`,
   },

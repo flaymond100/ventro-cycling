@@ -5,7 +5,12 @@ import { Layout } from "@/components";
 export const metadata: Metadata = {
   title: "Free 4-Week FTP Builder Plan",
   description:
-    "Get your free 4-week FTP builder training plan from Ventro Cycling Coaching. Structured workouts to increase Functional Threshold Power, improve cycling fitness, and build endurance. Download now.",
+    "Download a free 4-week FTP builder training plan. Structured, power-based cycling workouts to raise your Functional Threshold Power and build endurance.",
+  openGraph: {
+    title: "Free 4-Week FTP Builder Plan | Ventro Cycling",
+    description:
+      "Download a free 4-week FTP builder training plan. Structured, power-based cycling workouts to raise your Functional Threshold Power and build endurance.",
+  },
   alternates: {
     canonical: `https://www.ventrocycling.com/free-4-week-ftp-builder-plan/`,
   },

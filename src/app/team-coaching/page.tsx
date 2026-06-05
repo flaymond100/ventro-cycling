@@ -27,9 +27,9 @@ function TeamCoachingIntro() {
             color: T.bone,
           }}
         >
-          Team{" "}
+          Team Cycling{" "}
           <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
-            consultation.
+            Coaching.
           </span>
         </h1>
         <p className="max-w-2xl text-base leading-relaxed" style={{ color: T.mist }}>

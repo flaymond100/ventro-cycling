@@ -3,9 +3,14 @@ import type { Metadata } from "next";
 import { Layout } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Plans and Pricing",
+  title: "Cycling Coaching Plans & Pricing",
   description:
-    "Cycling coaching plans and pricing for all levels. Choose from monthly coaching, training plans, or consultations. Personalized coaching to improve FTP, endurance, and race performance.",
+    "Cycling coaching plans and pricing for every level. 1:1 power-based coaching, training-plan options and consultations to raise your FTP and race performance.",
+  openGraph: {
+    title: "Cycling Coaching Plans & Pricing | Ventro Cycling",
+    description:
+      "Cycling coaching plans and pricing for every level. 1:1 power-based coaching, training-plan options and consultations to raise your FTP and race performance.",
+  },
   alternates: {
     canonical: `https://www.ventrocycling.com/plans-and-pricing/`,
   },

@@ -78,9 +78,9 @@ export function Prices() {
             color: T.bone,
           }}
         >
-          Plans &{" "}
+          Cycling Coaching Plans &{" "}
           <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
-            pricing.
+            Pricing.
           </span>
         </motion.h1>
 

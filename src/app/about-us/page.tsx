@@ -80,7 +80,7 @@ const AboutUs = () => (
           color: T.bone,
         }}
       >
-        Ventro
+        About Ventro{" "}
         <br />
         Cycling{" "}
         <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>

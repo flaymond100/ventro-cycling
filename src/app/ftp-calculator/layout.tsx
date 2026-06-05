@@ -3,9 +3,14 @@ import type { Metadata } from "next";
 import { Layout } from "@/components";
 
 export const metadata: Metadata = {
-  title: "FTP Calculator",
+  title: "FTP Calculator — Power & W/kg",
   description:
-    "Free cycling FTP calculator: Calculate your Functional Threshold Power (FTP) and watts per kilogram (W/kg). Enter your 20-minute average power and weight to determine your cycling fitness level and training zones.",
+    "Free FTP calculator for cyclists. Enter your best 20-minute power and weight to get your Functional Threshold Power, watts per kilogram and training zones.",
+  openGraph: {
+    title: "FTP Calculator — Power & W/kg | Ventro Cycling",
+    description:
+      "Free FTP calculator for cyclists. Enter your best 20-minute power and weight to get your Functional Threshold Power, watts per kilogram and training zones.",
+  },
   alternates: {
     canonical: `https://www.ventrocycling.com/ftp-calculator/`,
   },
