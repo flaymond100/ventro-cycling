@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Learn about Ventro Cycling Coaching: Expert cycling coaches helping athletes worldwide improve performance through science-based training, power analysis, and personalized coaching plans.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/about-us`,
+    canonical: `https://www.ventrocycling.com/about-us/`,
   },
 };
 

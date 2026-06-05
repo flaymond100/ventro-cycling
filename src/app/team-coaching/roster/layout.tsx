@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Meet the Ventro Cycling Coaching team roster: Competitive cyclists and triathletes from around the world training with our expert coaching programs.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/cycling-team/roster`,
+    canonical: `https://www.ventrocycling.com/team-coaching/roster/`,
   },
 };
 

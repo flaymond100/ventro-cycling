@@ -26,7 +26,7 @@ const TERMS = [
   },
   {
     title: "4. Termination of Contract",
-    body: "You may terminate your contract with us at any time by providing one month notice. Termination requests should be sent to info@nrc-team.com.",
+    body: "You may terminate your contract with us at any time by providing one month notice. Termination requests should be sent to contact@ventrocycling.com.",
   },
   {
     title: "5. Health and Responsibility",

@@ -23,21 +23,21 @@ const PROGRAMS = [
     title: "Running Trainings",
     copy: "Elevate your running performance with personalized training plans tailored to your fitness level and goals.",
     image: "/image/8716_20230423_144655_274310037_original.webp",
-    href: "/trainings/running-trainings",
+    href: "/plans-and-pricing",
   },
   {
     id: "cycling",
     title: "Cycling Trainings",
     copy: "Discover cycling with structured plans for beginners and experienced athletes focused on measurable progress.",
     image: "/image/France_Downhill_Kosta.webp",
-    href: "/trainings/cycling-trainings",
+    href: "/plans-and-pricing",
   },
   {
     id: "triathlon",
     title: "Triathlon Trainings",
     copy: "Build confidence across swim, bike, and run with personalized triathlon plans and race-specific preparation.",
     image: "/image/tri_1.webp",
-    href: "/trainings/triathlon-trainings",
+    href: "/plans-and-pricing",
   },
 ];
 
@@ -176,7 +176,7 @@ export const TimelineWithIcon = () => {
           <ArrowDown size={16} />
         </div>
         {!form && (
-          <Link aria-label="sign-up-form" href="/personal-coaching">
+          <Link aria-label="sign-up-form" href="/plans-and-pricing">
             <button
               className="group inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
               style={{ background: T.lime, color: T.ink }}

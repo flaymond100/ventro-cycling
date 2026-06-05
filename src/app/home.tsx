@@ -157,7 +157,7 @@ function PrimaryCta() {
 
 function SecondaryCta() {
   return (
-    <Link href="/about">
+    <Link href="/about-us">
       <motion.button
         variants={rise as any}
         className="inline-flex items-center gap-2 px-5 py-4 font-medium"

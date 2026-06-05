@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Terms and conditions for Ventro Cycling Coaching services. Review our coaching agreement, training plan policies, and service terms before signing up.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/terms-and-conditions`,
+    canonical: `https://www.ventrocycling.com/terms-and-conditions/`,
   },
 };
 

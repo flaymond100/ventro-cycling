@@ -11,7 +11,7 @@ export function ChooseType() {
         <Link
           aria-label="Read more about cycling trainings"
           style={{ zIndex: "1" }}
-          href="/trainings/cycling-trainings"
+          href="/plans-and-pricing"
           className="flip-card-1"
         >
           <Card

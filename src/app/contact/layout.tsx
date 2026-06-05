@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Contact Ventro Cycling Coaching for personalized cycling training plans, FTP improvement programs, and expert coaching. Get started with a free consultation today.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/contact-us`,
+    canonical: `https://www.ventrocycling.com/contact/`,
   },
 };
 

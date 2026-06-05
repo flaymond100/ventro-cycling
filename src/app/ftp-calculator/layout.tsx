@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Free cycling FTP calculator: Calculate your Functional Threshold Power (FTP) and watts per kilogram (W/kg). Enter your 20-minute average power and weight to determine your cycling fitness level and training zones.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/ftp-calculator`,
+    canonical: `https://www.ventrocycling.com/ftp-calculator/`,
   },
 };
 

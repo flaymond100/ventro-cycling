@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Cycling coaching plans and pricing for all levels. Choose from monthly coaching, training plans, or consultations. Personalized coaching to improve FTP, endurance, and race performance.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/plans-and-pricing/plans-and-pricing`,
+    canonical: `https://www.ventrocycling.com/plans-and-pricing/`,
   },
 };
 

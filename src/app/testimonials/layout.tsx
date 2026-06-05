@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Read success stories from cyclists and triathletes who improved their FTP, race performance, and endurance with Ventro Cycling Coaching. Real results from real athletes.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/testimonials`,
+    canonical: `https://www.ventrocycling.com/testimonials/`,
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Get your free 4-week FTP builder training plan from Ventro Cycling Coaching. Structured workouts to increase Functional Threshold Power, improve cycling fitness, and build endurance. Download now.",
   alternates: {
-    canonical: `https://www.ventrocycling.com/free-4-week-ftp-builder-plan`,
+    canonical: `https://www.ventrocycling.com/free-4-week-ftp-builder-plan/`,
   },
 };
 
