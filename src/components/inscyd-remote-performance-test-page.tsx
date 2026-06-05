@@ -26,7 +26,7 @@ const T = {
   hair: "rgba(244,244,242,0.14)",
 };
 
-const STRIPE_URL = "https://buy.stripe.com/7sY6oGfGL5JN4Il0S76sw06";
+const CONTACT_URL = "/contact";
 
 const markers = [
   { label: "VO2max", icon: HeartPulse },
@@ -64,16 +64,16 @@ const included = [
 
 const howItWorks = [
   {
-    title: "Buy the test",
-    text: "Complete payment through Stripe.",
+    title: "Ask for your price",
+    text: "Send a quick request through the contact form.",
   },
   {
-    title: "Receive your instructions",
-    text: "After payment, you receive an email with the protocol, execution guidelines, and submission instructions.",
+    title: "Receive your options",
+    text: "We reply with pricing details and the best setup for your goals.",
   },
   {
-    title: "Perform the test",
-    text: "Complete the protocol using your own equipment, ideally when rested and in good conditions.",
+    title: "Confirm and get instructions",
+    text: "Once confirmed, you receive the protocol, execution guidelines, and submission instructions.",
   },
   {
     title: "Send your files",
@@ -203,21 +203,16 @@ export default function InscydRemotePerformanceTestPage() {
           transition={{ delay: 0.25 }}
           className="mt-8 flex flex-wrap gap-3"
         >
-          <Link href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
+          <Link href={CONTACT_URL}>
             <button
               className="group inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
               style={{ background: T.lime, color: T.ink }}
             >
-              Buy INSCYD Remote Test
+              Request a quote
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </button>
           </Link>
-          <div className="px-5 py-4" style={{ border: `1px solid ${T.hair}`, color: T.bone }}>
-            <p className="font-mono uppercase" style={{ fontSize: 10.5, letterSpacing: "0.14em", color: T.dim }}>
-              Price
-            </p>
-            <p className="font-semibold mt-1">EUR 189</p>
-          </div>
+          
         </motion.div>
 
         <div className="mt-20 space-y-16">
@@ -384,12 +379,12 @@ export default function InscydRemotePerformanceTestPage() {
             <p className="mt-3 max-w-2xl text-base leading-relaxed" style={{ color: T.mist }}>
               Stop relying on one number. Build your training around your real metabolic profile.
             </p>
-            <Link href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
+            <Link href={CONTACT_URL}>
               <button
                 className="group mt-6 inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
                 style={{ background: T.lime, color: T.ink }}
               >
-                Buy the INSCYD Remote Performance Test
+                Ask for your INSCYD test price
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </button>
             </Link>
