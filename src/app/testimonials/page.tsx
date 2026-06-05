@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AboutMe } from "@/components/about-me";
+import { JsonLd } from "@/components/json-ld";
 
 // ── Tokens ────────────────────────────────────────────────────────────────
 const T = {
@@ -68,6 +69,16 @@ const TESTIMONIALS = [
   },
 ];
 
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@graph": TESTIMONIALS.map((t) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: t.name },
+    itemReviewed: { "@id": "https://www.ventrocycling.com/#organization" },
+    reviewBody: t.quotes.join(" "),
+  })),
+};
+
 const SCRIM = `linear-gradient(to top, rgba(11,13,16,0.92) 0%, rgba(11,13,16,0.55) 55%, rgba(11,13,16,0.2) 100%)`;
 
 function TestimonialCard({
@@ -124,6 +135,7 @@ const Testimonials = () => (
     style={{ background: T.ink, color: T.bone }}
   >
     <div className="mx-auto max-w-6xl">
+      <JsonLd data={reviewSchema} />
       {/* Eyebrow */}
       <p
         className="font-mono uppercase mb-4"

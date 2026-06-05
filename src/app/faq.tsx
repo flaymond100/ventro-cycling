@@ -15,7 +15,7 @@ const T = {
   hair: "rgba(244,244,242,0.14)",
 };
 
-const FAQS = [
+export const FAQS = [
   {
     title: "Are your training plans suitable for beginner cyclists?",
     desc: "Absolutely. Whether you're new to cycling or getting back into it, we create training plans that match your fitness level and goals. The focus is on gradual progression and sustainable performance gains.",
