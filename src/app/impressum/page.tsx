@@ -107,11 +107,9 @@ const Impressum = () => {
             <br />
             Ventro Cycling Coaching
             <br />
-            {/* TODO: Kosta to supply street + house number */}
-            [Straße und Hausnummer]
+            Gerichtsweg 7D
             <br />
-            {/* TODO: Kosta to supply postal code + city */}
-            [PLZ und Ort]
+            04103 Leipzig
             <br />
             Deutschland
           </div>
@@ -129,9 +127,6 @@ const Impressum = () => {
             Kontakt
           </h2>
           <div className="text-sm leading-relaxed" style={{ color: T.mist }}>
-            {/* TODO: Kosta to supply phone number */}
-            Telefon: [Telefonnummer]
-            <br />
             E-Mail: contact@ventrocycling.com
           </div>
         </div>
@@ -149,24 +144,6 @@ const Impressum = () => {
           </h2>
           <div className="text-sm leading-relaxed" style={{ color: T.mist }}>
             Kostiantyn Garbar (Anschrift wie oben)
-          </div>
-        </div>
-
-        {/* USt-IdNr */}
-        <div
-          className="pt-6 mb-12"
-          style={{ borderTop: `1px solid ${T.hair}` }}
-        >
-          <h2
-            className="font-semibold text-base mb-3"
-            style={{ color: T.bone }}
-          >
-            Umsatzsteuer-ID
-          </h2>
-          <div className="text-sm leading-relaxed" style={{ color: T.mist }}>
-            {/* TODO: Kosta to supply USt-IdNr, or confirm Kleinunternehmer nach § 19 UStG */}
-            [Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG, oder Hinweis
-            auf Kleinunternehmerregelung nach § 19 UStG]
           </div>
         </div>
 
