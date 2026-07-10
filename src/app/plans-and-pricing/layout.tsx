@@ -6,11 +6,11 @@ import { JsonLd } from "@/components/json-ld";
 export const metadata: Metadata = {
   title: "Cycling Coaching Plans & Pricing",
   description:
-    "1:1 power-based coaching for gran fondo, road-race and long-course athletes. Training plans and consultations to raise your FTP and race performance.",
+    "1:1 power-based cycling coaching. Core €150, Performance €250 with INSCYD metabolic testing included, PRO by application.",
   openGraph: {
     title: "Cycling Coaching Plans & Pricing | Ventro Cycling",
     description:
-      "1:1 power-based coaching for gran fondo, road-race and long-course athletes. Training plans and consultations to raise your FTP and race performance.",
+      "1:1 power-based cycling coaching. Core €150, Performance €250 with INSCYD metabolic testing included, PRO by application.",
   },
   alternates: {
     canonical: `https://www.ventrocycling.com/plans-and-pricing/`,

@@ -11,18 +11,22 @@ const T = {
   hair: "rgba(244,244,242,0.14)",
 };
 
+// TODO: Kosta / legal review — payment terms below were updated to reflect the
+// new Stripe monthly-subscription model (previously listed Lite/Premium/Deluxe
+// EUR 100/150/300 packages paid by bank transfer). Please confirm the trial,
+// payment, refund (14-day) and termination wording matches the new tiers.
 const TERMS = [
   {
-    title: "1. Service Description and Packages",
-    body: "We offer online training plans for triathlon, cycling, running, and swimming. We provide three packages: Lite Package (EUR 100), Premium Package (EUR 150), and Deluxe Package (EUR 300).",
+    title: "1. Service Description and Coaching Tiers",
+    body: "We offer online 1:1 cycling coaching in tiers — Core and Performance, billed as monthly subscriptions, and PRO, which is offered by application. The inclusions and current prices for each tier are shown on our Plans & Pricing page.",
   },
   {
-    title: "2. Free Trial Period",
-    body: "Your first 7 days of training are provided for free to allow you to evaluate our services. After the free trial period, you must pay for the selected package via bank transfer.",
+    title: "2. Free Plan",
+    body: "You can try our approach at no cost via the free 4-Week FTP Builder Plan before subscribing to a paid coaching tier.",
   },
   {
     title: "3. Payment",
-    body: "Payment for the selected package must be made via bank transfer. Payment details will be provided upon completion of your free trial period.",
+    body: "Paid coaching tiers are billed as recurring monthly subscriptions through our payment provider, Stripe. Payment details are entered securely at checkout, and the subscription renews monthly until cancelled.",
   },
   {
     title: "4. Termination of Contract",

@@ -328,6 +328,18 @@ const Free4WeekPlan = () => {
             </motion.button>
           </form>
         </div>
+
+        {/* Upsell to paid coaching */}
+        <div className="mt-16 pt-8" style={{ borderTop: `1px solid ${T.hair}` }}>
+          <Link
+            href="/plans-and-pricing"
+            className="group inline-flex items-center gap-2 font-semibold"
+            style={{ color: T.lime }}
+          >
+            Ready for real coaching? See plans
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
       </div>
     </section>
   );
