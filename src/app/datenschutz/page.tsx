@@ -15,12 +15,12 @@ const T = {
   Datenschutzerklärung (GDPR/DSGVO privacy policy).
   TODO: legal review before publish (baseline generated for review, not final).
 
-  ⚠️ CONSENT GAP — Google Analytics (src/app/layout.tsx, <GoogleAnalytics />)
-  currently loads on every page WITHOUT a consent banner. Section 9 below
-  describes the lawful consent-based state (Art. 6(1)(a) DSGVO + § 25 TDDDG).
-  Before this page is published, EITHER a consent mechanism must gate Analytics
-  and other non-essential third parties, OR Analytics must be disabled.
-  Do not publish this policy while Analytics fires without consent.
+  Consent: Google Analytics is gated behind an opt-in consent banner
+  (src/components/consent.tsx) — GA is not loaded until the visitor accepts,
+  matching Section 9 below (Art. 6(1)(a) DSGVO + § 25 TDDDG). Consent can be
+  revoked via the footer "Cookie settings" link.
+  Note: Stripe (js.stripe.com) and Firebase-Storage assets are treated as
+  service-necessary and still load on the pages that use them (see §7 / §11).
 */
 
 const SECTIONS = [
