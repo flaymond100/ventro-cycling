@@ -18,7 +18,7 @@ const T = {
 export const FAQS = [
   {
     title: "Are your training plans suitable for beginner cyclists?",
-    desc: "Absolutely. Whether you're new to cycling or getting back into it, we create training plans that match your fitness level and goals. The focus is on gradual progression and sustainable performance gains.",
+    desc: "Beginners are welcome — but only if you're committed to training with structure and data. This isn't a casual get-fit program: you'll need a power meter or smart trainer and the willingness to follow a plan consistently. If that's you, we'll build a solid base and progress you the right way. If you're after a generic, low-effort plan, we're not the right fit.",
   },
   {
     title: "I want to race at a high level, can your coaching help me get there?",
@@ -58,7 +58,7 @@ export const FAQS = [
   },
   {
     title: "Do I need a specific fitness level to start?",
-    desc: "Not at all. We coach cyclists of all backgrounds—from complete beginners to seasoned racers. Your current level just helps us set a realistic starting point for building fitness effectively.",
+    desc: "You don't need to be fast yet, but you do need to be serious. We work best with committed amateur racers and long-course athletes who train with power or heart rate and want real structure. Your current numbers just set a realistic starting point — the willingness to train with data is what matters.",
   },
 ];
 

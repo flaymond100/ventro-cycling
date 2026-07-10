@@ -48,12 +48,18 @@ const COPY = {
   body:
     "Coaching built on data you trust. We analyse power, heart rate, recovery and fatigue so every hour you give the bike comes back to you — as watts, as kilos, as results. No jargon. No guesswork.",
   signoff: "This is Ventro. Built to make you faster.",
+  human:
+    "Built by an engineer who races what you race — coached by Kosta Garbar, Gran Fondo World Championship participant.",
   cta: "See plans",
   ctaHref: "/plans-and-pricing",
   // Bottom meta strip — quick, quantified trust signals.
+  // TODO: Kosta confirm numbers — the previous "48 Athletes" / "312 Podiums"
+  // were unlabeled cumulative claims (UWG / unfair-competition risk). Restore a
+  // number only if it can be substantiated with a timeframe or athlete-results
+  // list, e.g. ["48", "Athletes coached since 2021"].
   meta: [
-    ["48", "Athletes"],
-    ["312", "Podiums"],
+    ["Capped", "Limited spots"],
+    ["Top-10", "Intl. races"],
     ["1:1", "Coaching"],
     ["14d", "Refund window"],
   ],
@@ -289,6 +295,14 @@ function Home() {
           style={{ color: tokens.bone, fontSize: 16 }}
         >
           {COPY.signoff}
+        </motion.p>
+
+        <motion.p
+          variants={rise as any}
+          className="mt-4 max-w-2xl leading-relaxed"
+          style={{ color: tokens.dim, fontSize: 15 }}
+        >
+          {COPY.human}
         </motion.p>
 
         <motion.div
