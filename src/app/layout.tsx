@@ -4,7 +4,7 @@ import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { Layout } from "@/components";
 import { Toaster } from "react-hot-toast";
 import Scroll from "@/components/scroll";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Consent } from "@/components/consent";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -143,8 +143,8 @@ export default function RootLayout({
           <Toaster position="top-right" />
           {children}
         </Layout>
+        <Consent />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID!} />
     </html>
   );
 }
