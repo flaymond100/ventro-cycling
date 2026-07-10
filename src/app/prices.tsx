@@ -316,7 +316,7 @@ export function Prices() {
         {/* Small print */}
         {/* TODO: Kosta confirm VAT/Kleinunternehmer wording */}
         <p className="mt-8 max-w-3xl text-xs leading-relaxed" style={{ color: T.dim }}>
-          All prices incl. VAT. Monthly subscription, cancel per Terms &amp; Conditions. NRC International Team members: ask about your team discount.
+          All prices incl. VAT. Monthly subscription, cancel per Terms &amp; Conditions.
         </p>
 
         {/* How it works */}
