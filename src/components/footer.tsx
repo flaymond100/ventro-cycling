@@ -121,6 +121,24 @@ export function Footer() {
                   Terms &amp; Conditions
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/impressum"
+                  className="font-mono uppercase text-[11px] tracking-[0.14em] transition-colors"
+                  style={{ color: T.dim }}
+                >
+                  Impressum
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/datenschutz"
+                  className="font-mono uppercase text-[11px] tracking-[0.14em] transition-colors"
+                  style={{ color: T.dim }}
+                >
+                  Datenschutz
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
