@@ -5,7 +5,7 @@ import Faq from "../faq";
 import { CalendlyWidget } from "@/components/widget";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 
 // ── Tokens ────────────────────────────────────────────────────────────────
 const T = {
@@ -20,23 +20,30 @@ const T = {
 };
 
 // ── Copy ──────────────────────────────────────────────────────────────────
-const BELIEFS = [
-  {
-    title: "Inclusivity",
-    body: "No matter your background or experience level, Ventro is your inclusive fitness community where everyone is welcome.",
-  },
-  {
-    title: "Health Awareness",
-    body: "Our core value is to raise awareness about the importance of health and overall well-being, guiding you toward a healthier and more balanced lifestyle.",
-  },
-  {
-    title: "Expert Guidance",
-    body: "Our coaches are here to support and encourage you every step of the way. We prioritise your well-being and individual goals.",
-  },
-  {
-    title: "Data Driven",
-    body: "Every plan is built around power, heart rate, and real performance data. No guesswork—just structured progress you can measure.",
-  },
+// First-person throughout. Bio verbatim per positioning brief.
+const BIO = [
+  "I'm not a retired pro selling nostalgia or AI coach. I'm a working engineer, a father, and a competitive cyclist — Gran Fondo World Championship participant, multiple Top-10 finisher of the biggest international races, founder of NRC International Team in Leipzig.",
+  "I coach the way I train. Every athlete I work with gets a plan built on their actual data — power, metabolic profile (INSCYD), recovery, and the honest constraint most coaches ignore: you have a job and a life. My job is to make sure every hour you can give the bike returns the maximum.",
+  "I keep my roster small on purpose. Fewer athletes, more attention, better results.",
+];
+
+// Placeholder slots for race photos — alt text is production-ready.
+const PHOTOS = [
+  { label: "Kosta racing", alt: "Kosta Garbar racing in an international road cycling event" },
+  { label: "On the podium", alt: "Kosta Garbar on the podium at a Gran Fondo race" },
+  { label: "NRC International Team", alt: "Kosta Garbar with the NRC International Team in Leipzig" },
+];
+
+const FOR = [
+  "You're training for a gran fondo, a road race, or a long-course triathlon — and you have a job, a family, and maybe 6–12 hours a week.",
+  "You own a power meter (or a smart trainer) and you want your numbers to actually mean something.",
+  "You want a coach who adapts the plan when life happens, not a PDF that expires.",
+];
+
+const NOT_FOR = [
+  "You're looking for the cheapest generic plan on the internet.",
+  "You want motivation, not structure. I'll hold you accountable — I won't chase you.",
+  "You're not willing to train with data.",
 ];
 
 // ── Motion ────────────────────────────────────────────────────────────────
@@ -63,7 +70,7 @@ const AboutUs = () => (
         className="font-mono uppercase mb-4"
         style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.lime }}
       >
-        ◎ Who we are
+        ◎ Who I am
       </motion.p>
 
       {/* Poster H1 */}
@@ -74,62 +81,38 @@ const AboutUs = () => (
         className="font-extrabold uppercase mb-10"
         style={{
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: "clamp(48px, 8vw, 112px)",
+          fontSize: "clamp(44px, 8vw, 104px)",
           lineHeight: 0.9,
           letterSpacing: "-0.04em",
           color: T.bone,
         }}
       >
-        About Ventro{" "}
+        Coached by{" "}
         <br />
-        Cycling{" "}
         <span style={{ background: T.lime, color: T.ink, padding: "0 0.18em" }}>
-          Coaching.
+          Kosta Garbar.
         </span>
       </motion.h1>
 
-      {/* Intro copy */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="mb-16 max-w-2xl text-lg leading-relaxed"
-        style={{ color: T.mist }}
-      >
-        A community of athletes united by a passion for endurance sports and a
-        commitment to living a healthy life. We believe everyone—regardless of
-        experience—has a place here.
-      </motion.p>
-
-      {/* Divider */}
-      <div className="mb-16" style={{ height: 1, background: T.hair }} />
-
-      {/* Two-col: mission copy + CTA */}
+      {/* Bio — first person */}
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
         variants={container}
-        className="grid grid-cols-1 gap-12 md:grid-cols-2 mb-20"
+        className="max-w-3xl mb-16"
       >
-        <motion.div variants={rise as any}>
-          <h2
-            className="font-bold uppercase mb-5"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "clamp(22px, 3vw, 36px)",
-              letterSpacing: "-0.025em",
-              color: T.bone,
-            }}
+        {BIO.map((para, i) => (
+          <motion.p
+            key={i}
+            variants={rise as any}
+            className="text-lg leading-relaxed mb-5"
+            style={{ color: T.mist }}
           >
-            Our mission
-          </h2>
-          <p className="text-base leading-relaxed mb-6" style={{ color: T.mist }}>
-            At the heart of Ventro Cycling Coaching is the mission to empower
-            individuals—regardless of their sporting background—to lead healthier
-            lives, one ride at a time. We inspire, support, and empower athletes
-            to achieve their goals, no matter how big or small.
-          </p>
+            {para}
+          </motion.p>
+        ))}
+        <motion.div variants={rise as any}>
           <Link href="/plans-and-pricing">
             <button
               className="group inline-flex items-center gap-2 px-5 py-4 font-semibold text-sm"
@@ -140,76 +123,128 @@ const AboutUs = () => (
             </button>
           </Link>
         </motion.div>
-
-        <motion.div variants={rise as any}>
-          <h2
-            className="font-bold uppercase mb-5"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "clamp(22px, 3vw, 36px)",
-              letterSpacing: "-0.025em",
-              color: T.bone,
-            }}
-          >
-            The coach
-          </h2>
-          <p className="text-base leading-relaxed mb-4" style={{ color: T.mist }}>
-            Kostiantyn (Kosta) Garbar is the founder and head coach. With over a
-            decade of experience in high-performance endurance sports, he helps
-            cyclists unlock their full potential through structured, data-driven,
-            and fully personalised coaching.
-          </p>
-          <p className="text-base leading-relaxed" style={{ color: T.mist }}>
-            At Ventro we understand your needs, set realistic goals, adapt
-            training to your life, and build a partnership based on trust,
-            communication, and real progress.
-          </p>
-        </motion.div>
       </motion.div>
 
-      {/* Belief grid */}
+      {/* Race photos — placeholder slots */}
       <p
-        className="font-mono uppercase mb-8"
+        className="font-mono uppercase mb-6"
         style={{ fontSize: 10.5, letterSpacing: "0.18em", color: T.dim }}
       >
-        ◎ What we stand for
+        ◎ On the road
       </p>
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
         variants={container}
-        className="grid grid-cols-1 gap-px sm:grid-cols-2"
-        style={{ border: `1px solid ${T.hair}` }}
+        className="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-20"
       >
-        {BELIEFS.map(({ title, body }, i) => (
+        {PHOTOS.map(({ label, alt }, i) => (
+          // TODO: Kosta to supply photo — replace this placeholder with an
+          // <Image src={...} alt={alt} /> using the alt text above.
           <motion.div
             key={i}
             variants={rise as any}
-            className="p-8"
-            style={{
-              background: T.char,
-              borderRight: i % 2 === 0 ? `1px solid ${T.hair}` : "none",
-              borderBottom: i < 2 ? `1px solid ${T.hair}` : "none",
-            }}
+            role="img"
+            aria-label={`Placeholder — ${alt}`}
+            className="flex aspect-[4/5] items-end p-5"
+            style={{ background: T.char, border: `1px solid ${T.hair}` }}
           >
-            <span
-              className="font-mono block mb-3"
-              style={{ fontSize: 11, letterSpacing: "0.14em", color: T.lime }}
-            >
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <h3
-              className="font-semibold mb-2 text-base"
-              style={{ color: T.bone }}
-            >
-              {title}
-            </h3>
-            <p className="text-sm leading-relaxed" style={{ color: T.mist }}>
-              {body}
-            </p>
+            <div>
+              <span
+                className="font-mono block mb-1"
+                style={{ fontSize: 10.5, letterSpacing: "0.14em", color: T.lime }}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span
+                className="font-mono uppercase"
+                style={{ fontSize: 11, letterSpacing: "0.12em", color: T.dim }}
+              >
+                {label}
+              </span>
+            </div>
           </motion.div>
         ))}
+      </motion.div>
+
+      {/* Divider */}
+      <div className="mb-16" style={{ height: 1, background: T.hair }} />
+
+      {/* Who this is for / not for */}
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+        className="grid grid-cols-1 gap-px md:grid-cols-2"
+        style={{ border: `1px solid ${T.hair}` }}
+      >
+        {/* For */}
+        <motion.div
+          variants={rise as any}
+          className="p-8"
+          style={{ background: T.char, borderRight: `1px solid ${T.hair}` }}
+        >
+          <h2
+            className="font-bold uppercase mb-6"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "clamp(20px, 2.5vw, 30px)",
+              letterSpacing: "-0.025em",
+              color: T.bone,
+            }}
+          >
+            Who this is for
+          </h2>
+          <ul className="flex flex-col gap-4">
+            {FOR.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <Check
+                  size={18}
+                  className="mt-0.5 shrink-0"
+                  style={{ color: T.lime }}
+                />
+                <span className="text-base leading-relaxed" style={{ color: T.mist }}>
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Not for */}
+        <motion.div
+          variants={rise as any}
+          className="p-8"
+          style={{ background: T.char }}
+        >
+          <h2
+            className="font-bold uppercase mb-6"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "clamp(20px, 2.5vw, 30px)",
+              letterSpacing: "-0.025em",
+              color: T.bone,
+            }}
+          >
+            Who this is NOT for
+          </h2>
+          <ul className="flex flex-col gap-4">
+            {NOT_FOR.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <X
+                  size={18}
+                  className="mt-0.5 shrink-0"
+                  style={{ color: T.dim }}
+                />
+                <span className="text-base leading-relaxed" style={{ color: T.dim }}>
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </motion.div>
     </div>
   </section>

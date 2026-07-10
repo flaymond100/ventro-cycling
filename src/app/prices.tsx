@@ -92,7 +92,7 @@ export function Prices() {
           className="mb-8 max-w-2xl text-lg leading-relaxed"
           style={{ color: T.mist }}
         >
-          Different types of training plans for cyclists of all levels. Start with a completely free 4-Week FTP Builder Plan and upgrade when you're ready.
+          Power-based coaching for committed amateur racers, gran fondo and long-course athletes. Start with a completely free 4-Week FTP Builder Plan and upgrade when you&apos;re ready.
         </motion.p>
 
         {/* Free plan CTA */}
